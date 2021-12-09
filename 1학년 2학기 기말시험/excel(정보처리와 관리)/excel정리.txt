@@ -12,6 +12,7 @@ ROUNDDOWN : 선택한 값을 소수 K번째에서 내림 ex) =ROUNDDOWN(A5,k)
 AVERAGE : 선택한 값들의 평균 ex) =AVERAGE(A1:A4)
 LOWER : 선택한 문자열 모두 소문자로 변경 ex) =LOWER(G1)
 PROPER  : 선택한 문자열 첫글자를 대문자로 변경 ex) =PROPER(G1)
+CHOOSE : k번째에 있는 값을 출력 ex) =CHOOSE(2,"red","blue","green") -> blue
 YEAR : 선택한 숫자(2021-01-01)에서 연도만 추출 ex) = =YEAR(G5)
 TODAY : 오늘 날짜 출력 ex) =TODAY()
 MOD : a / b의 나머지 ex) =MOD(a,b)
