@@ -1,0 +1,11 @@
+SELECT문
+: SELECT * FROM `c-users` WHERE id = "111"
+
+INSERT문
+:INSERT INTO `c-users` (`id`, `pw`, `name`) VALUES ("222","222","222")
+
+DELETE문
+:DELETE FROM `c-users` WHERE `id` = "222"
+
+UPDATE문
+:UPDATE `c-users` set id = "111" WHERE id = "333"
