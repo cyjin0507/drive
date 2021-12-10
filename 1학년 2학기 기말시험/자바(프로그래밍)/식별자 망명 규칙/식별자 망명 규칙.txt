@@ -1,45 +1,53 @@
+--식별자 망명 규칙--
+-한글, _, $ 로 시작 가능
+-길이 제한 X
+
+--자바 키위드--
+
 assert
-default
-goto
-package
+goto 
 synchronized
-boolean
-do
-if
-private
-this
-break
-double
-implements
-protected
-throw
-byte
-else
-import
-public
-throws
-case
-enum
 instanceof
-return
-transient
-catch
-extends
-int
-short
-try
-char
-final
-interface
-static
-void
-class
-finally
-long
 stricfp
 volatile
-const
-float
+transient
 native
 super
-while
+
+---------
+default O
+package O
+boolean O
+do O
+if O
+private O
+this O
+break O
+double O
+implements O
+protected O
+throw O
+byte O
+else O
+import O
+public O
+throws O
+case O
+enum O
+return O
+catch O
+extends O
+int O
+short O
+try O
+char O
+final O
+interface O
+static O
+void O
+class O
+finally O
+long O
+const O
+float O
+while O
