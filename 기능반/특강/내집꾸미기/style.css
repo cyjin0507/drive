@@ -1,0 +1,287 @@
+* {
+    width: 100%;
+    margin: 0 auto;
+    padding: auto;
+}
+
+#sec-title {
+    text-align: center;
+}
+
+#sec-title > div:nth-child(1) {
+    font-size: 18px;
+    color: #CA4444;
+    font-weight: bolder;
+}
+
+#sec-title > div:nth-child(2) {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.more-button {
+    border: 1px solid rgb(116, 116, 116);
+    width: 140px;
+    height: 25px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    color: rgb(85, 85, 85);
+    padding-top: 5px;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header img {
+    width: 200px;
+    margin-left: -20px;
+}
+
+#left-header {
+    width: 450px;
+    display: grid;
+    grid-template-columns: .6fr 1.6fr 1fr 1fr 1fr;
+    font-size: 18px;
+    font-weight: bolder;
+    margin-top: 35px;
+}
+
+#right-header {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    width: 300px;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-top: 35px;
+}
+
+#right-header i {
+    margin-top: 5px;
+}
+
+/*  */
+
+#section1 {
+    position: relative;
+    height: 89.7vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+#section1 img {
+    position: absolute;
+    height: 89.7vh;
+}
+
+#visual {
+    width: 100%;
+    height: 89.7vh;
+    animation: vRotate 12s linear infinite
+}
+
+#vImg1 {
+    top: 0;
+    left: 0;
+}
+
+#vImg2 {
+    top: 0;
+    left: 100%;
+}
+
+#vImg3 {
+    top: 0;
+    left: 200%;
+}
+
+@keyframes vRotate {
+    0% {
+        transform: translateX(0%);
+    }
+
+    12.5% {
+        transform: translateX(0%);
+    }
+
+    25% {
+        transform: translateX(-100%);
+    }
+
+    37.5% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(-200%);
+    }
+
+    62.5% {
+        transform: translateX(-200%);
+    }
+
+    75% {
+        transform: translateX(-100%);
+    }
+
+    87.5% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/*  */
+
+#section2 {
+    width: 90%;
+    margin-top: 90px;
+}
+
+#sec2-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+#sec2-img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+#sec2-img > img {
+    width: 100%;
+    height: 500px;
+    position: absolute;
+}
+
+.after {
+    z-index: 1;
+}
+
+#sec2-img > .before {
+    top: 0;
+    left: 100%;
+    z-index: 2;
+    transition: all .4s linear;
+
+}
+
+#sec2-info:hover #sec2-img > .before {
+    top: 0;
+    left: 0;
+}
+
+.writer-id {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.writer-id > span {
+    font-size: 14px;
+    font-weight: lighter;
+    color: rgb(112, 112, 112);
+}
+
+.score {
+    display: flex;
+    width: 200px;
+    margin-top: 13px;   
+}
+
+.score > span {
+    font-size: 14px;
+    color: rgb(112, 112, 112);
+    margin-top: 3px;
+}
+
+.score > div {
+    display: flex;
+    width: 200px;
+    color: rgb(221, 188, 0);
+    font-size: 25px;
+}
+
+/*  */
+
+#section3 {
+    width: 85%;
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+#sec3-title {
+    margin-top: 300px;
+}
+
+#sec3-title > div:nth-child(1) {
+    font-size: 20px;
+    color: #CA4444;
+    font-weight: bolder;
+}
+
+#sec3-title > div:nth-child(2) {
+    font-size: 26px;
+    font-weight: bolder;
+    margin-top: 14px;
+}
+ 
+#sec3-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 1050px;
+    gap: 30px;
+}
+
+.sec3-sort {
+    display: flex;
+}
+
+.sec3-sort:nth-child(2), .sec3-sort:nth-child(3) {
+    margin-top: 100px;
+}
+
+.expert-area img {
+    width: 200px;
+    height: 300px;
+}
+
+.expert-area > div {
+    position: relative;
+}
+
+.expert-area > div > img, .expert-area > div > div{
+    position: absolute;
+}
+
+.expert-area > div > div {
+    width: 200px;
+    height: 300px;
+    /* background-color: white; */
+}
+
+/*  */
+
+#section4 {
+    width: 100%;
+    margin-top: 300px;
+}
+
+#sec4-main {
+    margin-top: 100px;
+}
