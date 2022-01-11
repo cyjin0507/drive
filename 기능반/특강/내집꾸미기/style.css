@@ -226,7 +226,7 @@ header img {
 }
 
 #sec3-title {
-    margin-top: 300px;
+    margin-top: 250px;
 }
 
 #sec3-title > div:nth-child(1) {
@@ -245,43 +245,168 @@ header img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 1050px;
-    gap: 30px;
+    gap: 70px;
 }
 
 .sec3-sort {
     display: flex;
 }
 
-.sec3-sort:nth-child(2), .sec3-sort:nth-child(3) {
+.sec3-sort:nth-child(2) {
     margin-top: 100px;
+}
+
+.sec3-sort:nth-child(3) {
+    margin-top: 130px;
 }
 
 .expert-area img {
     width: 200px;
     height: 300px;
+    transform-style: preserve-3d;
 }
 
-.expert-area > div {
+.expert-area {
     position: relative;
 }
 
-.expert-area > div > img, .expert-area > div > div{
+.expert-img, .expert-info{
     position: absolute;
+    backface-visibility:hidden;
+    transition:all 1.5s;
+    border-radius: 80px;
+    transform-style: preserve-3d;
 }
 
-.expert-area > div > div {
+.expert-info{
     width: 200px;
     height: 300px;
-    /* background-color: white; */
+    transform:rotateY(180deg);
+    background-color: white;
+    border: .5px solid rgb(228, 226, 226);
+    background-color: rgb(241, 241, 241);
+}
+
+.expert-info > div {
+    width: auto;
+    margin-top: 100px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: rgb(156, 156, 156);
+}
+
+.expert-info > div span {
+    color: rgb(49, 49, 49);
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.expert-more-button {
+    width: 80px;
+    height: 25px;
+    border: 1px solid rgb(104, 104, 104);
+    text-align: center;
+    margin-left: 0;
+    padding-top: 5px;
+    margin-top: 10px;
+    font-weight: bolder;
+    color: #CA4444;
+    background-color: white;
+}
+
+.expert-area:hover .expert-img {
+    transform:rotateY(-180deg);
+}
+
+.expert-area:hover .expert-info {
+    transform:rotateY(0deg);
 }
 
 /*  */
 
 #section4 {
-    width: 100%;
-    margin-top: 300px;
+    width: 76%;
+    margin-top: 360px;
 }
 
 #sec4-main {
     margin-top: 100px;
+    display: flex;
+}
+
+.review {
+    background-position: center;
+    background-size: cover;
+    width: 700px;
+    height: 500px;
+    position: relative;
+}
+
+.review-content {
+    width: auto;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 150px;
+    z-index: 2;
+    color: rgb(187, 187, 187);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    transition: all .5s;
+}
+
+.review-content span {
+    font-size: 18px;
+    color: white;
+    font-weight: bolder;
+}
+
+.review-img {
+    width: 700px;
+    height: 500px;
+    position: absolute;
+    z-index: 1;
+    filter: brightness(.4);
+    transition: all .5s;
+}
+
+.score2 {
+    display: flex;
+}
+
+.score2 > div {
+    display: flex;
+    width: 150px;
+    color: gold;
+    margin-left: 20px;
+    margin-top: 3px;
+}
+
+#img1 {
+    background-image: url("./resources/imgs/imgs/livingroom-1032733_1280.jpg");
+}
+
+#img2 {
+    background-image: url("./resources/imgs/imgs/living-room-2155353_1920.jpg");
+}
+
+.sec4-btn {
+    width: 100px;
+    height: 30px;
+    border: .5px solid white;
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.review:hover .review-content {
+    opacity: .5;
+}
+
+.review:hover .review-img {
+    filter: brightness(1);
 }
