@@ -40,8 +40,10 @@ header {
 }
 
 header img {
-    width: 200px;
+    width: 100px;
+    /* height: 90px; */
     margin-left: -20px;
+    object-fit: contain;
 }
 
 #left-header {
@@ -83,7 +85,7 @@ header img {
 #visual {
     width: 100%;
     height: 89.7vh;
-    animation: vRotate 12s linear infinite
+    animation: vRotate 16s linear infinite
 }
 
 #vImg1 {
@@ -106,7 +108,7 @@ header img {
         transform: translateX(0%);
     }
 
-    12.5% {
+    22.5% {
         transform: translateX(0%);
     }
 
@@ -114,7 +116,7 @@ header img {
         transform: translateX(-100%);
     }
 
-    37.5% {
+    47.5% {
         transform: translateX(-100%);
     }
 
@@ -122,7 +124,7 @@ header img {
         transform: translateX(-200%);
     }
 
-    62.5% {
+    73.5% {
         transform: translateX(-200%);
     }
 
@@ -130,7 +132,7 @@ header img {
         transform: translateX(-100%);
     }
 
-    87.5% {
+    98.5% {
         transform: translateX(-100%);
     }
 
@@ -159,6 +161,7 @@ header img {
     position: relative;
     height: 500px;
     overflow: hidden;
+    /* border-radius: 29px; */
 }
 
 #sec2-img > img {
@@ -284,13 +287,13 @@ header img {
     transform:rotateY(180deg);
     background-color: white;
     border: .5px solid rgb(228, 226, 226);
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(255, 255, 255);
 }
 
 .expert-info > div {
     width: auto;
     margin-top: 100px;
-    margin-left: 40px;
+    margin-left: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -308,7 +311,7 @@ header img {
     height: 25px;
     border: 1px solid rgb(104, 104, 104);
     text-align: center;
-    margin-left: 0;
+    margin-left: 40px;
     padding-top: 5px;
     margin-top: 10px;
     font-weight: bolder;
@@ -347,7 +350,7 @@ header img {
 .review-content {
     width: auto;
     position: absolute;
-    margin-top: 200px;
+    margin-top: 100px;
     margin-left: 150px;
     z-index: 2;
     color: rgb(187, 187, 187);
