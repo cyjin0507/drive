@@ -4,7 +4,7 @@ class DB
     private static $db = null;
 
     private static function getDB() {
-        $host = "www.yydhsoft.com";
+        $host = "localhost";
         $dbname = "skills05";
         $charset = "utf8mb4";
         $user = "skills05";
