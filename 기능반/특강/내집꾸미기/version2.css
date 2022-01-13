@@ -195,3 +195,32 @@
         transform: translateX(0%);
     }
 }
+
+
+/*  */
+
+#section2 {
+    width: 90%;
+    margin-top: 150px;
+}
+
+#sec2-main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+}
+
+#sec2-left {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+#sec2-img {
+    position: relative;
+}
+
+#sec2-img > img {
+    position: absolute;
+}
