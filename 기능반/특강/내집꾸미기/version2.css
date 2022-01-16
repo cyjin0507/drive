@@ -366,7 +366,7 @@
     object-fit: cover;
 }
 
-#sec3-right img {
+#expert-right img {
     width: 100%;
     height: 690px;
     object-fit: cover;
@@ -378,6 +378,156 @@
 
 .expert > img, .expert > div {
     position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+}
+
+#expert-left .expert-info {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+#expert-right .expert-info {
+    width: 100%;
+    height: 690px;
+    overflow: hidden;
+}
+
+.expert-info {
+    transform: rotateY(180deg);
+    color: white;
+}
+
+#info1 #info-main > div > span {
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+}
+
+#info1 #info-main > div:nth-child(1) {
+    margin-top: 60px;
+    margin-left: 50px;
+    font-size: 17px;
+    color: rgb(216, 216, 216);
+}
+
+#info1 #info-main > div:nth-child(2) {
+    margin-top: 10px;
+    margin-left: 50px;
+    font-size: 17px;
+    color: rgb(216, 216, 216);
+}
+
+#info1 .more-info {
+    margin-top: 20px;
+    text-align: center;
+    width: 320px;
+    font-size: 17px;
+    color: rgb(216, 216, 216);
+}
+
+#info2 #info-main > div > span {
+    font-size: 20px;
+    font-weight: bolder;
+    color: black;
+}
+
+#info2 #info-main > div:nth-child(1) {
+    margin-top: 60px;
+    margin-left: 50px;
+    font-size: 17px;
+    color: rgb(53, 53, 53);
+}
+
+#info2 #info-main > div:nth-child(2) {
+    margin-top: 10px;
+    margin-left: 50px;
+    font-size: 17px;
+    color: rgb(53, 53, 53);
+
+}
+
+#info2 .more-info {
+    margin-top: 20px;
+    text-align: center;
+    width: 320px;
+    font-size: 17px;
+    color: rgb(36, 35, 35);
+}
+
+#info3 #info-main > div > span {
+    font-size: 25px;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+}
+
+#info3 #info-main > div:nth-child(1) {
+    margin-top: 160px;
+    margin-left: 50px;
+    font-size: 20px;
+    color: rgb(53, 53, 53);
+}
+
+#info3 #info-main > div:nth-child(2) {
+    margin-top: 10px;
+    margin-left: 50px;
+    font-size: 20px;
+    color: rgb(53, 53, 53);
+
+}
+
+#info3 .more-info {
+    margin-top: 20px;
+    text-align: center;
+    width: 540px;
+    font-size: 20px;
+    color: rgb(209, 209, 209);
+}
+
+.expert-info .more-button {
+    margin-top: 30px;
+    background-color: white;
+    opacity: .6;
+}
+
+#info-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+    /* filter: brightness(.4); */
+    filter: blur(6px);
+}
+
+#info-main {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    position: absolute;
+}
+
+#info1 > #info-img {
+    background-image: url("./resources/imgs/imgs/apartment-2094700_1920.jpg");
+}
+
+#info2 > #info-img {
+    background-image: url("./resources/imgs/imgs/baby-boy-3368016.jpg");
+}
+
+#info3 > #info-img {
+    background-image: url("./resources/imgs/imgs/apartment-lounge-3147892_1920.jpg");
+}
+
+.expert:hover .expert-img {
+    transform: rotateY(-180deg);
+}
+
+.expert:hover .expert-info {
+    transform: rotateY(0deg);
 }
 
 /*  */
