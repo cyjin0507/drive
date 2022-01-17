@@ -397,130 +397,32 @@
 
 .expert-info {
     transform: rotateY(180deg);
-    color: white;
+    border: .5px solid #aaa;
 }
 
-#info1 #info-main > div > span {
-    font-size: 20px;
-    font-weight: bolder;
-    color: white;
-}
-
-#info1 #info-main > div:nth-child(1) {
-    margin-top: 60px;
-    margin-left: 50px;
-    font-size: 17px;
-    color: rgb(216, 216, 216);
-}
-
-#info1 #info-main > div:nth-child(2) {
-    margin-top: 10px;
-    margin-left: 50px;
-    font-size: 17px;
-    color: rgb(216, 216, 216);
-}
-
-#info1 .more-info {
-    margin-top: 20px;
-    text-align: center;
-    width: 320px;
-    font-size: 17px;
-    color: rgb(216, 216, 216);
-}
-
-#info2 #info-main > div > span {
-    font-size: 20px;
-    font-weight: bolder;
-    color: black;
-}
-
-#info2 #info-main > div:nth-child(1) {
-    margin-top: 60px;
-    margin-left: 50px;
-    font-size: 17px;
-    color: rgb(53, 53, 53);
-}
-
-#info2 #info-main > div:nth-child(2) {
-    margin-top: 10px;
-    margin-left: 50px;
-    font-size: 17px;
-    color: rgb(53, 53, 53);
-
-}
-
-#info2 .more-info {
-    margin-top: 20px;
-    text-align: center;
-    width: 320px;
-    font-size: 17px;
-    color: rgb(36, 35, 35);
-}
-
-#info3 #info-main > div > span {
-    font-size: 25px;
-    font-weight: bolder;
-    color: rgb(255, 255, 255);
-}
-
-#info3 #info-main > div:nth-child(1) {
-    margin-top: 160px;
-    margin-left: 50px;
-    font-size: 20px;
-    color: rgb(53, 53, 53);
-}
-
-#info3 #info-main > div:nth-child(2) {
-    margin-top: 10px;
-    margin-left: 50px;
-    font-size: 20px;
-    color: rgb(53, 53, 53);
-
-}
-
-#info3 .more-info {
-    margin-top: 20px;
-    text-align: center;
-    width: 540px;
-    font-size: 20px;
-    color: rgb(209, 209, 209);
-}
-
-.expert-info .more-button {
-    margin-top: 30px;
-    background-color: white;
-    opacity: .6;
-}
-
-#info-img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    object-fit: cover;
-    background-position: center;
-    background-size: cover;
-    /* filter: brightness(.4); */
-    filter: blur(6px);
+.info-img {
+    border-radius: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 #info-main {
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    position: absolute;
+    text-align: center;
 }
 
-#info1 > #info-img {
-    background-image: url("./resources/imgs/imgs/apartment-2094700_1920.jpg");
+#info-main > div:not(.more-button) {
+    line-height: 30px;
+    color: #aaa;
 }
 
-#info2 > #info-img {
-    background-image: url("./resources/imgs/imgs/baby-boy-3368016.jpg");
+#info-main span {
+    color: rgb(47, 47, 47);
+    font-size: 19px;
+    font-weight: bolder;
 }
 
-#info3 > #info-img {
-    background-image: url("./resources/imgs/imgs/apartment-lounge-3147892_1920.jpg");
+#expert-left .info-img {
+    margin-top: 20px;
 }
 
 .expert:hover .expert-img {
@@ -635,8 +537,6 @@
 #review-content > div:nth-child(1) {
     margin-top: 60px;
 }
-
-
 
 .score2 {
     display: flex;
