@@ -253,6 +253,7 @@
     height: 500px;
     position: absolute;
     object-fit: cover;
+    transition: all .5s;
 }
 
 .writer-id {
@@ -302,6 +303,16 @@
 #sec2-main .more-button {
     margin-left: 30px;
     margin-top: 20px;
+}
+
+.before {
+    top: 0;
+    left: 100%;
+}
+
+#sec2-img:hover .before{
+    top: 0;
+    left: 0;
 }
 
 /*  */
