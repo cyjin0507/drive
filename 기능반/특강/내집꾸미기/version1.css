@@ -287,7 +287,7 @@ header img {
 .expert-img, .expert-info{
     position: absolute;
     backface-visibility:hidden;
-    transition:all 1.5s;
+    transition:all .8s;
     border-radius: 80px;
     transform-style: preserve-3d;
 }

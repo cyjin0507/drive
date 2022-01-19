@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dokdo&family=Hi+Melody&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@300;400&family=Noto+Serif+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Neonderthaw&display=swap');
+
 * {
      width: 100%;
      margin: 0 auto;
      padding: auto;
  }
+
+ /* #main-title {
+     color: #CA4444;
+     text-shadow: 5px 5px 5px rgb(221, 105, 105);
+ } */
 
  #btn {
     width: 130px;
@@ -246,7 +253,7 @@
 #sec2-img-info {
     height: 200px;
     /* margin-top: 500px; */
-    box-shadow: 1px 1px 10px rgb(143, 143, 143);
+    box-shadow: 5px 5px 10px rgb(143, 143, 143);
 }
 
 #sec2-img > img {
@@ -353,15 +360,17 @@
 }
 
 #section3  #sub-title {
+    width: 90%;
+    margin-left: 0;
     margin-top: 14px;
-    font-size: 17px;
+    font-size: 16px;
+    font-family: sans-serif;
 }
 
 #section3  #sub-title > span {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    color: rgb(248, 211, 0);
-    /* color: rgb(226, 0, 0); */
+    color: rgb(218, 0, 0);
 }
 
 #expert-left {
@@ -380,7 +389,7 @@
 
 #expert-right img {
     width: 100%;
-    height: 690px;
+    height: 650px;
     object-fit: cover;
 }
 
@@ -403,7 +412,7 @@
 
 #expert-right .expert-info, #expert-right .expert-img {
     width: 90%;
-    height: 690px;
+    height: 650px;
     overflow: hidden;
     border-radius: 20px;
 }
@@ -411,7 +420,7 @@
 .expert-info {
     transform: rotateY(180deg);
     /* border: .5px solid #aaa; */
-    box-shadow: 1px 1px 10px #aaa;
+    box-shadow: 5px 5px 10px rgb(148, 148, 148);
 }
 
 .info-img {
@@ -587,6 +596,7 @@
 #review-main .more-button {
     width: 100px;
     color: #CA4444;
+    font-weight: bolder;
 }
 
 #review1:checked ~ #sec4-info > #sec4-right > #review-main {
@@ -657,9 +667,15 @@ footer {
     display: flex;
 }
 
+#footer-info {
+    display: flex;
+    width: 1000px;
+    margin-left: 0;
+    gap: 20px;
+}
+
 #compare-info {
     width: 800px;
-    margin-left: -42VW;
     margin-top: 30px;
     line-height: 1.7;
     font-weight: 300;
@@ -671,6 +687,15 @@ footer {
     font-weight: bolder;
     color: black;
     font-size: 15px;
+}
+
+#footer-main > a {
+    font-size: 50px;
+    color: black;
+    width: auto;
+    height: 0;
+    margin-right: 10px;
+    margin-top: 130px;
 }
 
 #footer-img {
