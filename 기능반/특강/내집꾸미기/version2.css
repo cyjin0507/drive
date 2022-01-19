@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dokdo&family=Hi+Melody&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@300;400&family=Noto+Serif+KR:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Neonderthaw&display=swap');
 
 * {
      width: 100%;
@@ -27,9 +26,6 @@
      width: 100%;
      height: 120px;
      border-bottom: 1px solid rgb(218, 218, 218);
-     /* position: fixed;
-     z-index: 100000;
-     background-color: red; */
  }
 
  #util {
@@ -335,7 +331,7 @@
 #sec2-img-info {
     height: 200px;
     /* margin-top: 500px; */
-    box-shadow: 5px 5px 10px rgb(143, 143, 143);
+    box-shadow: 3px 3px 6px rgb(202, 202, 202);
 }
 
 #sec2-img > img {
@@ -448,8 +444,8 @@
 
 #section3 {
     width: 100%;
-    height: 800px;
-    padding-top: 150px;
+    height: 700px;
+    padding-top: 100px;
     margin-top: 200px;
     background-color: rgb(240, 241, 243);
 }
@@ -492,7 +488,7 @@
 #section3  #sub-title > span {
     font-size: 20px;
     font-weight: bold;
-    color: rgb(218, 0, 0);
+    color: rgb(218, 196, 0);
 }
 
 #expert-left {
@@ -527,16 +523,17 @@
 
 #expert-left .expert-info, #expert-left .expert-img {
     width: 90%;
-    height: 500px;
+    height: 450px;
     overflow: hidden;
-    border-radius: 20px;
+    object-fit: cover;
 }
 
 #expert-right .expert-info, #expert-right .expert-img {
     width: 90%;
-    height: 650px;
+    height: 600px;
     overflow: hidden;
-    border-radius: 20px;
+    object-fit: cover;
+
 }
 
 .expert-info {
@@ -596,6 +593,49 @@
 
 .expert-area:hover .expert-info {
     transform: rotateY(0deg);
+}
+
+@media screen and (max-width:480px) {
+
+    #section3 {
+        padding-top: 50px;
+    }
+
+    #section3 #sub-title {
+        font-size: 13px;
+    }
+
+    #section3 #sub-title > span {
+        font-size: 16px;
+    }
+
+    #sec3-main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #expert-left {
+        gap: 100px;
+    }
+
+    #expert-left .expert-info, #expert-left .expert-img {
+        width: 200px;
+        height: 350px;
+    }
+
+    #expert-right {
+        margin-left: 10px;
+        margin-top: 310px;
+    }
+
+    #expert-right .expert-info, #expert-right .expert-img {
+        width: 400px;
+        height: 200px;
+    }
+
+    .info-img {
+        display: none;
+    }
 }
 
 /*  */
@@ -801,6 +841,22 @@
         /* text-align: ; */
     }
 
+    #review-content > div {
+        font-size: 14px;
+    }
+
+    #review-content > div > span {
+        font-size: 17px;
+        color: rgb(231, 231, 231);
+    }
+
+    #sec4-right #review-content {
+        position: absolute;
+        background-color: transparent !important;
+        margin-left: 0px;
+        /* text-align: ; */
+    }
+
     #sec4-right{
         margin-top: 20px;
     }
@@ -812,9 +868,11 @@
 
     #review1:checked ~ #sec4-info > #sec4-right > #review-main #review-content {
         margin-left: -180px;
+        z-index: 10;
+        background-color: transparent !important;
     }
     
-
+}
 /*  */
 
 footer {
@@ -889,4 +947,32 @@ footer {
     text-align: center;
     color: rgb(105, 105, 105);
 }
+
+
+@media screen and (max-width:480px) {
+ 
+    #footer-menu > div {
+        width: 95%;
+        font-size: 13px;
+    }
+
+    #footer-logo {
+        margin-left: 140px;
+        width: 170px;
+        height: 100px;
+    }
+
+    #footer-info {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #compare-info {
+        width: 90%;
+    }
+
+    #footer-main a {
+        display: none;
+    }
+    
 }

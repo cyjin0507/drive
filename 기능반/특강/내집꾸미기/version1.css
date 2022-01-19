@@ -39,13 +39,14 @@ header {
     position: fixed;
     /* margin-top: 200px; */
     z-index: 100;
+    color: rgb(37, 37, 37);
 }
 
 #header-back-color {
     position: absolute;
     width: 100%;
     height: 100px;
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(187, 187, 187);
     z-index: -1;
     opacity: .8;
 }
@@ -90,13 +91,14 @@ header img {
 
 @media screen and (max-width:480px) {
     #section1 {
-        height: 30vh;
+        height: 40vh;
     }
 }
 
 #section1 img {
     position: absolute;
     height: 100%;
+    object-fit: cover;
 }
 
 #visual {
@@ -199,7 +201,7 @@ header img {
 
 }
 
-#sec2-info:hover #sec2-img > .before {
+#sec2-img:hover .before {
     top: 0;
     left: 0;
 }
@@ -310,6 +312,7 @@ header img {
 
 .sec3-sort:nth-child(3) {
     margin-top: 130px;
+    text-align: right;
 }
 
 .expert-area img {
@@ -408,10 +411,18 @@ header img {
     }
 
     .sec3-sort {
+        margin-left: -110px;
+        gap: 220px;
         display: flex;
-        flex-direction: column;
-        gap: 320px;
+        flex-direction: row;
     }
+
+    /* .expert-area */
+
+    /* .expert-img, .expert-info {
+        width: 200px;
+        height: 200px;
+    } */
 }
 
 /*  */
@@ -452,6 +463,7 @@ header img {
     font-size: 18px;
     color: white;
     font-weight: bolder;
+    transition: all .5s;
 }
 
 .review-img {
@@ -494,7 +506,15 @@ header img {
 }
 
 .review:hover .review-content {
+    background-color: rgb(218, 218, 218);
     opacity: .8;
+    color: rgb(58, 58, 58);
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+}
+
+.review:hover .review-content span {
+    color: rgb(53, 53, 53);
 }
 
 .review:hover .review-img {
@@ -507,6 +527,15 @@ header img {
         flex-direction: column;
         width: 90%;
         gap: 30px;
+    }
+
+    #section4 #sec-title > div:nth-child(1) {
+        font-size: 12px;
+    }
+
+    #section4 #sec-title > div:nth-child(2) {
+        font-size: 20px;
+        margin-top: 10px;
     }
 
     .review {
@@ -525,6 +554,21 @@ header img {
         margin-left: 10px;
         margin-top: 10px;
     }
+
+    .review-content > div {
+        font-size: 13px;
+    }
+
+    .review-content > div > span {
+        font-size: 15px;
+    }
+
+    .sec4-btn {
+        width: 70px;
+        height: 22px;
+        padding-top: 6px;
+    }
+
 }
 
 /*  */
