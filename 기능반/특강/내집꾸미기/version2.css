@@ -515,7 +515,13 @@
     color: #aaa;
     font-size: 17px;
     margin-left: 20px;
-    transition: color .5s;
+    transition: all .5s;
+    width: 200px;
+}
+
+#sec4-main > label i {
+    width: auto;
+    margin-top: 5px;
 }
 
 #sec4-info {
@@ -684,7 +690,7 @@ footer {
 }
 
 #compare-info > div:nth-child(1) {
-    font-weight: bolder;
+    font-weight: 900;
     color: black;
     font-size: 15px;
 }
