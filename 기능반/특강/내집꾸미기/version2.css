@@ -534,12 +534,10 @@
     height: 600px;
     overflow: hidden;
     object-fit: cover;
-
 }
 
 .expert-info {
     transform: rotateY(180deg);
-    /* border: .5px solid #aaa; */
     box-shadow: 5px 5px 10px rgb(148, 148, 148);
 }
 

@@ -80,6 +80,31 @@ header img {
     margin-top: 5px;
 }
 
+@media screen and (max-width:480px) {
+
+    header {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1.2fr;
+    }
+
+    #left-header > div {
+        font-size: 16px;
+    }
+
+    header > img {
+        width: 50px;
+    }
+
+    #right-header > div {
+        font-size: 14px;
+    }
+
+    #right-header > i {
+        display: none;
+    }
+
+}
+
 /*  */
 
 #section1 {
