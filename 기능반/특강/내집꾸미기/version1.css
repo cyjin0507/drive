@@ -23,13 +23,12 @@
 .more-button {
     border: 1px solid rgb(116, 116, 116);
     width: 140px;
-    height: 25px;
+    line-height: 2;
     margin-top: 20px;
     text-align: center;
     font-size: 17px;
     font-weight: bold;
     color: rgb(85, 85, 85);
-    padding-top: 5px;
 }
 
 header {
@@ -440,15 +439,23 @@ footer {
 
 #footer-logo {
      width: 150px;
+     margin-left: 20px;
 }
 
-#left-footer > div {
-    width: 350px;
-    margin-left: 10px;
-    line-height: 1.4;
-    font-size: 17px;
-    font-weight: 400;
-    margin-top: 20px;
+#compare-info {
+    width: 800px;    
+    line-height: 1.7;
+    font-weight: 300;
+    font-size: 14px;
+    color: rgb(46, 46, 46);
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+#compare-info > div:nth-child(1) {
+    font-weight: bolder;
+    color: black;
+    font-size: 15px;
 }
 
 #call {
