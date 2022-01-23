@@ -16,22 +16,20 @@ class Session
     {
         unset($_SESSION[$type]);
     }
-    
+
     public function get($type, $save = false, $user = false)
     {
-        if($this->has($type)) {
+        if ($this->has($type)) {
             $data = $_SESSION[$type];
-            
 
-            if(!$save && !$user) {
+
+            if (!$save && !$user) {
                 $this->remove($type);
             }
 
             return $data;
-
         } else {
             return false;
         }
     }
-
 }

@@ -1,16 +1,18 @@
 <?php
-class DB {
-    public static function getDB() {
-        $host = "localhost";
-        $dbname = "test";
-        $charset = "utf8mb4";
-        $user = "localhost";
-        $pass = "";
+class Session
+{
+    public function set($type, $value)
+    {
+        $_SESSION[$type] = $value;
+    }
 
-        if(is_null(self::$db)) {
-            self::$db = new \PDO("mysql:host={$host}; dbname={$dbname}; charset={$charset};", $user, $pass);
-        }
+    public function has($type)
+    {
+        return isset($_SESSION[$type]);
+    }
 
-        return self::$db;
+    public function remove($type)
+    {
+        unset($_SESSION[$type]);
     }
 }
