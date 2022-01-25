@@ -46,7 +46,7 @@ header {
     position: absolute;
     width: 100%;
     height: 100px;
-    background-color: rgb(187, 187, 187);
+    background-color: rgb(243, 243, 243);
     z-index: -1;
     opacity: .8;
 }
@@ -530,21 +530,6 @@ header img {
     padding-top: 10px;
 }
 
-.review:hover .review-content {
-    background-color: rgb(218, 218, 218);
-    opacity: .8;
-    color: rgb(58, 58, 58);
-    border-radius: 20px;
-    padding: 10px 10px 10px 10px;
-}
-
-.review:hover .review-content span {
-    color: rgb(53, 53, 53);
-}
-
-.review:hover .review-img {
-    filter: brightness(1);
-}
 
 @media screen and (max-width:480px) {
     #sec4-main {
