@@ -1,0 +1,53 @@
+$('#item')
+    .on('click', event)
+    .on('mousemove', event)
+    .on('mouseup', event)
+
+$('#item').each()
+
+1. let 과 const
+-배열과 객체는 const로 작성
+let data = []
+let buy_list = []
+->
+const data = []
+const buy_list = []
+
+
+
+2. 캔버스 -> SVG
+/* canvas */
+ctx.beginPath();
+ctx.arc();
+ctx.stroke();
+ctx.fill();
+
+/* SVG */
+<circle cx="150" cy="100" r="80" fill="green" />
+const circle = $('svg #circle');
+circle.addEventListener('click', function() {
+    //이벤트
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
