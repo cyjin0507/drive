@@ -1,0 +1,96 @@
+$('#item')
+    .on('click', event)
+    .on('mousemove', event)
+    .on('mouseup', event)
+
+$('#item').each()
+
+
+1. let 과 const
+
+-배열과 객체는 const로 작성
+let data = []
+let buy_list = []
+->
+const data = []
+const buy_list = []
+
+
+
+2. 캔버스 -> SVG
+
+/* canvas */
+ctx.beginPath();
+ctx.arc();
+ctx.stroke();
+ctx.fill();
+
+/* SVG */
+<circle cx="150" cy="100" r="80" fill="green" />
+const circle = $('svg #circle');
+circle.addEventListener('click', function() {
+    //이벤트
+})
+
+
+3. 구조 분해 할당
+
+const {a, b} = 1
+
+4. 코드 분리
+
+setting.js
+
+const UPLOAD_SIZE = {
+    image : 1024 * 5,
+    video : 1024 * 10,
+    items : ["jpeg", "png"]
+}
+
+
+5. onload 이벤트에서 코드 분리
+
+window.addEventListener('load' function() {
+    const app = new App();
+    app.init();
+})
+
+
+6. class 함수 사용 방식
+class Map {
+    init() {
+
+    }
+}
+
+
+7. Object 사용 방식
+
+list.push({name, age});
+
+
+8. if / else if 여러번 사용시 switch 사용 권장
+
+
+9. static get 사용
+class Temp {
+    static get() {
+        return Temp.size.x[this.phase]
+    }
+}
+
+
+10.중복되는 로직은 함수로 분리
+
+11. class 상속 가능 활용
+캔버스의 경우, 삼각형, 원 이렇게 모형이 있는데 
+모두 동일한 draw라는 함수가 필요한 경우, 부모클래스 만들고 상속
+
+
+12. 폴더 구조
+
+util.js // 사용 많이 하는 유용한 함수를 모아둔 파일
+config.js // 업로드 사이즈와 같은 설정 파일
+
+
+
