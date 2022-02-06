@@ -1,0 +1,134 @@
+[
+    {
+        "img" : "image3.jpg",
+        "name" : "우드코스터",
+        "tall" : 165,
+        "satisfaction" : 4.5
+    },
+    {
+        "img" : "image4.jpg",
+        "name" : "토네이도",
+        "tall" : 160,
+        "satisfaction" : 4.7
+    },
+    {
+        "img" : "image5.png",
+        "name" : "썬더볼트",
+        "tall" : 150,
+        "satisfaction" : 4.4
+    },
+    {
+        "img" : "image7.jpg",
+        "name" : "와이드드롭",
+        "tall" : 165,
+        "satisfaction" : 4.5
+    },
+    {
+        "img" : "image8.jpg",
+        "name" : "스카이클락",
+        "tall" : 160,
+        "satisfaction" : 4.1
+    },
+    {
+        "img" : "image10.jpg",
+        "name" : "번지드롭",
+        "tall" : 161,
+        "satisfaction" : 4.3
+    },
+    {
+        "img" : "image11.jpg",
+        "name" : "썬더보트",
+        "tall" : 165,
+        "satisfaction" : 4.5
+    },
+    {
+        "img" : "image12.jpg",
+        "name" : "토네이도스윙",
+        "tall" : 140,
+        "satisfaction" : 4.1
+    },
+    {
+        "img" : "image13.png",
+        "name" : "타이톤",
+        "tall" : 150,
+        "satisfaction" : 3.9
+    },
+    {
+        "img" : "image14.jpg",
+        "name" : "코스터777",
+        "tall" : 150,
+        "satisfaction" : 4.5
+    },
+    {
+        "img" : "image15.jpg",
+        "name" : "블라이드잭",
+        "tall" : 140,
+        "satisfaction" : 4.1
+    },
+    {
+        "img" : "image16.jpg",
+        "name" : "터닝코스터",
+        "tall" : 130,
+        "satisfaction" : 3.5
+    },
+    {
+        "img" : "image17.jpg",
+        "name" : "회전목마",
+        "tall" : "없음",
+        "satisfaction" : 4.8
+    },
+    {
+        "img" : "image20.jpg",
+        "name" : "애플스윙",
+        "tall" : 120,
+        "satisfaction" : 4.5
+    },
+    {
+        "img" : "image23.jpg",
+        "name" : "스퀘어스카이",
+        "tall" : 165,
+        "satisfaction" : 4.3
+    },
+    {
+        "img" : "image24.jpg",
+        "name" : "헬스터",
+        "tall" : 155,
+        "satisfaction" : 4.5
+    },
+    {
+        "img" : "image25.jpg",
+        "name" : "썬더폴스",
+        "tall" : 135,
+        "satisfaction" : 4.1
+    },
+    {
+        "img" : "image26.jpg",
+        "name" : "토네엘로",
+        "tall" : 145,
+        "satisfaction" : 4.5
+    },
+    {
+        "img" : "image27.jpg",
+        "name" : "바나나스윙",
+        "tall" : 140,
+        "satisfaction" : 3.7
+    },
+    {
+        "img" : "image28.jpg",
+        "name" : "스페이스드롭",
+        "tall" : 125,
+        "satisfaction" : 4.5
+    },
+    {
+        "img" : "image29.jpg",
+        "name" : "탑블레이스",
+        "tall" : 135,
+        "satisfaction" : 4.8
+    },
+    {
+        "img" : "image30.jpg",
+        "name" : "스페이스스윙",
+        "tall" : 145,
+        "satisfaction" : 4.1
+    }
+]
