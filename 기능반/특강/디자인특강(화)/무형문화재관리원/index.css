@@ -36,8 +36,7 @@
 
 header {
     background-color: white;
-    position: -webkit-sticky;
-    /* position: sticky; */
+    position: fixed;
     z-index: 100;
 }
 
@@ -106,7 +105,7 @@ nav a {
 /*  */
 
 #visual {
-    height: 45vh;
+    height: 50vh;
     position: relative;
     overflow: hidden;
 }
@@ -467,6 +466,51 @@ nav a {
 }
 
 /*  */
+#unesco {
+    width: 80%;
+    margin-top: 50px;
+}
+
+#unesco-main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.sort {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 10px;
+}
+
+.year {
+    font-size: 23px;
+    font-weight: 900;
+    transition: all .5s;
+}
+
+.unesco-txt {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.unesco-info {
+    transition: all .5s;
+}
+
+.unesco-info:hover {
+    margin-top: -10px;
+}
+
+.unesco-info:hover .year {
+    color: cadetblue;
+}
+
+/*  */
 #banner {
     position: relative;
     margin-top: 50px;
@@ -500,7 +544,6 @@ nav a {
 .banner_list > a > img {
     width: var(--banner-width);
     height: 50px;
-    border: 1px solid #ddd;
     object-fit: cover;
 }
 
