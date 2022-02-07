@@ -1,0 +1,192 @@
+* {
+    width: 100%;
+    margin: 0 auto;
+}
+
+a {
+
+}
+
+#util {
+    /* width: 80%; */
+    background-color: #aaa;
+}
+
+#util-main {
+    display: flex;
+    width: 25%;
+    gap: 10px;
+    margin-right: 30px;
+}
+
+#util-main > div {
+    width: auto;
+    color: rgb(230, 230, 230);
+    font-size: 13px;
+    align-items: center;
+    display: flex;
+    line-height: 2.5;
+}
+
+#util-main > select {
+    width: 100px;
+    height: 25px;
+    margin-top: 4px;
+}
+
+
+#header {
+    width: 80%;
+}
+
+#header {
+    display: flex;
+}
+
+.logo {
+    width: 220px;
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    width: 60%;
+    align-items: center;
+}
+
+nav > div {
+    width: auto;
+    font-weight: 900;
+    position: relative;
+    z-index: 200;
+}
+
+nav > div:hover #sub1 {
+    display: flex;
+}
+
+nav a:hover {
+    background-color: #aaa;
+    color: white;
+}
+
+#sub1 {
+    position: absolute;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    display: none;
+}
+
+#sub2 {
+    font-size: 12px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 200;
+}
+
+#sub1 > div:hover #sub2 {
+    display: flex;
+}
+
+#sub1 a:hover {
+    background-color: #aaa;
+    color: white;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+/*  */
+
+#visual {
+    height: 45vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#visual-main {
+    height: 100%;
+    position: absolute;
+    animation: vRotate 12s linear infinite;
+}
+
+.visual-img {
+    height: 100%;
+    position: absolute;
+}
+
+.imgs {
+    height: 100%;
+    object-fit: cover;
+}
+
+.visual-txt {
+    position: absolute;
+    margin-top: -250px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.visual-txt span {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.visual-img:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+
+.visual-img:nth-child(2) {
+    top: 0;
+    left: 100%;
+}
+
+.visual-img:nth-child(3) {
+    top: 0;
+    left: 200%;
+}
+
+@keyframes vRotate {
+    0% {
+        transform: translateX(0%);
+    }
+
+    22.5% {
+        transform: translateX(0%);
+    }
+
+    25% {
+        transform: translateX(-100%);
+    }
+
+    47.5% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(-200%);
+    }
+
+    73.5% {
+        transform: translateX(-200%);
+    }
+
+    75% {
+        transform: translateX(-100%);
+    }
+
+    98.5% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
