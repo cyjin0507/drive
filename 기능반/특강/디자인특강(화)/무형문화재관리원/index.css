@@ -326,33 +326,40 @@ nav a {
 }
 
 .pop {
-    border: 1px solid black;
     height: 200px;
     position: relative;
     transition: all .5s;
+}
+
+.pop-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     background-position: bottom;
     background-size: cover;
     object-fit: cover;
+    filter: brightness(.5);
 }
 
-.pop:nth-child(1) {
-    background-image: url("./resources/imgs/pop1.jpg");
+#pop1 {
+    background-image: url("./resources/imgs/people-850097_960_720.jpg");
 }
 
-.pop:nth-child(2) {
-    background-image: url("./resources/imgs/1\ \(57\).jpg");
+#pop2 {
+    background-image: url("./resources/imgs/1\ \(58\).jpg");
 }
 
-.pop:nth-child(3) {
+#pop3 {
     background-image: url("./resources/imgs/Cambodia-Volunteer-Village-Child-Countryside-Kid-2197179.jpg");
 }
 
-.pop:nth-child(4) {
+#pop4 {
     background-image: url("./resources/imgs/flower-22656_960_720.jpg");
 }
 
 .pop-txt {
     position: relative;
+    text-align: center;
 }
 
 .pop-txt > div:nth-child(1) {
@@ -599,10 +606,12 @@ footer {
     width: 80%;
     margin-top: 20px;
     display: flex;
+    flex-direction: column;
 }
 
 #footer-logo {
     width: 200px;
+    margin-left: 0;
 }
 
 #copy-right {
@@ -611,4 +620,5 @@ footer {
     margin-left: 20px;
     font-size: 15px;
     font-weight: 900;
+    margin-top: 20px;
 }
