@@ -330,31 +330,24 @@ nav a {
     height: 200px;
     position: relative;
     transition: all .5s;
-}
-
-.pop-img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
     background-position: bottom;
     background-size: cover;
     object-fit: cover;
-    filter: brightness(.5);
 }
 
-#pop1 {
-    background-image: url("./resources/imgs/1\ \(8\).jpg");
+.pop:nth-child(1) {
+    background-image: url("./resources/imgs/pop1.jpg");
 }
 
-#pop2 {
+.pop:nth-child(2) {
     background-image: url("./resources/imgs/1\ \(57\).jpg");
 }
 
-#pop3 {
+.pop:nth-child(3) {
     background-image: url("./resources/imgs/Cambodia-Volunteer-Village-Child-Countryside-Kid-2197179.jpg");
 }
 
-#pop4 {
+.pop:nth-child(4) {
     background-image: url("./resources/imgs/flower-22656_960_720.jpg");
 }
 
