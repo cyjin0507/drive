@@ -404,3 +404,65 @@ nav > div:hover {
         opacity: 1;
     }
 }
+
+/*  */
+
+footer {
+    margin-top: 200px;
+    background-color: #333333;
+}
+
+#footer-main {
+    width: 80%;
+}
+
+#footer-up {
+    display: flex;
+    border-bottom: 1px solid #484848;
+    line-height: 6;
+}
+
+#footer-nav {
+    display: flex;
+    width: 50%;
+    margin-left: 0;
+}
+
+#footer-nav > div {
+    width: auto;
+    color: white;
+    font-size: 20px;
+}
+
+#footer-nav > div:nth-child(2) {
+    color: var(--sub-color);
+}
+
+#social {
+    display: flex;
+    align-items: center;
+    width: 14%;
+    margin-right: 0;
+}
+
+#social > i {
+    width: auto;
+    color: #aaa;
+    font-size: 25px;
+}
+
+#footer-down {
+    display: flex;
+}
+
+#footer-logo {
+    width: 200px;
+}
+
+#footer-down > div {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #aaa;
+}
