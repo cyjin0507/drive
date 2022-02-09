@@ -50,12 +50,26 @@ nav {
     display: flex;
     width: 50%;
     margin-top: -20px;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
 }
 
 nav > div {
     width: auto;
-    font-size: 26px;
+    font-size: 23px;
     font-weight: 300;
+    display: flex;
+}
+
+nav > div i {
+    width: auto;
+    padding-left: 5px;
+}
+
+nav > div > div {
+    margin-left: 5px;
 }
 
 nav > div:nth-child(2) {
@@ -80,8 +94,10 @@ nav > div:hover {
 /* 1500 */
 /* 500 */
 #visual-imgs {
+    transition: all .5s;
     height: 100%;
     position: relative;
+    animation: vRotate 20s linear infinite;
 }
 
 .imgs {
@@ -99,6 +115,44 @@ nav > div:hover {
     left: 200%;
 }
 
+@keyframes vRotate {
+    0% {
+        transform: translateX(0%);
+    }
+
+    22.5% {
+        transform: translateX(0%);
+    }
+
+    25% {
+        transform: translateX(-100%);
+    }
+
+    47.5% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(-200%);
+    }
+
+    73.5% {
+        transform: translateX(-200%);
+    }
+
+    75% {
+        transform: translateX(-100%);
+    }
+
+    98.5% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
 /*  */
 #section1 {
     width: 50%;
@@ -109,6 +163,7 @@ nav > div:hover {
     position: relative;
     background-color: white;
     box-shadow: 10px 10px 10px rgb(93, 93, 93);
+    border: 1px solid rgb(243, 243, 243);
 }
 
 #section1 span {
@@ -149,26 +204,36 @@ nav > div:hover {
 }
 
 .sec1-sub-img2 {
-    height: 60%;
+    height: 50%;
     background-image: url("./resources/imgs/제공이미지/2.jpg");
     background-size: cover;
     background-position: center;
 }
 
+.area3 .sec1-sort {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    text-align: center;
+    gap: 20px;
+}
+
 .area3 .sec1-sort > div:nth-child(1) {
     margin-top: 30px;
-    text-align: center;
-    font-size: 25px;
-    font-weight: 900;
+    font-size: 20px;
     color: var(--sub-color);
 }
 
-.area3 .sec1-sort > div:nth-child(2) {
-    text-align: center;
-    margin-top: 35px;
-    font-size: 50px;
-    font-weight: 600;
-    color: rgb(126, 126, 126);
+.area3 .sec1-sort i {
+    width: auto;
+}
+
+.area3 .sec1-sort i:nth-child(1) {
+    margin-top: 30px;
+}
+
+.area3 .sec1-sort > div:nth-child(4) {
+    color: var(--point-color);
 }
 
 /*  */
