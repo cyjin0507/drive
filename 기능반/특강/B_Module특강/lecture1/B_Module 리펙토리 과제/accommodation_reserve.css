@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#myCanvas {
+    position: relative; 
+    top: 50px;
+    left: 200px;
+}
+
+#roomInfo {
+    width: 300px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    z-index: 10;
+    border: 1px solid black;
+    display: none;
+}
+
+#modal {
+    width:750px;
+    height: 700px;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1900000;
+    margin-left: 30%;
+    margin-top: 10%;
+    border: 1px solid black;
+    display: none;
+}
+
+#sign_area {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+#reservation_modal {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    position: fixed;
+    z-index: 100;
+    background-color: white;
+    left: 30%;
+    top: 10%;
+    display: none;
+}
+
+#reservation_canvas {
+    width:490px;
+    height: 450px;
+    border: 1px solid black;
+
+}
+
+#calender {
+    display: flex;
+    margin-top: 60px;
+    gap: 100px;
+}
+
+#calender > div {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+#calender > div > div {
+    border: 1px solid black;
+}
+
+.f1 {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(35, 255, 145);
+}
+
+.f2 {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(57, 35, 255);
+}
+
+.f3 {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 35, 163);
+}
+
+.f4 {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(136, 134, 0);
+}
+
+/* 예약리스트 */
+#reservation {
+    margin-top: 100px;
+    width: 70%;
+    margin-left: 100px;
+}
+
+#reservation > div {
+    display: flex;
+    border-bottom: 1px solid black;
+    gap: 60px;
+}
+
+#reservation_list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 40px;
+}
+
+#reservation_list > div {
+    display: flex;
+    gap: 80px;
+}
+
+#reservation_list img {
+    width: 70px;
+}
