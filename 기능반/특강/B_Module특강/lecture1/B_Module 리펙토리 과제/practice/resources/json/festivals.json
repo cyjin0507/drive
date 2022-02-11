@@ -1,0 +1,37 @@
+[
+	{
+		"idx": 1, 
+		"name": "전주가맥축제", 
+		"location": [66, 9],
+		"opening_day": "2020-08-06",
+		"closing_day": "2020-08-08" 
+	},
+	{
+		"idx": 2,
+		"name": "전주비빔밥축제",
+		"location": [26, 44],
+		"opening_day": "2020-10-08",
+		"closing_day": "2020-10-11"
+	},
+	{
+		"idx": 3,
+		"name": "전주 단오축제",
+		"location": [65, 45],
+		"opening_day": "2020-06-25",
+		"closing_day": "2020-06-26"
+	},
+	{
+		"idx": 4,
+		"name": "전주세계소리축제",
+		"location": [107, 65],
+		"opening_day": "2020-09-16",
+		"closing_day": "2020-09-20"
+	},
+	{
+		"idx": 5,
+		"name": "전주한지문화축제",
+		"location": [56, 90],
+		"opening_day": "2020-09-18",
+		"closing_day": "2020-09-20"
+	}
+]
