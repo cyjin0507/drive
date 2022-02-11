@@ -274,14 +274,6 @@ nav > div:hover {
     font-size: 27px;
 }
 
-#r1:checked ~ #label > #l1 {
-    color: var(--point-color);
-}
-
-#r2:checked ~ #label > #l2 {
-    color: var(--point-color);
-}
-
 #sec2-main {
     position: relative;
     margin-top: 30px;
@@ -368,13 +360,28 @@ nav > div:hover {
     top: 0;
 }
 
-.r1:checked ~ #sec2-main {
+#r1:checked ~ #label > #l1 {
+    color: var(--point-color);
+}
+
+#r2:checked ~ #label > #l2 {
+    color: var(--point-color);
+}
+
+#r1:checked ~ #sec2-main {
     margin-left: 0%;
 }
 
-.r2:checked ~ #sec2-main {
+#r2:checked ~ #sec2-main {
     margin-left: -100%;
 }
+
+/*  */
+#section3 {
+    width: 80%;
+    margin-top: 100px;
+}
+
 
 
 /*  */
