@@ -1,0 +1,28 @@
+nav a {
+    /* border: 1px solid #aaa; */
+}
+
+#visual .col-auto {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+#visual {
+    background-image: url("./resources/image/swiper01.jpg");
+    height: 65vh;
+}
+
+.tab {
+    text-align: center; border: 1px solid #666; font-size: 18px;font-weight: bold; margin-right: -1px;
+}
+
+.tab:nth-child(1) {
+    color: white;
+    background-color: #666;
+    border: none;
+}
+
+#open {
+    background-image: url("./resources/image/bg01@1.jpg");
+}
