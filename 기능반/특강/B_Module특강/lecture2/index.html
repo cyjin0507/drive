@@ -10,10 +10,16 @@
             width: 600px;
             height: 600px;
             background-color: #228eed;
+            padding: 15px;
         }
 
         #drop-box.dragover {
             background-color: #fa555f;
+        }
+
+        #drop-box img {
+            width: 200px;
+            margin: 15px;
         }
     </style>
 </head>
@@ -23,12 +29,14 @@
 
     </div>
     
-    <script src="./DropBox.js"></script>
-    <script src="./File.js"></script>
+    <script src="File.js"></script>
+    <script src="Element.js"></script>
+    <script src="DropBox.js"></script>
     <script>
-    
         window.onload = function() {
-            window.dropBox = new DropBox(document.getElementById("drop-box"));
+            window.dropBox = new DropBox(
+                {elem : document.getElementById("drop-box")}
+            );
         };
     </script>
 

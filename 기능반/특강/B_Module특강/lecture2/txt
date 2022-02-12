@@ -5,3 +5,89 @@ notion.com - 포트폴리오 정리
 원리 / 이론
 
 React / Redux / Next.js
+
+
+#브라우저 저장
+localstorage
+             - 영구적 저장 O
+             - 용량 제한 O
+SessionStorage
+             - 영구적 저장 X
+             - 용량 제한 O
+WebSQL
+             - 영구적 저장 O
+             - 용량 제한 X
+             - 사용법 - WebSQL
+             - 브라우저 표준 X
+Cookie
+             - 영구적 저장 O
+             - 저장되는 시간 설정 가능
+             - 용량 5kb
+             - 로그인 인증
+IndexedDB
+             - 영구적 저장 O
+             - 용량 제한 X
+             - 사용법 - NoSQL
+
+
+// IndexedDB
+
+1. IndexedDB는 open 메소드를 통해 DB를 연다.
+2. DB를 열 경우, 다음과 같은 이벤트가 발생할 수 있다.
+    - onsuccess 성공했을 때
+    - onerror 실패했을 때
+    - onupgradeneeed 최초 1회 혹은 버전이 현재보다 높은 경우
+3. 객체 저장소를 만드는 법
+    * 객체 저장소는 onupgradeneeed 이벤트 내부에서 만들어야 한다.
+    createObjectStore라는 메소드로 객체 저장소를 만들 수 있다.
+    객체 저장소가 겹칠 수 있으니, objectStoreNames.contains 메소드를 통해 확인이 필요하다.
+    이미 존재하는 경우에는 deleteObjectStore로 삭제 필요
+4. 트랜잭션
+    - 수행하는 작업 단위
+    - 저장소에 접근하기 위해 사용한다.
+    - readonly, readwrite, versionchange 세 가지 모드가 존재한다.
+    - readonly는 데이터를 조회할 때만
+    - readwrite는 데이터 조회, 수정, 삭제 등
+
+    // 접근하고자 하는 객체 저장소가 한 개 일 경우
+    db.transaction(스토어 이름);
+
+    // 접근하고자 하는 객체 저장소가 여러 개 일 경우, 배열로
+    db.transaction([]);
+
+5. 데이터 제어하기 (objectStore)
+    // 한 개의 스토어에만 접근 가능하다.
+    const objectStore = transaction.objectStore(스토어 이름); 
+
+    데이터 추가 - objectStore.add({ ... })
+    데이터 수정 - objectStore.put({ ... })
+    데이터 삭제 - objectStore.delete(key)
+    데이터 조회 - objectStore.get(key)
+
+    데이터 조회2 - objectStore.openCursor 사용 방법
+
+    이런 데이터의 변경, 조회등의 작업들은 모두 비동기로 이루어진다.
+    async, await을 사용하거나 onsuccess 같은 이벤트 사용 필요
+DB.html
+4KB
+
+// hw
+1. IndexedDB 코드를 class 바꿔보기
+2. Drag & Drop IndexedDB 적용하기
+
+
+#프론트 엔드
+
+1번 vue.js
+    -Vuex
+    -Nuxt.js
+
+2번 React.js
+    -Redux
+    -Next.js
+    -Redux-saga
+    -Redux-thunk
+
+-Typescript
+-WebPack
+-Babel

@@ -1,6 +1,14 @@
 class DropBox {
-    constructor(elem) {
+    constructor({ elem }) {
         this.elem = elem;
+        this.list = [];
+
+        this.init();
+    }
+
+    async init() {
+        this.loadList();
+        await this.setList();
         this.addEvent();
     }
     
@@ -12,11 +20,11 @@ class DropBox {
 
         // 해당 요소를 드랍할 때
         elem.addEventListener("drop", (ev) => this.onDrop(ev));
-
+        
         // 해당 요소에서 벗어났을 때
         elem.addEventListener("dragleave", (ev) => this.onDragLeave(ev));
     }
-
+    
     onDragOver(ev) {
         ev.preventDefault();
         this.elem.classList.add("dragover");
@@ -26,8 +34,46 @@ class DropBox {
         this.elem.classList.remove("dragover");
     }
 
-    onDrop(ev) {
+    async onDrop(ev) {
+        const { elem, list } = this;
+
         ev.preventDefault();
-        console.log(ev);
+        elem.classList.remove("dragover");
+        const files = ev.dataTransfer.files;
+
+        for (const file of files) {
+            try {
+                if (file.name.match(/(jpeg|jpg|gif|png)/)) {
+                    const base64 = await File.loadImage(file);
+                    list.push(base64);
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        await this.setList();
+        this.saveList();
+    }
+
+    async setList() {
+        const { list, elem } = this;
+
+        elem.innerHtml = ''
+
+        for (const base64 of list) {
+            const img = await Element.createImage(base64);
+            elem.appendChild(img);
+        }
+    }
+
+    loadList() {
+        const images = localStorage.getItem("DropBox_images");
+
+        this.list = images ? JSON.parse(images) : [];
+    }
+
+    saveList() {
+        localStorage.setItem("DropBox_images", JSON.stringify(this.list));
     }
 }
