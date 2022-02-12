@@ -19,7 +19,7 @@ export class Map {
 
     }
 
-    getJson = () => {
+    getJson() {
         fetch("./resources/json/map.json")
             .then((response) => response.json())
             .then((data) => {
@@ -35,7 +35,7 @@ export class Map {
 
 
 
-    init = () => {
+    init() {
         this.canvas.width = 450;
         this.canvas.height = 450;
 
@@ -43,7 +43,7 @@ export class Map {
         setTimeout(() => this.render(), 34);
     }
 
-    setEventHandlers = () => {
+    setEventHandlers() {
         this.canvas.addEventListener("mousedown", () => this.mousedown());
         this.canvas.addEventListener("mousemove", (e) => this.mousemove(e));
         this.canvas.addEventListener("mouseup", () => this.mouseup());
@@ -52,7 +52,7 @@ export class Map {
 
     }
 
-    render = () => {
+    render() {
         this.ctx.clearRect(0, 0, 3600, 3600);
         const x = 0;
         const y = 0;
@@ -83,6 +83,12 @@ export class Map {
         })
 
 
+        this.size()
+
+
+    }
+
+    size() {
         this.ctx.fillStyle = "red";
         this.ctx.font = "10px";
         if (this.currentPhase == 0) {
@@ -114,11 +120,9 @@ export class Map {
             this.ctx.fillText("0", 385, 348);
             this.ctx.fillText("0.25km", 420, 348);
         }
-
-
     }
 
-    mousedown = () => {
+    mousedown() {
         this.isDragging = true;
     }
 
@@ -136,7 +140,7 @@ export class Map {
         this.render();
     }
 
-    mouseup = () => {
+    mouseup() {
         this.isDragging = false;
     }
 
