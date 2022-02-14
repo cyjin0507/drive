@@ -153,6 +153,48 @@ nav > div:hover {
     }
 }
 
+#visual > input {
+    display: none;
+}
+
+#animation-btn {
+    margin-top: -130px;
+    margin-left: 45px;
+    position: absolute;
+    color: white;
+    width: auto;
+}
+
+#animation-btn label {
+    font-size: 30px;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#animation-btn label > i {
+    width: auto;
+}
+
+#stop,#play {
+    display: none;
+    margin-left: 0;
+    width: 20px;
+    height: 30px;
+}
+
+#p2:checked ~ #animation-btn > #stop {
+    display: block;
+}
+
+#p1:checked ~ #animation-btn > #play {
+    display: block;
+}
+
+#p1:checked ~ #visual-imgs {
+    animation-play-state: paused;
+}
+
 /*  */
 #section1 {
     width: 50%;
@@ -174,10 +216,22 @@ nav > div:hover {
 
 .area1 > .sec1-sort > div:nth-child(1) {
     margin-top: 30px;
-    text-align: center;
     font-size: 30px;
     font-weight: 900;
+    display: flex;
+    width: 210px;
 }
+
+.area1 > .sec1-sort > div:nth-child(1) i {
+    width: auto;
+    margin-top: 2px;
+    color: var(--sub-color);
+}
+
+.area1 > .sec1-sort > div:nth-child(1) > div {
+    margin-left: 10px;
+}
+
 
 .area1 > .sec1-sort > div:nth-child(2) {
     width: 90%;
@@ -239,11 +293,19 @@ nav > div:hover {
 /*  */
 
 #section2 {
-    width: 80%;
+    width: 100%;
     margin-top: 100px;
-    padding-bottom: 50px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     overflow: hidden;
     height: 500px;
+    background-color: rgb(255, 247, 210);
+}
+
+#section2-area {
+    width: 80%;
+    overflow: hidden;
+
 }
 
 .title > div:nth-child(1) {
@@ -288,7 +350,7 @@ nav > div:hover {
 }
 
 .sec2-info {
-    background-color: rgb(255, 202, 78);
+    background-color: rgb(255, 222, 76);
     border-radius: 40px 40px 0px 40px;
     overflow: hidden;
     transition: all .3s;
@@ -342,10 +404,10 @@ nav > div:hover {
     margin-top: 300px;
     text-align: center;
     font-size: 25px;
-    background-color: var(--sub-color);
+    background-color: white;
     width: 130px;
     line-height: 1.8;
-    color: white;
+    color: var(--sub-color);
     border-radius: 20px;
     cursor: pointer;
 }
@@ -382,7 +444,185 @@ nav > div:hover {
     margin-top: 100px;
 }
 
+#section3 input {
+    display: none;
+}
 
+#sec3-main {
+    margin-top: 100px;
+    display: flex;
+    width: 70%;
+}
+
+#map {
+    position: relative;
+}
+
+#map > img {
+    width: 500px;
+}
+
+#map > label {
+    font-size: 25px;
+    color: var(--sub-color);
+    position: absolute;
+    width: auto;
+}
+
+#a1 {
+    margin-top: 155px;
+    margin-left: -365px;
+}
+
+#a2 {
+    margin-top: 194px;
+    margin-left: -215px;
+}
+
+#a3 {
+    margin-top: 285px;
+    margin-left: -424px;
+}
+
+#a4 {
+    margin-top: 296px;
+    margin-left: -145px;
+}
+
+#a5 {
+    margin-top: 358px;
+    margin-left: -243px;
+}
+
+.graph {
+    margin-top: 30px;
+}
+
+.graph > div {
+    display: none;
+    height: 150px;
+}
+
+#graph1:checked ~ .graph > div:nth-child(1) {
+    display: block;
+}
+
+#graph2:checked ~ .graph > div:nth-child(2) {
+    display: block;
+}
+
+#graph3:checked ~ .graph > div:nth-child(3) {
+    display: block;
+}
+
+.tour-info {
+    border: 1px solid black;
+    width: 450px;
+    height: 550px;
+    padding: 20px;
+}
+
+.store-name {
+    display: flex;
+    margin-top: 5px;
+    border-bottom: 3px solid var(--sub-color);
+    padding-bottom: 5px;
+}
+
+.store-name > div:nth-child(1) {
+    font-size: 30px;
+    width: 100px;
+    margin-left: 20px;
+}
+
+.store-name > div:nth-child(2) {
+    background-color: var(--sub-color);
+    width: 100px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    line-height: 2;
+    border-radius: 10px;
+}
+
+.store-location {
+    margin-top: 5px;
+    margin-left: 20px;
+    color: rgb(110, 110, 110);
+}
+
+.graph_menu {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 20px;
+    width: 250px;
+    gap: 15px;
+    display: flex;
+}
+
+.graph_menu > label {
+    width: auto;
+}
+
+.graph_menu > label:nth-child(2) {
+    margin-top: 3.5px;
+}
+
+#graph1:checked ~ .graph_menu > label:nth-child(1) {
+    color: var(--point-color);
+}
+
+#graph2:checked ~ .graph_menu > label:nth-child(2) {
+    color: var(--point-color);
+}
+
+#graph3:checked ~ .graph_menu > label:nth-child(3) {
+    color: var(--point-color);
+}
+
+
+.store-menu {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 18px;
+    color: var(--point-color);
+}
+
+.store-info {
+    width: 90%;
+    margin-top: 10px;
+}
+
+/* 그래프 */
+#pieChart {
+    width: 150px;
+    height: 150px;
+    background: conic-gradient(#4800a7 0% 25%, #ffc33b 25% 56%, #21f3d6 56% 100%);
+    border-radius: 50%;
+}
+
+#stick_graph {
+    height: 150px;
+}
+
+#stick_graph ul {
+    margin:0 50px 0 50px;
+    padding:1px 0 0 0;
+    list-style:none
+}
+
+#stick_graph li {
+    position:relative;
+    margin:10px 0;
+}
+
+#stick_graph .bar {
+    display:inline-block;
+    position:relative;
+    height:25px;
+    border-left:0;
+}
+/* 그래프 */
 
 /*  */
 
@@ -391,7 +631,7 @@ nav > div:hover {
     display: grid;
     gap: 100px;
     grid-template-columns: 1fr 1fr;
-    margin-top: 100px;
+    margin-top: 200px;
 }
 
 #banner-main {
