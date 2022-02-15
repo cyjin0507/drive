@@ -2,14 +2,29 @@
 * {
     width: 100%;
     margin: 0 auto;
-    font-family: 'Do Hyeon';
 }
 
 :root {
     --sub-color : rgb(255, 173, 65);
-    --point-color : rgb(226, 0, 0);
+    --point-color : rgb(255, 104, 104);
 }
 /* var(--banner-width) */
+
+
+.title {
+    font-family: 'Do Hyeon';
+}
+
+.title > div:nth-child(1) {
+    text-align: center;
+    font-size: 40px;
+}
+
+.title > div:nth-child(2) {
+    text-align: center;
+    font-size: 20px;
+    color: var(--sub-color);
+}
 
 img {
     object-fit: cover;
@@ -17,6 +32,7 @@ img {
 
 header {
     position: relative;
+    font-family: 'Do Hyeon';
 }
 
 #header {
@@ -206,6 +222,7 @@ nav > div:hover {
     background-color: white;
     box-shadow: 10px 10px 10px rgb(93, 93, 93);
     border: 1px solid rgb(243, 243, 243);
+    font-family: 'Do Hyeon';
 }
 
 #section1 span {
@@ -282,47 +299,56 @@ nav > div:hover {
 /*  */
 
 #section2 {
-    width: 80%;
+    width: 100%;
     margin-top: 100px;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     overflow: hidden;
     height: 500px;
-    /* background-color: rgb(255, 247, 210); */
+    background-color: rgb(255, 245, 199);
+    background-size: cover;
+    background-image: url("./resources/imgs/배너이미지.jpg");
+    background-position: bottom;
 }
 
-
-.title > div:nth-child(1) {
-    text-align: center;
-    font-size: 40px;
+#section2 .title {
+    color: white;
 }
 
-.title > div:nth-child(2) {
-    text-align: center;
-    font-size: 20px;
-    margin-top: 10px;
-    color: var(--sub-color);
+#section2-area {
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
 }
+
 
 #section2 input {
     display: none;
 }
 
 #label {
-    width: 30%;
-    margin-top: 20px;
+    width: 20%;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
+    color: rgb(46, 46, 46);
+    border-radius: 30px;
+    overflow: hidden;
 }
 
 #label > label {
     text-align: center;
-    font-size: 27px;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: white;
+    margin-right: -1px;
+    line-height: 2;
+    border: 1px solid #aaa;
 }
 
 #sec2-main {
     position: relative;
-    margin-top: 30px;
+    margin-top: 60px;
     transition: all .5s;
 }
 
@@ -334,49 +360,63 @@ nav > div:hover {
 }
 
 .sec2-info {
-    background-color: var(--sub-color);
-    border-radius: 40px 40px 0px 40px;
+    background-color: rgb(255, 253, 224);
+    border-radius: 10px;
     overflow: hidden;
-    transition: all .3s;
     height: 230px;
+    transition: all .5s;
 }
 
 .sec2-info > div:nth-child(1) {
     text-align: center;
     line-height: 1.6;
-    font-size: 20px;
-    color: var(--point-color);
+    font-size: 14px;
     margin-top: 10px;
+    width: 60px;
 }
 
-.sec2-info hr {
-    border-top: 1px solid white;
-    width: 30%;
+.ing {
+    border-radius: 10px;
+    color: #ff6161;
+    border: 1px solid #ff6161;
+}
+
+.finish {
+    border-radius: 10px;
+    color: #aaa;
+    /* border-style: none; */
+    border: 1px solid #aaa;
 }
 
 .sec2-info > div:nth-child(2) {
     margin-top: 15px;
     text-align: left;
-    font-size: 23px;
-    width: 90%;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(80, 80, 80);
+    width: 70%;
+    height: 70px;
+    line-height: 1.7;
 }
 
 .sec2-info > div:nth-child(3) {
     font-size: 15px;
-    margin-top: 20px;
-    text-align: right;
-    width: 90%;
-    color: rgb(139, 107, 0);
+    margin-top: 40px;
+    width: 70%;
+    display: flex;
+    color: rgb(80, 80, 80);
 }
 
-.sec2-info > div:nth-child(4) {
-    text-align: center;
-    font-size: 20px;
-    margin-top: 20px;
+.plus {
+    font-size: 30px;
+    margin-top: -5px;
+    width: auto;
+    transition: all .5s;
 }
 
 .sec2-info:hover {
-    margin-top: -15px;
+    box-shadow: 10px 10px 10px #aaa;
+    margin-top: -10px;
 }
 
 .sec2-info > div:nth-child(4):hover {
@@ -384,17 +424,16 @@ nav > div:hover {
     cursor: pointer;
 }
 
-.sec2-btn {
-    margin-top: 300px;
-    text-align: center;
-    font-size: 25px;
-    background-color: var(--sub-color);
-    width: 130px;
-    line-height: 1.8;
-    color: white;
-    border-radius: 20px;
-    cursor: pointer;
+.sec2-info:hover .plus {
+    transform: rotate(180deg);
+    color: rgb(108, 108, 240);
 }
+
+.sec2-info:hover > div:nth-child(2) {
+    color: rgb(108, 108, 240);
+}
+
+
 
 #tab1 {
     left: 0;
@@ -429,6 +468,7 @@ nav > div:hover {
     background-color: rgb(255, 253, 231);
     padding-top: 100px;
     padding-bottom: 100px;
+    font-family: 'Do Hyeon';
 }
 
 #section3 input {
@@ -710,6 +750,7 @@ nav > div:hover {
 footer {
     margin-top: 200px;
     background-color: #333333;
+    font-family: 'Do Hyeon';
 }
 
 #footer-main {
