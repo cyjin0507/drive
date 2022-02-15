@@ -218,18 +218,7 @@ nav > div:hover {
     margin-top: 30px;
     font-size: 30px;
     font-weight: 900;
-    display: flex;
-    width: 210px;
-}
-
-.area1 > .sec1-sort > div:nth-child(1) i {
-    width: auto;
-    margin-top: 2px;
-    color: var(--sub-color);
-}
-
-.area1 > .sec1-sort > div:nth-child(1) > div {
-    margin-left: 10px;
+    text-align: center;
 }
 
 
@@ -293,20 +282,15 @@ nav > div:hover {
 /*  */
 
 #section2 {
-    width: 100%;
+    width: 80%;
     margin-top: 100px;
     padding-top: 60px;
     padding-bottom: 60px;
     overflow: hidden;
     height: 500px;
-    background-color: rgb(255, 247, 210);
+    /* background-color: rgb(255, 247, 210); */
 }
 
-#section2-area {
-    width: 80%;
-    overflow: hidden;
-
-}
 
 .title > div:nth-child(1) {
     text-align: center;
@@ -350,7 +334,7 @@ nav > div:hover {
 }
 
 .sec2-info {
-    background-color: rgb(255, 222, 76);
+    background-color: var(--sub-color);
     border-radius: 40px 40px 0px 40px;
     overflow: hidden;
     transition: all .3s;
@@ -404,10 +388,10 @@ nav > div:hover {
     margin-top: 300px;
     text-align: center;
     font-size: 25px;
-    background-color: white;
+    background-color: var(--sub-color);
     width: 130px;
     line-height: 1.8;
-    color: var(--sub-color);
+    color: white;
     border-radius: 20px;
     cursor: pointer;
 }
@@ -440,8 +424,11 @@ nav > div:hover {
 
 /*  */
 #section3 {
-    width: 80%;
+    width: 100%;
     margin-top: 100px;
+    background-color: rgb(255, 253, 231);
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 #section3 input {
@@ -451,7 +438,7 @@ nav > div:hover {
 #sec3-main {
     margin-top: 100px;
     display: flex;
-    width: 70%;
+    width: 60%;
 }
 
 #map {
@@ -516,10 +503,11 @@ nav > div:hover {
 }
 
 .tour-info {
-    border: 1px solid black;
+    border: 1px solid rgb(238, 237, 237);
     width: 450px;
     height: 550px;
     padding: 20px;
+    background-color: white;
 }
 
 .store-name {
@@ -777,4 +765,14 @@ footer {
     font-size: 18px;
     line-height: 1.7;
     color: #aaa;
+}
+
+#footer-nav > div:hover {
+    cursor: pointer;
+    color: #aaa;
+}
+
+#social > i:hover {
+    cursor: pointer;
+    color: white;
 }
