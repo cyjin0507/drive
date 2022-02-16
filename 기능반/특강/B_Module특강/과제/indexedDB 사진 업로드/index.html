@@ -32,11 +32,14 @@
     <script src="File.js"></script>
     <script src="Element.js"></script>
     <script src="DropBox.js"></script>
+    <script src="OpenDB.js"></script>
+    <script src="DataControl.js"></script>
     <script>
         window.onload = function() {
-            window.dropBox = new DropBox(
-                {elem : document.getElementById("drop-box")}
-            );
+            // window.dropBox = new DropBox(
+            //     {elem : document.getElementById("drop-box")}
+            // );
+            new openDB().open();
         };
     </script>
 

@@ -1,4 +1,4 @@
-export class DataControl {
+class DataControl {
   dataAdd(objectStore, name, age) {
     objectStore.add({
       name: name,

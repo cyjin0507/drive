@@ -1,6 +1,7 @@
 class DropBox {
-    constructor({ elem }) {
+    constructor({ elem }, objectStore) {
         this.elem = elem;
+        this.objectStore = objectStore;
         this.list = [];
 
         this.init();
@@ -53,7 +54,7 @@ class DropBox {
         }
 
         await this.setList();
-        this.saveList();
+        await this.saveList();
     }
 
     async setList() {
@@ -69,11 +70,19 @@ class DropBox {
 
     loadList() {
         const images = localStorage.getItem("DropBox_images");
-
+        // console.log(images);
+        
         this.list = images ? JSON.parse(images) : [];
+        console.log(this.list);
+        // new openDB().dataControl();
+        new DataControl().dataSearch(this.objectStore, 3);
     }
 
-    saveList() {
-        localStorage.setItem("DropBox_images", JSON.stringify(this.list));
+    async saveList() {
+        // console.log(this.list);
+        console.log(this.objectStore);
+        // console.log(this.list);
+         new DataControl().dataAdd(this.objectStore, this.list);
+        // localStorage.setItem("DropBox_images", JSON.stringify(this.list));
     }
 }
