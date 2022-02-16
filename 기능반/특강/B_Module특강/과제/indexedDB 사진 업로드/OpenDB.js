@@ -14,7 +14,7 @@ class openDB {
             this.db = ev.target.result;
             const transaction = this.db.transaction("users", "readwrite")
             this.objectStore = transaction.objectStore("users");
-            
+
             new DropBox({elem : document.getElementById("drop-box")}, this.objectStore)
         }
 
@@ -79,6 +79,10 @@ class openDB {
         // 모든 데이터 조회2
         // new DataControl().dataAllSearch2(this.objectStore);
 
+        
+    }
+
+    test() {
         
     }
     

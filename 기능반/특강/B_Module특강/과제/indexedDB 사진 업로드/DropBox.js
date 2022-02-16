@@ -75,14 +75,17 @@ class DropBox {
         this.list = images ? JSON.parse(images) : [];
         console.log(this.list);
         // new openDB().dataControl();
-        new DataControl().dataSearch(this.objectStore, 3);
+        new DataControl().dataSearch(this.objectStore, 2);
+        //  new DataControl().dataAdd(this.objectStore, this.list);
+
     }
 
     async saveList() {
         // console.log(this.list);
         console.log(this.objectStore);
         // console.log(this.list);
-         new DataControl().dataAdd(this.objectStore, this.list);
+         new DataControl().dataAdd(this.objectStore, "test");
+        //  new DataControl().dataAdd(this.objectStore, this.list);
         // localStorage.setItem("DropBox_images", JSON.stringify(this.list));
     }
 }
