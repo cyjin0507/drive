@@ -25,5 +25,19 @@ h2 {
 }
 
 .event1-area:hover .event1 {
-    left: 0;
+    left: 5%;
+}
+
+.event2 {
+    position: absolute;
+    background-color: white;
+    width: 350px;
+    height: 100%;
+    margin-top: -350px;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.event2-area:hover .event2 {
+    opacity: 1;
 }
