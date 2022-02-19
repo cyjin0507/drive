@@ -60,7 +60,7 @@ class openDB {
         // new DataControl().dataRemove(this.objectStore, 7);
         
         // 데이터 수정
-        // let idx = 8; let name = "아아아"; let age = 110;
+        // let idx = 8; let name = "test"; let age = 110;
         // new DataControl().dataModify(this.objectStore, idx, name, age);
 
         //데이터 하나 조회
@@ -76,5 +76,3 @@ class openDB {
     }
     
 }
-
-new openDB();

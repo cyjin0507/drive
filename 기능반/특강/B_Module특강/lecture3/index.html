@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #paint {
+            width: 600px;
+            height: 600px;
+            border: 2px solid red;
+        }
+
+        #svg-map {
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <canvas id="paint"></canvas>
+    <svg id="svg-map" width="600" height="600">
+        <!-- 
+            svg에서 캔버스처럼 선을 그리는 경우에는 
+            line이라는 태그를 사용할 수 있다.
+
+            x1, x2, y1, y2
+
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.lineTo(300, 400);
+            ctx.stroke();
+            ctx.closePath();
+
+            x1, y1 -> moveTo 시작점
+            x2, y2 -> lineTo 도착점
+            stroke -> strokeStyle 색상
+            stroke-width -> lineWidth
+            stroke-linecap -> lineCap (butt, round, square)
+        -->
+        <line x1="0" y1="0" x2="300" y2="400" stroke="#000" stroke-width="10" stroke-linecap="round"></line>
+
+        <!-- 
+            ctx.beginPath();
+            ctx.fillRect(200, 200, 200, 200);
+            ctx.closePath();
+
+            x, y, width, height
+        -->
+        <rect x="200" y="100" width="50" height="50"></rect>
+
+        <!--
+            가로 세로 동일한 크기의 원??
+
+            cx, cy, r -> arc()
+        -->
+        <circle cx="50" cy="50" r="50"></circle>
+        
+        <!-- 
+            가로 세로 다른 크기의 원 
+
+            cx, cy, rx, ry
+        -->
+        <ellipse cx="150" cy="150" rx="50" ry="75"></ellipse>
+
+        <!-- 
+            다각형 그리는 방법 (삼각형, 사각형, 오각형)
+
+            points ()
+
+            x y, x y, x y -> 삼각형
+            x y * 4 사각형
+            x y * n N각형
+        -->
+        <polygon points="255 66, 255 240, 375 240"></polygon>
+
+        <!-- <polygon points="255 66, 375 240, 255 240, 375 66"></polygon> -->
+
+        <!--
+            텍스트
+
+            <text x="" y="">{text}</text>
+        -->
+        <text x="300" y="500">2022년 2월 19일 SVG</text>
+
+        <!--
+            이미지
+
+            x, y, width, height
+        -->
+        <image href="https://code.visualstudio.com/assets/docs/nodejs/vuejs/welcome-to-vue.png" x="100" y="300" width="200" height="200" />
+
+        <!-- 
+            사실상 SVG에서 HTML을 사용하는 방법
+
+            x, y, width, height
+        -->
+        <foreignObject x="50" y="100" width="300" height="300">
+            <!-- HTML5 네임스페이스?? 명시 -->
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <video width="300" height="300" controls="">
+                    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                    type="video/mp4" />
+                </video>
+            </div>
+        </foreignObject>
+    </svg>
+
+    <script>
+        window.onload = function() {
+            window.app = new App();
+        };
+
+        class App {
+            constructor() {
+                const canvas = this.canvas = document.getElementById("paint");
+                this.ctx = canvas.getContext("2d");
+                canvas.width = 600;
+                canvas.height = 600;
+                this.drawLine();
+                this.drawRect();
+            }
+
+            drawLine() {
+                const { ctx } = this;
+                
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.lineTo(300, 400);
+                ctx.stroke();
+                ctx.closePath();
+            }
+
+            drawRect() {
+                const { ctx } = this;
+
+                ctx.beginPath();
+                ctx.fillRect(200, 200, 200, 200);
+                ctx.closePath();
+            }
+        }
+    </script>
+
+</body>
+</html>
