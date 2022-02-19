@@ -10,11 +10,14 @@ class DataControl {
     }
   
     dataSearch(objectStore, id) {
+      console.log(id);
       const req = objectStore.get(id);
+      let result;
       req.onsuccess = () => {
-        console.log(req.result);
-      };
+        result = req.result;
+      }
     }
+
   
     dataModify(objectStore, id, name) {
       objectStore.put({

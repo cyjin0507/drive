@@ -37,7 +37,7 @@ class DropBox {
 
     async onDrop(ev) {
         const { elem, list } = this;
-
+ 
         ev.preventDefault();
         elem.classList.remove("dragover");
         const files = ev.dataTransfer.files;
@@ -73,19 +73,16 @@ class DropBox {
         // console.log(images);
         
         this.list = images ? JSON.parse(images) : [];
-        console.log(this.list);
         // new openDB().dataControl();
-        new DataControl().dataSearch(this.objectStore, 2);
-        //  new DataControl().dataAdd(this.objectStore, this.list);
-
+        console.log(new DataControl().dataSearch(this.objectStore, 3));;
+        // new DataControl().dataAdd(this.objectStore, this.list);
+        
     }
-
+    
     async saveList() {
-        // console.log(this.list);
-        console.log(this.objectStore);
-        // console.log(this.list);
-         new DataControl().dataAdd(this.objectStore, "test");
-        //  new DataControl().dataAdd(this.objectStore, this.list);
+        // console.log(this.list[0]);
         // localStorage.setItem("DropBox_images", JSON.stringify(this.list));
+
+        // new DataControl().dataSearch(this.objectStore, 1);
     }
 }

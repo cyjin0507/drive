@@ -2,18 +2,19 @@
 class openDB {
 
     constructor() {
+        this.open();
     }
     
     open() {
         const indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
-        this.req = indexedDB.open("20220212db3",2);
+        this.req = indexedDB.open("20220212dbImage",2);
 
 
         this.req.onsuccess = (ev) => {
             console.log("DB 오픈 성공");
             this.db = ev.target.result;
-            const transaction = this.db.transaction("users", "readwrite")
-            this.objectStore = transaction.objectStore("users");
+            const transaction = this.db.transaction("iamges", "readwrite")
+            this.objectStore = transaction.objectStore("iamges");
 
             new DropBox({elem : document.getElementById("drop-box")}, this.objectStore)
         }
@@ -26,17 +27,17 @@ class openDB {
             console.log("DB최초생성");
             this.db = ev.target.result; // IDBDatabase 객체
             
-            const stores = ["users"];
+            const stores = ["iamges"];
             stores.forEach(storeName => {
                 
                 // 기존 객체 저장소가 존재할 경우
-                if (this.db.objectStoreNames.contains("user")) {
+                if (this.db.objectStoreNames.contains("iamges")) {
                     // 기존 객체 저장소 삭제
-                    this.db.deleteObjectStore("users");
+                    this.db.deleteObjectStore("iamges");
                 }
                 
                 // 객체 저장소 생성
-                this.db.createObjectStore("users", {
+                this.db.createObjectStore("iamges", {
                     keyPath: "idx",
                     autoIncrement: true
                 })
@@ -51,13 +52,13 @@ class openDB {
     dataControl() {
         
 
-        // new DataControl().dataAdd(this.objectStore, list)
+        new DataControl().dataAdd(this.objectStore, "asd")
         // setTimeout(()=> {
         //     console.log(this.objectStore);
         //     console.log("df");
         // },1000)
         // new DataControl().dataRemove(this.objectStore, 1);
-        // new DataControl().dataAdd(this.objectStore, "test")
+        // new DataControl().dataAdd(this.objectStore, "iamges")
 
 
         // 데이터 추가
@@ -82,10 +83,8 @@ class openDB {
         
     }
 
-    test() {
+    iamges() {
         
     }
     
 }
-
-new openDB();
