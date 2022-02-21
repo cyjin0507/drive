@@ -21,6 +21,33 @@
         </div>
     </div>
 
+    <div class="container px-5 bg-white position-fixed" id="basket">
+        <div class="row justify-content-between">
+            <div class="col-12 text-center"><h3>장바구니</h3></div>
+            <div class="col-2 mt-4 bg-danger text-center text-white" id="drop_area" style="height:160px">
+                드래그
+            </div>
+            <div class="col-8 bg-light mt-4" style="height: 160px;">
+                <div class="row text-center">
+                    <div class="col">사진</div>
+                    <div class="col">상품명</div>
+                    <div class="col">브랜드명</div>
+                    <div class="col">가격</div>
+                    <div class="col">수량</div>
+                </div>
+                <div id="basket_list">
+
+                </div>
+            </div>
+
+            <div class="col-2 mt-4">
+                <h5>총금액 : 0원</h5>
+                <button class="btn btn-primary mt-4">구매하기</button>
+            </div>
+        </div>
+    </div>
+
+
     <div class="container">
         <div class="row mt-5 text-center">
             <div class="col">사진</div>
@@ -33,9 +60,25 @@
         </div>
     </div>
 
+    
     <script src="./resources/js/app.js"></script>
     <script src="./resources/js/search.js"></script>
     <script src="./resources/js/util.js"></script>
+    <script src="./resources/js/drop.js"></script>
     
+    <style>
+        #basket {
+            margin-top: 70vh;
+            z-index: 100;
+            height: 300px;
+            border: 1px solid #aaa;
+        }
+
+        #basket_list {
+            overflow: auto;
+            height: 130px;
+        }
+    </style>
+
 </body>
 </html>

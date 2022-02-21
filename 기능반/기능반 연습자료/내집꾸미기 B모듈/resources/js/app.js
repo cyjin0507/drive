@@ -6,7 +6,10 @@ class app {
     getJson() {
         fetch('./resources/store.json')
             .then((response)=> response.json())
-                .then((data) => new search(data))
+                .then((data) => {
+                    new search(data)
+                    new drop(data);
+                })
     }
 
 }
