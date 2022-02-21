@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/bootstrap-4.3.1-dist/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row mt-3 justify-content-between">
+            <div class="col-auto">
+                <h3>내집꾸미기</h3>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="search" placeholder="검색어를 입력하세요">
+                <button class="btn btn-primary" id="searchBtn">검색</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mt-5 text-center">
+            <div class="col">사진</div>
+            <div class="col">상품명</div>
+            <div class="col">브랜드명</div>
+            <div class="col">가격</div>
+        </div>
+        <div id="goods_list">
+            
+        </div>
+    </div>
+
+    <script src="./resources/js/app.js"></script>
+    <script src="./resources/js/search.js"></script>
+    <script src="./resources/js/util.js"></script>
+    
+</body>
+</html>
