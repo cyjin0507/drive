@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background: url("./images/sunrise.jpg");
+    }
+
+    .title {
+        font-size: 100px;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .container::after {
+        width: 100%;
+        height: 100%;
+        content: "";
+        /* background: url("./resources/갤러리/이미지/1.jpg"); */
+        background-color: #aaa;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        opacity: 0.5;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1 class="title">Hello</h1>
+    </div>
+</body>
+
+</html>

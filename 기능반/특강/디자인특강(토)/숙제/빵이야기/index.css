@@ -1,0 +1,139 @@
+section {
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding-top: 100px;
+    object-fit: cover;
+}
+
+.paddingNot {
+    padding-top: 200px;
+}
+
+
+.opacity {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    z-index: 10;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.opacity::after {
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: rgb(121, 121, 121);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.8;
+    filter: blur(4px);
+}
+
+.title > div:nth-child(1) {
+    color: #E4D127;
+    font-size: 18px;
+}
+
+.title > div:nth-child(2) {
+    color: white;
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+.title span {
+    color: #E4D127;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.button {
+    color: #E4D127;
+    border: 1px solid #E4D127;
+    width: 100px;
+    line-height: 2;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+/* section1 */
+.streat {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    align-items: center;
+}
+
+.streat > div:nth-child(1) {
+    font-size: 20px;
+    color: white;
+    font-weight: 900;
+}
+
+/* section2 */
+.goods-list {
+    display: flex;
+    margin-top: 40px;
+}
+
+.goods-list img {
+    width: 100px;
+}
+
+.goods-list > div {
+    margin-left: 20px;
+}
+
+.goods-list > div > div:nth-child(1) {
+    color: white;
+    font-size: 22px;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+.goods-list > div > div:nth-child(2) {
+    color: rgb(223, 223, 223);
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+/* section3 */
+
+.recommend > img {
+    width: 180px;
+    height: 180px;
+}
+
+.recommend > div {
+    margin-top: 30px;
+}
+
+.recommend > div > div {
+    color: rgb(209, 209, 209);
+    line-height: 2;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.recommend > div > div span {
+    color: rgb(206, 206, 206);
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+/* section4 */
+.gallery {
+    width: 220px;
+    height: 220px;
+}
+
+.gallery > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
