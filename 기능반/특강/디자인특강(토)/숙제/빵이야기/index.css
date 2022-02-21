@@ -59,6 +59,13 @@ section {
     font-size: 18px;
     font-weight: bold;
     border-radius: 50px;
+    transition: all .5s;
+}
+
+.button:hover {
+    color: white;
+    background-color: #E4D127;
+    cursor: pointer;
 }
 
 /* section1 */
