@@ -4,6 +4,11 @@ class draw {
         this.drawing = false;
 
         this.addEvent();
+        // 도형
+        this.line = document.querySelector('#line')
+        this.rectangle = document.querySelector('#rectangle')
+        this.triangle = document.querySelector('#triangle')
+        this.circle = document.querySelector('#circle')
         // 색상
         this.borderColor = document.querySelector('#border_color');
         this.backgroundColor = document.querySelector('#background_color');
@@ -20,39 +25,16 @@ class draw {
             this.draw(e);
         })
 
-        document.querySelector('#line').addEventListener('change', () => {
-            this.inputValue()
-        })
-
-        document.querySelector('#rectangle').addEventListener('change', () => {
-            this.inputValue()
-        })
-
-        document.querySelector('#triangle').addEventListener('change', () => {
-            this.inputValue()
-        })
-
-        document.querySelector('#circle').addEventListener('change', () => {
-            this.inputValue()
-        })
-
-    }
-
-    inputValue() {
-        this.line = document.querySelector('#line').checked;
-        this.rectangle = document.querySelector('#rectangle').checked;
-        this.triangle = document.querySelector('#triangle').checked;
-        this.circle = document.querySelector('#circle').checked;
     }
 
     draw(e) {
-        if (this.line) {
+        if (this.line.checked) {
             this.lineDraw(e);
-        } else if (this.rectangle) {
+        } else if (this.rectangle.checked) {
             this.rectangleDraw(e);
-        } else if (this.circle) {
+        } else if (this.circle.checked) {
             this.circleDraw(e);
-        } else if (this.triangle) {
+        } else if (this.triangle.checked) {
             this.triangleDraw(e)
         }
     }
