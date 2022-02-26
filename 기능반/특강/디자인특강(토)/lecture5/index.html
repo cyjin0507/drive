@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <section>
+        <div class="vh-100 bg-danger">
+            <div class="pink">pink</div>
+            <div class="yellow">yellow</div>
+        </div>
+        <div class="vh-100 bg-warning">
+            <div class="target">
+                <div class="box">box</div>
+            </div>
+        </div>
+        <div class="vh-100 bg-success position-relative">
+            <div class="text">
+                지나갑니다.
+            </div>
+        </div>
+        <div class="vh-100 bg-info position-relative">
+            <div class="img1"></div>
+            <div class="img2"></div>
+        </div>
+        <div class="vh-100"></div>
+    </section>
+    
+</body>
+<style>
+    .pink {
+        position: absolute;
+        left: 15%;
+        top: 500px;
+        width: 50px;
+        height: 50px;
+        background-color: pink;
+    }
+
+    .yellow {
+        position: absolute;
+        right: 15%;
+        top: 600px;
+        width: 50px;
+        height: 50px;
+        background-color: yellow;
+    }
+
+    .target {
+        width: 200px;
+        margin: 0 auto;
+        padding-bottom: 100px;
+    }
+
+    .target .box {
+        width: 200px;
+        height: 100px;
+        background: coral;
+        position: relative;
+        opacity: 0;
+    }
+
+    .text {
+        color: #fff;
+        font-size: 100px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .img1 {
+        width: 10%;
+        height: 90vh;
+        background-color: azure;
+        position: absolute;
+        top: 5vh;
+    }
+    
+    .img2 {
+        width: 10%;
+        height: 90vh;
+        right: 0;
+        background-color: bisque;
+        position: absolute;
+        top: 5vh;
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            var scroll = $(this).scrollTop()
+
+            // 1 section
+
+            var pinkScroll = 33.3-scroll / 3;
+            var yellowScroll =100 -scroll / 1;
+
+            if(scroll > 100) {
+                $('.pink').css({
+                    "transform" : `translate3d(0, ${pinkScroll}px, 0)`
+                })
+            
+                $('.yellow').css({
+                    "transform" : `translate3d(0, ${yellowScroll}px, 0)`
+                })
+            } else {
+                $('.pink').css({
+                    "transform" : `translate3d(0, 0, 0)`
+                })
+
+                $('.yellow').css({
+                    "transform" : `translate3d(0, 0, 0)`
+                })
+            }
+
+            // 2 section
+            var targetScroll = $(".target").offset().top
+            var successSectionScroll = $('.bg-success').offset().top
+
+            var sectionHeight = $(".bg-danger").height();
+
+            var pos = targetScroll - (sectionHeight / 2)
+            var opacity = (scroll - pos) / 500
+
+            if(scroll >= targetScroll - (sectionHeight / 2)) {
+                $(".box").css({
+                    "position" : "fixed",
+                    "top" : (sectionHeight / 2)+"px",
+                    "opacity" : (opacity > 1) ? 1 : opacity,
+                    "transform" : `scale(${(opacity > 1) ? 1 : opacity})`
+                })
+                
+                if(scroll >= targetScroll) {
+                    $('.target').css({
+                        "paddingTop" : "50vh",
+                        "paddingBottom" : "0"
+                    })
+                    $(".box").css({
+                        "position" : "relative",
+                        "top" : "auto",
+                    })  
+                }
+
+            } else {
+                $('.target').css({
+                    "paddingTop" : "0",
+                    "paddingBottom" : "calc(100vh - 100px)"
+                })
+
+                $(".box").css({
+                    "position" : "relative",
+                    "top" : "auto"
+                })
+            }
+
+            // 3 section
+            var warningSectionScroll = $('.bg-warning').offset().top;
+            var posX = (scroll - warningSectionScroll - 150)
+            
+            if(scroll > warningSectionScroll + 150) {
+                $(".text").css({
+                    "transform" : `translateX(-${posX}px)`
+                })
+            }
+
+            // 4 section
+            var infoSectionScroll = $('.bg-success').offset().top;
+            var p = (scroll - infoSectionScroll  - 150)
+            if(scroll > infoSectionScroll + 150) {
+                p = p/2
+                if(p <= 367.5) {
+                    $(".img1").css({  
+                        "transform" : `translateX(${p}px)`
+                    })
+                    $(".img2").css({  
+                        "transform" : `translateX(-${p}px)`
+                    })
+                }
+                
+            }
+
+
+        })
+    })
+</script>
+
+</html>
