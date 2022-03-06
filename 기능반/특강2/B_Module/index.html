@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/style/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>2019 전국대회 B모듈</h2>
+        <div id="application">
+            <!-- 왼쪽 기능 바 시작 -->
+            <div class="left-toolbar">
+                <button class="btn-tool active" data-tool="pen">자유곡선</button>
+                <button class="btn-tool" data-tool="rect">사각형</button>
+                <button class="btn-tool" data-tool="text">텍스트</button>
+                <button class="btn-tool" data-tool="select">선택</button>
+                <button class="btn-play">재생</button>
+                <button class="btn-pause">정지</button>
+                <button class="btn-clear">전체 삭제</button>
+                <button class="btn-remove">선택 삭제</button>
+                <button class="btn-reset">초기화</button>
+                <button class="btn-download">다운로드</button>
+                <button class="btn-merge">병합하기</button>
+            </div>
+            <!-- 왼쪽 기능 바 종료 -->
+
+            <!-- 중앙 시작 -->
+            <div>
+                <div id="workspace">
+                    <video src=""></video>
+                    <svg id="canvas"></svg>
+                </div>
+                <div class="time-area">
+                    <span class="video-time">영상 시간 : 00:00:00 / 00:12:34</span>
+                    <span class="track-time">클립 시간 : 00:00:00 / 00:56:78</span>
+                </div>
+                <div class="clip-area">
+                    <div id="cursor"></div>
+                    <div class="track">
+                        <input type="checkbox" />
+                        <div class="bar">
+                            <div class="bar-left-handle"></div>
+                            <div class="bar-body"></div>
+                            <div class="bar-right-handle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="movie-area">
+                    <img src="/src/img/movie1-cover.jpg" alt="" data-src="">
+                    <img src="/src/img/movie2-cover.jpg" alt="" data-src="">
+                    <img src="/src/img/movie3-cover.jpg" alt="" data-src="">
+                    <img src="/src/img/movie4-cover.jpg" alt="" data-src="">
+                    <img src="/src/img/movie5-cover.jpg" alt="" data-src="">
+                </div>
+            </div>
+            <!-- 중앙 종료 -->
+
+             <!-- 오른쪽 스타일 기능 바 시작 -->
+             <div class="right-toolbar">
+                 <label for="selectColor">색상</label>
+                 <select name="selectColor" id="selectColor">
+                     <option value="gray">gray</option>
+                     <option value="blue">blue</option>
+                     <option value="green">green</option>
+                     <option value="red">red</option>
+                     <option value="yellow">yellow</option>
+                 </select>
+                 <label for="selectWidth">굵기</label>
+                 <select name="selectWidth" id="selectWidth">
+                     <option value="3">3px</option>
+                     <option value="5">5px</option>
+                     <option value="10">10px</option>
+                 </select>
+                 <label for="selectSize">글자 크기</label>
+                 <select name="selectSize" id="selectSize">
+                    <option value="16">16px</option>
+                    <option value="18">18px</option>
+                    <option value="24">24px</option>
+                    <option value="32">32px</option>
+                 </select>
+             </div>
+             <!-- 오른쪽 스타일 기능 바 종료 -->
+        </div>
+    </div>
+    <script src="./src/js/jquery-3.6.0.min.js"></script>
+    <script src="./src/js/App.js"></script>
+    <script src="./src/js/common.js"></script>
+    <script src="./src/js/track.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+/* Essential Style Start */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: lighter;
+    color: #222;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+/* Essential Style End */
+
+h2 {
+    text-align: center;
+    padding: 50px 30px;
+}
+
+#application {
+    display: grid;
+    grid-template-columns: 1fr 800px 1fr;
+    grid-gap: 40px;
+}
+
+#application .left-toolbar,
+#application .right-toolbar {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#application .left-toolbar button,
+#application .right-toolbar select {
+    height: 35px;
+    background-color: #f1f1f1;
+    border: #ddd 1px solid;
+    margin: 5px 0;
+    cursor: pointer;
+    outline: none;
+}
+
+#application .right-toolbar
+label:not(:first-child) {
+    margin-top: 20px;
+}
+
+#application .left-toolbar button.active {
+    background-color: #3c45ff;
+    border-color: #3c45ff;
+    color: #fff;
+}
+
+#application #workspace {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #d3d3d3;
+    position: relative;
+}
+
+#application #workspace video,
+#application #workspace #canvas {
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#application .time-area {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+#application .clip-area .track {
+    background-color: #f3f3f3;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+#application .clip-area .track .bar {
+    width: 100%;
+    height: 100%;
+    background-color: #666;
+    display: flex;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+#application .clip-area .track .bar
+.bar-left-handle,
+#application .clip-area .track .bar
+.bar-right-handle {
+  width: 20px;
+  height: 100%;
+  background-color: #555;
+}
+
+#application .clip-area .track .bar
+.bar-body {
+  width: 100%;
+  height: 100%;
+}
+
+#application .movie-area {
+  margin: 50px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#application .movie-area img {
+  width: calc(100% / 5 - 10px);
+}
+
+#application .clip-area .track input[type="checkbox"] {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: calc(50% - 8px);
+  left: -30px;
+}
+
