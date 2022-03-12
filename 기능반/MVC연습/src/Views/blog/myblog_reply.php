@@ -7,7 +7,7 @@ include('/xampp/htdocs/src/Views/template/menuList.php');
                                     <div class="row">
                                         <div class="col-md-12">
                                             <h1>답글쓰기</h1>
-                                            <form class="boardwrite" action="" method="POST">
+                                            <form class="boardwrite" action="/replyOk" method="POST">
                                                 <label>제목
                                                     <span class="color-red">*</span>
                                                 </label>
@@ -28,7 +28,7 @@ include('/xampp/htdocs/src/Views/template/menuList.php');
                                                 <div class="row">
                                                     <div class="col-lg-12 text-right">
                                                         <input type="hidden" name="bidx" value="<?=$menu?>">
-                                                        <input type="hidden" name="answer" value="<?=$idx?>">
+                                                        <input type="hidden" name="idx" value="<?=$idx?>">
                                                         <button class="btn btn-primary btn-sm" type="submit">글작성</button>
                                                         <button class="btn btn-default btn-sm" type="reset">다시작성하기</button>
                                                         <button class="btn btn-default btn-sm" type="button" onclick="history.back();">취소</button>

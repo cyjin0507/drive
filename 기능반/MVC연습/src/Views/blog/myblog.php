@@ -30,7 +30,7 @@ $menuData = DB::fetch("SELECT * FROM menu WHERE idx=?", array($menu));
                                                             <tr>
                                                                 <td><?=$postData[$key]->idx?></td>
                                                                 <td>
-                                                                    <a href="/blogView/<?=$postData[$key]->idx?>/<?=$menu?>/<?=$user_name?>"><?=$postData[$key]->title?></a>
+                                                                    <a href="/blogView/<?=$postData[$key]->idx?>/<?=$menu?>/<?=$user_name?>"><?=$postData[$key]->answer != 0 ? 'ㄴ' : ''?><?=$postData[$key]->title?></a>
                                                                 </td>
                                                                 <td><?=$postData[$key]->writer?></td>
                                                                 <td><?=$postData[$key]->date?></td>

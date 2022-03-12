@@ -77,7 +77,7 @@ use src\App\DB;
                             </a>
                         </li>
                         <li>
-                            <a href="preferences.html" title="블로그관리">
+                            <a href="/preferences" title="블로그관리">
                                 블로그관리
                             </a>
                         </li>
