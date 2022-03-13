@@ -38,13 +38,13 @@
                                 <span class="input-group-addon">
                                     <i class="fa fa-user"></i>
                                 </span>
-                                <input placeholder="아이디" name="id" class="form-control" type="text" required>
+                                <input placeholder="아이디" class="form-control" type="text" required name="id">
                             </div>
                             <div class="input-group margin-bottom-20">
                                 <span class="input-group-addon">
                                     <i class="fa fa-lock"></i>
                                 </span>
-                                <input placeholder="비밀번호" name="pw" class="form-control" type="password" required>
+                                <input placeholder="비밀번호" class="form-control" type="password" required name="pw">
                             </div>
                             <div class="row">
                                 <div class="col-md-12">

@@ -1,6 +1,6 @@
 <?php
-extract($_GET);
 use src\App\DB;
+extract($_GET);
 include('/xampp/htdocs/src/Views/template/menuList.php');
 $postData = DB::fetch("SELECT * FROM post WHERE idx = ?", array($idx));
 ?>
@@ -25,16 +25,16 @@ $postData = DB::fetch("SELECT * FROM post WHERE idx = ?", array($idx));
                                             <hr>
                                             <div class="pull-right">
                                                 <button class="btn btn-default btn-sm" type="button" onclick="window.location='/blog/<?=$user_name?>/<?=$menu?>'">목록보기</button>
-                                                <button class="btn btn-default btn-sm" type="button" onclick="window.location='/blogReply/<?=$idx?>/<?=$menu?>/<?=$user_name?>'">답글</button>
-                                                <button class="btn btn-default btn-sm" type="button" onclick="window.location='/blogModify/<?=$idx?>/<?=$menu?>/<?=$user_name?>'">수정</button>
-                                                <button class="btn btn-default btn-sm" type="button" onclick="window.location='/deleteOk/<?=$idx?>/<?=$menu?>/<?=$user_name?>'">삭제</button>
+                                                <button class="btn btn-default btn-sm" type="button" onclick="window.location='/blogReply/<?=$user_name?>/<?=$menu?>/<?=$idx?>'">답글</button>
+                                                <button class="btn btn-default btn-sm" type="button" onclick="window.location='/blogModify/<?=$user_name?>/<?=$menu?>/<?=$idx?>'">수정</button>
+                                                <button class="btn btn-default btn-sm" type="button" onclick="window.location='/blogRemove/<?=$user_name?>/<?=$menu?>/<?=$idx?>'">삭제</button>
                                             </div>
                                         </div>
                                         <div class="commentwrite col-md-12 row">
                                         <h2 class="bold">Comments</h2>
                                             <form action="/commentAdd" method="POST">
-                                                <textarea class="margin-bottom-20" type="text" required name="content"></textarea>
-                                                <input type="hidden" name="idx" value="<?=$idx?>">
+                                                <input type="hidden" name="pidx" value="<?=$idx?>">
+                                                <textarea class="margin-bottom-20" type="text" name="content" required></textarea>
                                                 <button type="submit">등록</button>
                                             </form>
                                         </div>
@@ -56,13 +56,14 @@ $postData = DB::fetch("SELECT * FROM post WHERE idx = ?", array($idx));
 
                                                         <div class="pull-right">
                                                             <button class="btn btn-default btn-xs" type="button">수정</button>
-                                                            <button class="btn btn-default btn-xs" type="button"><a href="/commentRemove/<?=$commentData[$key]->idx?>">삭제</a></button>
+                                                            <button class="btn btn-default btn-xs" type="button">삭제</button>
                                                         </div>
                                                     </div>                                                   
                                                 </li>
                                                     <?php
                                                 }
                                                 ?>
+
                                             </ul>                   
                                         </div>
 

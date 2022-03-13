@@ -1,9 +1,6 @@
 <?php
 namespace src\Controller;
 
-// use src\App\Controller;
-
-// use src\App\D
 class ViewController extends Controller {
     public function main() {
         $this->view('/index', []);
@@ -13,7 +10,12 @@ class ViewController extends Controller {
         $this->view('/user/login', []);
     }
 
-    public function join() {
-        $this->view('/user/join', []);
+    public function loginOk() {
+        $this->view('/user/loginOk', []);
     }
+
+    public function logout() {
+        $this->view('/user/logout', []);
+    }
+
 }

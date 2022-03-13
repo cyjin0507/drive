@@ -10,14 +10,6 @@ class SettingController extends Controller {
         $this->view('/setting/menuAdd', []);
     }
 
-    public function boardAdd() {
-        $this->view('/setting/boardAdd', []);
-    }
-
-    public function boardRemove($idx) {
-        $this->view('/setting/boardRemove', ['idx'=>$idx]);
-    }
-
     public function menuRemove($idx) {
         $this->view('/setting/menuRemove', ['idx'=>$idx]);
     }
@@ -26,9 +18,16 @@ class SettingController extends Controller {
         $this->view('/setting/boardRegister', []);
     }
 
+    public function boardAdd() {
+        $this->view('/setting/boardAdd', []);
+    }
+
+    public function boardRemove($idx) {
+        $this->view('/setting/boardRemove', ['idx'=>$idx]);
+    }
+
     public function userRemove($idx) {
         $this->view('/setting/userRemove', ['idx'=>$idx]);
     }
-
 
 }

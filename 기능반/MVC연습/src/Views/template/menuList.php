@@ -1,19 +1,21 @@
 <?php
 use src\App\DB;
 extract($_GET);
-?>    
-    <!-- visual -->
-    <section id="page-breadcrumb">
+$userInfo = DB::fetch("SELECT * FROM users WHERE name = ?", array($user_name));
+if(!isset($menu)) {
+    $menu = DB::fetch("SELECT * FROM menu WHERE uidx = ?", array($userInfo->idx))->idx;
+}
+?>
+<!-- visual -->
+   <section id="page-breadcrumb">
         <div class="vertical-center sun">
              <div class="container">
                 <div class="row">
                     <div class="action">
                         <div class="col-sm-12">
-                            <?php
-                            $userInfo = DB::fetch("SELECT * FROM users WHERE name=?", array($user_name));
-                            ?>
+                            
                             <h1 class="title">
-                                <a href="/blog/<?=$user_name?>/<?=$menu?>"><?=$userInfo->name?>의 블로그</a>
+                                <a href="myblog.html"><?=$userInfo->name?>의 블로그</a>
                             </h1>
                             <p><small>Todo Blog of <?=$userInfo->id?> </small></p>
                         </div>
@@ -37,14 +39,12 @@ extract($_GET);
                                     <div class="sidebar portfolio-sidebar">
                                         <div class="sidebar-item categories">
                                             <h3>블로그 메뉴</h3>
-                                            <?php
-                                            $menuList = DB::fetchAll("SELECT * FROM menu WHERE uidx=?", array($userInfo->idx));
-                                            ?>
                                             <ul class="nav navbar-stacked">
                                                 <?php
-                                                foreach($menuList as $key=>$value) {
+                                                $menuData = DB::fetchAll("SELECT * FROM menu WHERE uidx=?", array($userInfo->idx));
+                                                foreach($menuData as $key=>$value) {
                                                     ?>
-                                                    <li class="<?=$menuList[$key]->idx == $menu ? 'active': ''?>"><a href="/blog/<?=$user_name?>/<?=$menuList[$key]->idx?>"><?=$menuList[$key]->name?><span class="pull-right">(3)</span></a></li>
+                                                    <li class="<?=$menuData[$key]->idx == $menu ? 'active' : ''?>"><a href="/blog/<?=$user_name?>/<?=$menuData[$key]->idx?>"><?=$menuData[$key]->name?><span class="pull-right">(3)</span></a></li>
                                                     <?php
                                                 }
                                                 ?>

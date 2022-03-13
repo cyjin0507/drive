@@ -1,7 +1,7 @@
 <?php
 use src\App\DB;
 if(!user()) {
-    redirect('/login', "로그인 후 이용가능합니다.");
+    redirect("로그인 후 이용가능", "/login");
 }
 ?>
     
@@ -75,41 +75,41 @@ if(!user()) {
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $menuData = DB::fetchAll("SELECT * FROM menu WHERE uidx=?", array(user()->idx));
-                                            foreach($menuData as $key=>$data) {
+                                            $menuData = DB::fetchAll("SELECT * FROM menu WHERE uidx = ?", array(user()->idx));
+                                            foreach($menuData as $key=>$value) {
                                                 ?>
                                                 <tr>
-                                                    <form action="/boardRegister" method="POST">
-                                                        <td>
-                                                            <?=$idx = $menuData[$key]->idx?>
-                                                        </td>
-                                                        <td>
-                                                            <?=$menuData[$key]->name?>
-                                                        </td>
-                                                        <td>
-                                                            <select class="form-control input-sm" name="board_id">
-                                                                <option value="0">선택</option>
-                                                                <?php
-                                                                $boardData = DB::fetchAll("SELECT * FROM board WHERE uidx=?", array(user()->idx));
-                                                                foreach($boardData as $key=>$value) {
-                                                                    ?>
-                                                                    <option value="<?=$boardData[$key]->idx?>"><?=$boardData[$key]->board_id?></option>
-                                                                    <?php
-                                                                }
-                                                                ?>
-                                                            </select>
-                                                        </td>
-                                                        <td>
-                                                            <input type="hidden" name="idx" value="<?=$idx?>">
-                                                            <button class="btn btn-default btn-xs" type="submit">게시판등록</button>
-                                                            <button class="btn btn-default btn-xs" type="button"><a href="/menuRemove/<?=$idx?>">메뉴삭제</a></button>
-                                                        </td>
-                                                    </form>
-                                                </tr>
+                                                <form action="/boardRegister" method="POST">
+                                                <td>
+                                                    <?=$idx = $menuData[$key]->idx?>
+                                                </td>
+                                                <td>
+                                                    <?=$menuData[$key]->name?>
+                                                </td>
+                                                <td>
+                                                    <select class="form-control input-sm" name="bidx">
+                                                        <option value="0">선택</option>
+                                                        <?php
+                                                        $boardData = DB::fetchAll("SELECT * FROM board WHERE uidx = ?", array(user()->idx));
+                                                        foreach($boardData as $key=>$value) {
+                                                            ?>
+                                                            <option value="<?=$boardData[$key]->idx?>"><?=$boardData[$key]->board_id?></option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input type="hidden" name="idx" value="<?=$idx?>">
+                                                    <button class="btn btn-default btn-xs" type="submit">게시판등록</button>
+                                                    <button class="btn btn-default btn-xs" type="button"><a href="/menuRemove/<?=$idx?>">메뉴삭제</a></button>
+                                                </td>
+                                                </form>
+                                            </tr>
                                                 <?php
                                             }
                                             ?>
-
+                        
                                         </tbody>
                                     </table>
                                 </div>
@@ -122,7 +122,7 @@ if(!user()) {
                                         <label>게시판아이디
                                             <span class="color-red">*</span>
                                         </label>
-                                        <input class="form-control margin-bottom-20" type="text" name="board_id" required>
+                                        <input class="form-control margin-bottom-20" type="text" required name="board_id">
                                         <div class="col-lg-12 text-right">
                                             <button class="btn btn-primary btn-sm" type="submit">게시판등록</button>
                                         </div>
@@ -149,29 +149,32 @@ if(!user()) {
                                         </thead>
                                         <tbody>
                                             <?php
-                                            foreach( $boardData as $key=>$value) {
+                                            foreach($boardData as $key=>$value) {
                                                 ?>
                                                 <tr>
-                                                    <td>
-                                                        <?=$boardData[$key]->idx?>
-                                                    </td>
-                                                    <td>
-                                                        <?=$boardData[$key]->board_id?>
-                                                    </td>                                                
-                                                    <td>
-                                                        <button class="btn btn-default btn-xs" type="button"><a href="/boardRemove/<?=$boardData[$key]->idx?>">게시판삭제</a></button>
-                                                    </td>
-                                                </tr>   
+                                                <td>
+                                                    <?=$boardData[$key]->idx?>
+                                                </td>
+                                                <td>
+                                                    <?=$boardData[$key]->board_id?>
+                                                </td>                                                
+                                                <td>
+                                                    <button class="btn btn-default btn-xs" type="button"><a href="/boardRemove/<?=$boardData[$key]->idx?>">게시판삭제</a></button>
+                                                </td>
+                                            </tr>
                                                 <?php
                                             }
                                             ?>
-
+                      
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
 
-                            <div class="margin-bottom">
+                            <?php 
+                            if(user()->type == "admin") {
+                                ?>
+                                <div class="margin-bottom">
                                 <h2 class="page-header">회원리스트</h2>
                                 <div class="testimonial menulist">
                                     <table class="table">
@@ -231,6 +234,10 @@ if(!user()) {
                                     </table>
                                 </div>
                             </div>
+                                <?php
+                            }
+                            ?>
+                            
 
 
                         </div>

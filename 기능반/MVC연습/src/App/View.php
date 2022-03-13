@@ -13,12 +13,12 @@ class View {
 	public function render($datas) {
 		extract($datas);
 		$__content = preg_replace('/\{\{([^{}]+)\}\}/', '<?=$1?>', $this->content);
-		$__tmp = __VIEW . __DS . uniqid();
+		$__tmp = __ROOT . __DS . uniqid();
 		file_put_contents($__tmp, $__content);
 		require $__tmp;
 		unlink($__tmp);
 	}
-
+	
 	public function getView() {
 		return $this->content;
 	}

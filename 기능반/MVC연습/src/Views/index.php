@@ -1,6 +1,5 @@
 
     
-    
     <!-- visual -->
     <section id="home-slider">
         <div class="container">
@@ -74,3 +73,4 @@
         </div>
     </section>
     
+   

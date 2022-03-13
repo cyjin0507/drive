@@ -14,7 +14,7 @@ use src\App\DB;
 </head>
 
 <body>
-	<header id="header">  
+	<header id="header"> 
 
         <!-- topicon -->    
         <div class="container">
@@ -32,7 +32,7 @@ use src\App\DB;
                 </div>
              </div>
         </div>
-            
+        
         <!-- navigation -->
         <div class="container">
             <div class="row">
@@ -61,18 +61,12 @@ use src\App\DB;
                             ?>
                         </li>
                         <li>
-                            <a href="/join" title="회원가입">
+                            <a href="join.html" title="회원가입">
                                 회원가입
                             </a>
                         </li>
                         <li>
-                            <?php
-                            $oneMenu;
-                            if(user()) {
-                                $oneMenu = DB::fetch("SELECT * FROM menu WHERE uidx=?", array(user()->idx))->idx;
-                            }
-                            ?>
-                            <a href="/blog/<?=user() ? user()->name : '#'?>/<?=$oneMenu?>" title="내 블로그" target="_blank">
+                            <a href="/blog/<?=user() ? user()->name : ''?>" title="내 블로그" target="_blank">
                                 내 블로그
                             </a>
                         </li>

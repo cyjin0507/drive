@@ -1,3 +1,4 @@
+
 <?php
 use src\App\DB;
 extract($_GET);

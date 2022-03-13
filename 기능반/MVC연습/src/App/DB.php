@@ -9,21 +9,20 @@ class DB {
         return self::$db;
     }
 
-    public static function execute($sql, $datas=[]) {
+    public static function execute($sql, $datas = []) {
         $query = self::getDB()->prepare($sql);
         return $query->execute($datas);
     }
-    
-    public static function fetch($sql, $datas=[]) {
+
+    public static function fetch($sql, $datas = []) {
         $query = self::getDB()->prepare($sql);
         $query->execute($datas);
         return $query->fetch(\PDO::FETCH_OBJ);
     }
-    
-    public static function fetchAll($sql, $datas=[]) {
+
+    public static function fetchAll($sql, $datas = []) {
         $query = self::getDB()->prepare($sql);
         $query->execute($datas);
         return $query->fetchAll(\PDO::FETCH_OBJ);
     }
-
 }
