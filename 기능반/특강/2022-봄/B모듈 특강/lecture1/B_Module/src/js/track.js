@@ -1,5 +1,6 @@
 class Track {
-    constructor(id) {
+    constructor(app, id) {
+        this.app = app;
         this.id = id;
         this.$track = null;
         this.$bar = null;
@@ -74,13 +75,21 @@ class Track {
         this.current_handle = null;
         this.is_handling = false;
         this.bar_position[0, 0];
+
+        this.updateTrackBar();
+    }
+
+    updateTrackBar() {
+        const start = this.$bar.position().left / this.MAX_WIDTH;
+        const end = this.$bar.width() / this.MAX_WIDTH + start;
+        this.app.updateTrackBar(this.id, start, end);
     }
 
     // bar width, left 가 변화함으로 offsetX 로는 기대하는 offset을 구할 수 없음.
     // fix 되어 있는 track width, left를 참조하여 bar의 offsetX를 구하는 메서드
     getMouseX(e) {
         let width = this.$track.width();
-        let left = this.$track.position().left;
+        let left = this.$track.offset().left;
 
         let x = e.pageX - left; // track 시작 부분에서 부터의 x 좌표
         x = x < 0  ? 0 : x > width ? width : x;
@@ -97,7 +106,7 @@ class Track {
 
         if (width < this.MIN_WIDTH) {
             width = this.MIN_WIDTH;
-            left = this.MAX_WIDTH - this.MIN_WIDTH + bar_x;
+            left = this.MAX_WIDTH - (this.MIN_WIDTH + bar_x);
         }
 
         this.updateBar({ left, width });

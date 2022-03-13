@@ -69,10 +69,27 @@ label:not(:first-child) {
     left: 0;
 }
 
+#application #workspace #canvas
+foreignObject {
+    overflow: visible;
+}
+  
+#application #workspace #canvas
+.canvas-input {
+    display: inline-block;
+    border: 1px solid black;
+    outline: none;
+    min-width: 100px;
+}
+
 #application .time-area {
     display: flex;
     justify-content: space-between;
     margin: 5px 0;
+}
+
+#application .clip-area {
+    position: relative;
 }
 
 #application .clip-area .track {
@@ -118,7 +135,8 @@ label:not(:first-child) {
   width: calc(100% / 5 - 10px);
 }
 
-#application .clip-area .track input[type="checkbox"] {
+#application .clip-area .track
+input[type="checkbox"] {
   position: absolute;
   width: 16px;
   height: 16px;
@@ -126,3 +144,24 @@ label:not(:first-child) {
   left: -30px;
 }
 
+#application .clip-area #cursor {
+    position: absolute;
+    top: -15px;
+    left: 0%;
+    width: 4px;
+    height: calc(100% + 30px);
+    background-color: red;
+    z-index: 100;
+    cursor: pointer;
+}
+
+#application .clip-area #cursor::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+    left: calc(50% - 5px);
+    border-radius: 50%;
+  }
