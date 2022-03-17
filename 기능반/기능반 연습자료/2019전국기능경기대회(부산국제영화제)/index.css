@@ -255,6 +255,7 @@ nav > div {
 footer {
     margin-top: 70px;
     padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #333333;
 }
 
@@ -288,4 +289,27 @@ footer {
 
 #footer #logo {
     color: white;
+}
+
+#footer-down {
+    margin-top: 30px;
+    display: flex;
+}
+
+#footer-down > div:nth-child(1) {
+    line-height: 1.5;
+    color: #aaa;
+    font-size: 14px;
+}
+
+#footer-down > div:nth-child(2) {
+    display: flex;
+    width: 150px;
+    margin-top: 20px;
+}
+
+#footer-down > div:nth-child(2) i {
+    width: auto;
+    color: #aaa;
+    font-size: 25px;
 }
