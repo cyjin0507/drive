@@ -1,0 +1,93 @@
+* {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    color: #707070;
+}
+
+:root {
+    --sub-color: #B84339;
+}
+
+header {
+    position: relative;
+    padding-top: 15px;
+}
+
+#header {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#navigation {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#util {
+    display: flex;
+    width: 130px;
+    font-size: 14px;
+    color: #aaa;
+    font-weight: lighter;
+    margin-right: 0;
+}
+
+#util > div {
+    width: auto;
+    margin-right: 0;
+}
+
+nav {
+    display: flex;
+    width: 600px;
+    margin-right: 0;
+}
+
+nav > div {
+    width: auto;
+    margin-right: 0;
+    font-size: 18px;
+}
+
+
+/* 헤더 */
+
+/* 비주얼 */
+
+#visual {
+    margin-top: 40px;
+    height: 600px;
+    position: relative;
+}
+
+#visual-img {
+    height: 100%;
+}
+
+#visual img {
+    height: 100%;
+    object-fit: cover;
+}
+
+#visual-info {
+    z-index: 10;
+    color: white;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 2px solid white;
+    margin-top: -450px;
+    text-align: justify;
+}
+
+/* 비주얼 */
