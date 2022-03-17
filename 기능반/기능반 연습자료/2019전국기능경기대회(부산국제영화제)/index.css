@@ -65,7 +65,7 @@ nav > div {
 /* 비주얼 */
 
 #visual {
-    margin-top: 40px;
+    margin-top: 20px;
     height: 600px;
     position: relative;
 }
@@ -81,13 +81,211 @@ nav > div {
 
 #visual-info {
     z-index: 10;
-    color: white;
     position: relative;
     width: 300px;
     height: 300px;
     border: 2px solid white;
     margin-top: -450px;
-    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+#visual-info > div {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#visual-info > div > div {
+    color: rgb(218, 218, 218);
+    width: auto;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 /* 비주얼 */
+
+/* 개최 개요 */
+
+#section1 {
+    margin-top: 100px;
+    position: relative;
+    width: 70%;
+}
+
+.title {
+    display: flex;
+    gap: 15px;
+}
+
+.title > .point {
+    width: 20px;
+    height: 20px;
+    background-color: #B84339;
+    transform: rotate(45deg);
+}
+
+.title > .txt {
+    font-size: 20px;
+    margin-top: -5px;
+    font-weight: bold;
+    color: black;
+}
+
+#sec1-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 600px;
+    margin-top: 50px;
+}
+
+#sec1-info {
+    padding-top: 90px;
+}
+
+#sec1-img {
+    width: 100%;
+    height: 100%;
+    margin-right: 0;
+    background-image: url('/resources/other/image_1.jpg');
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+}
+
+.sec1-main-title {
+    margin-top: 50px;
+    color: var(--sub-color);
+    line-height: 1.7;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sec1-main-info {
+    margin-top: 30px;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.sec1-sub-info1 {
+    display: flex;
+    margin-top: 40px;
+}
+
+.sec1-sub-info1 > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sec1-sub-info1 > div > div:nth-child(1) {
+    font-size: 13px;
+    color: #979797;
+}
+
+.sec1-sub-info1 > div > div:nth-child(2) {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.a {
+    color: var(--sub-color);
+}
+
+
+/* 개최 개요 */
+
+/* 행사 안내 */
+
+#section2 {
+    margin-top: 130px;
+    width: 70%;
+}
+
+#sec2-main {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+.sec2-area {
+    position: relative;
+}
+
+.sec2-area img {
+    object-fit: cover;
+}
+
+.sec2-info {
+    margin-top: 25px;
+}
+
+.sec2-info > div:nth-child(1) {
+    font-size: 20px;
+    color: var(--sub-color);
+    font-weight: bold;
+}
+
+.sec2-info > div:nth-child(2) {
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.popular {
+    position: absolute;
+    width: 80px;
+    line-height: 4;
+    font-size: 20px;
+    background-color: goldenrod;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 100%;
+    margin-left: 85%;
+    margin-top: -40px;
+}
+
+/* 행사 안내 */
+
+/* 푸터 */
+footer {
+    margin-top: 70px;
+    padding-top: 20px;
+    background-color: #333333;
+}
+
+#footer {
+    width: 70%;
+}
+
+#footer-up {
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer-nav {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    width: 900px;
+}
+
+#footer-nav > div {
+    width: auto;
+}
+
+#footer-nav > div:not(#b) {
+    color: #dddddd;
+}
+
+#b {
+    color: var(--sub-color);
+}
+
+#footer #logo {
+    color: white;
+}
