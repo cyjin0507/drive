@@ -48,82 +48,86 @@ header input {
     display: none;
 }
 
-.tab-area {
-    margin-left: -10px;
-    padding-left: 10px;
-    display: flex;
-}
-
-.openBtn {
-    z-index: 10;
-}
-
-.openBtn > img {
-    width: 40px;
-    background-color: #333333;
-    padding: 3px;
-    border-radius: 10px;
-}
-
-.tab {
-    padding: 10px;
-    width: 600px;
-    position: absolute;
-    margin-left: -650px;
-    background-color: #333333;
-    transition: all .5s;
-}
-
-.tab > ul {
-    display: flex;
-    width: 500px;
-}
-
-.tab > ul > li {
+header label {
     width: auto;
-    list-style: none;
-    color: #ffffff;
-    font-size: 18px;
+    margin-left: 0;
 }
 
-#tab2 > .tab {
-    width: 300px;
-}
-
-#tab2 > .tab > ul {
-    width: 250px;
-}
-
-.closeBtn {
-    margin-left: 580px;
-    margin-top: -20px;
-    color: rgb(119, 0, 0);
-    font-size: 20px;
-    font-weight: bold;
+#tab-area {
+    display: flex;
+    flex-direction: column;
     position: absolute;
+    z-index: 15;
+    width: auto;
 }
 
-#social-tab {
-    margin-top: -12px;
+#tab-area img {
+    width: 50px;
+    background-color: rgb(0, 30, 101);
 }
 
-.tab img {
-    width: 40px;
-    filter: brightness(.5);
-    animation: social 4s linear infinite;
+#menu-area {
+    width: 500px;
+    padding-left: 60px;
+    padding-right: 30px;
+    display: flex;
+    background-color: rgb(0, 30, 101);
+    margin-left: -600px;
+    transition: all .5s;
+    position: relative;
+    border-radius: 0px 20px 20px 0px;
 }
 
-.tab img:nth-child(2) {
+#menu-area > div {
+    width: auto;
+    line-height: 3;
+    color: #dddddd;
+}
+
+#closeMenu {
+    position: absolute;
+    margin-left: 510px;
+    z-index: 17;
+    color: white;
+}
+
+#social-area {
+    background-color: rgb(0, 30, 101);
+    display: flex;
+    margin-top: 5px;
+    height: 50px;
+    width: 400px;
+    margin-left: -500px;
+    padding-left: 60px;
+    padding-right: 20px;
+    transition: all .5s;
+    border-radius: 0px 20px 20px 0px;
+}
+
+#social-area > img {
+    width: 45px;
+    animation: social 4s linear infinite; 
+}
+
+#social-area > img:nth-child(2) {
     animation-delay: 1s;
 }
 
-.tab img:nth-child(3) {
+#social-area > img:nth-child(3) {
     animation-delay: 2s;
 }
 
-.tab img:nth-child(4) {
+#social-area > img:nth-child(4) {
     animation-delay: 3s;
 }
+
+#closeShare {
+    position: absolute;
+    z-index: 17;
+    margin-left: 400px;
+    color: white;
+}
+
 
 @keyframes social {
     0% {
@@ -147,20 +151,20 @@ header input {
     }
 }
 
-#openMenu:checked ~ #tab1 > .tab {
+#openMenu:checked ~ #menu-area {
+    margin-left: 0px;
+}
+
+#closeMenu:checked ~ #menu-area {
+    margin-left: -600px;
+}
+
+#openShare:checked ~ #social-area {
     margin-left: 0;
 }
 
-#closeMenu:checked ~ #menu-tab {
-    margin-left: -200px;
-}
-
-#openShare:checked ~ #tab2 > .tab {
-    margin-left: 0;
-}
-
-#closeShare:checked ~ #social-tab {
-    margin-left: -200px;
+#closeShare:checked ~ #social-area {
+    margin-left: -500px;
 }
 
 /* 헤더 */
@@ -221,14 +225,14 @@ header input {
     margin-left: 20px;
 }
 
-.menu-info > div:nth-child(2) {
-    margin-top: 25px;
+.page-name {
+    margin-top: 50px;
     margin-left: 20px;
     font-size: 25px;
     font-weight: bold;
 }
 
-.menu-info > div:nth-child(3) {
+.page-info {
     margin-left: 20px;
     margin-top: 25px;
 }
@@ -248,11 +252,11 @@ header input {
     }
 }
 
-.menu-info > div:nth-child(3) span {
+.page-info span {
     animation: colorChange 2s linear infinite;
 }
 
-.menu-info > div:nth-child(4) {
+.page-btn {
     position: absolute;
     margin-left: 325px;
     margin-top: -50px;
@@ -278,6 +282,36 @@ header input {
     margin-top: 29vh;
 }
 
+.tag {
+    width: 210px;
+    margin-right: 10px;
+    margin-top: -90px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tag > div > div {
+    line-height: 2;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.tag > div:nth-child(1) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    text-align: center;
+}
+
+.tag > div:nth-child(2) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    text-align: center;
+}
+
 /* .menu-info: */
 
 /* footer */
@@ -301,19 +335,113 @@ footer {
     margin-top: 100px;
 }
 
+#game-area {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 20px;
+    gap: 100px;
+}
+
 #card-area {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 40px;
+    gap: 30px;
 }
 
 .card {
-    background-color: #002672;
-    width: 40%;
+    border: 1px solid #002672;
+    background-color: #f7f7f7;
+    width: 100%;
     height: 150px;
+    border-radius: 15px;
+}
+
+.clear {
+    background-image: url('/resources/images/특산품/거창군_사과.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.not-clear img {
+    width: 80%;
+    display: flex;
+    margin-top: 20px;
+}
+
+#control-area > div:nth-child(1) {
+    margin-top: 200px;
+    display: flex;
+    gap: 20px;
+    width: 50%;
+    margin-left: 0;
+}
+#control-area > div:nth-child(1) > div {
+    text-align: center;
+    line-height: 2;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 0;
+}
+
+#control-area > div:nth-child(1) > div:nth-child(1) {
+    background-color: #276fff;
+    color: white;
+}
+
+#control-area > div:nth-child(1) > div:nth-child(2) {
+    background-color: white;
+    color: #276fff;
+    border: 1px solid #276fff;
+}
+
+#control-area > div:not(#control-area > div:nth-child(1)) {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#control-area span {
+    font-size: 16px;
+    color: rgb(97, 97, 97);
+    font-weight: lighter;
 }
 
 /* card */
 
+/* stamp */
+
+#stamp {
+    width: 70%;
+    margin-top: 100px;
+}
+
+#stamp-area {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 60%;
+    margin-left: 0;
+}
+
+#stamp-area > div {
+    width: 250px;
+    height: 250px;
+    border: 1px solid #aaa;
+    border-radius: 100%;
+}
+
+#stamp-area > div:nth-child(1) {
+    background-image: url('/resources/images/makeImg/스탬프.svg');
+    background-size: cover;
+}
+
+footer.sub {
+    color: black;
+    margin-top: 100px;
+    padding-bottom: 30px;
+}
+
+/* stamp */
 
 /* event */
