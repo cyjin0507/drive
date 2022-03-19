@@ -5,6 +5,10 @@
     color: #333333;
 }
 
+.highlight {
+    color: goldenrod;
+}
+
 body {
     position: relative;
 }
@@ -81,6 +85,9 @@ header label {
 #menu-area > div {
     width: auto;
     line-height: 3;
+}
+
+#menu-area > div:not(.highlight) {
     color: #dddddd;
 }
 
@@ -328,6 +335,15 @@ footer {
 
 /* event */
 
+/* img */
+#informationImg {
+    background-image: url('/resources/images/makeImg/안내이미지.png');
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+/* img */
+
 /* card */
 
 #card {
@@ -363,9 +379,9 @@ footer {
 }
 
 .not-clear img {
-    width: 80%;
+    width: 50%;
     display: flex;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 #control-area > div:nth-child(1) {
@@ -445,3 +461,49 @@ footer.sub {
 /* stamp */
 
 /* event */
+
+/* review */
+
+/* reviews */
+
+#reviews {
+    width: 70%;
+    margin-top: 100px;
+}
+
+#reviews-main {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 400px;
+    overflow: auto;
+}
+
+.list-content {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 20px;
+}
+
+.list-content img {
+    width: 50px;
+}
+
+.list-content > div {
+    width: 180px;
+    word-wrap: break-word;
+}
+
+/* reviews */
+
+
+/* review */
