@@ -239,7 +239,7 @@ class Game {
 
     gameReset = () => {
         // 인터벌과 변수를 모두 초기화 해줌
-        this.gameStartBtn.html('시작하기')
+        this.gameStartBtn.html('게임시작')
 
         clearInterval(this.timerInterval)
 
@@ -263,7 +263,7 @@ class Game {
         }
 
 
-        this.timerText.html(TIMEDATA.START_COUNTDOWN + '초')
+        this.timerText.html(padstart(TIMEDATA.START_COUNTDOWN) + '초')
 
         this.findCardCount = 0
         this.UpdateFindCardCount(0)
@@ -375,7 +375,7 @@ class Game {
                 // 남은 시간 계산
                 if (countDown - second >= 0) {
                     // 몇초 남았는지 출력
-                    this.timerText.html(`${countDown - second}초`)
+                    this.timerText.html(`${padstart(countDown - second)}초`)
                 } else {
                     // 5초 카운트 다운이 끝났다면...
 
@@ -709,10 +709,13 @@ async function getImage(file){
     })
 }
 
+
 // 날짜를 yyyy-mm-dd 형으로 바꿔줌
 Date.prototype.myDateFormat = function(){
     return this.getFullYear().padStart() + '-' + (this.getMonth()+1).padStart() + '-' + this.getDate().padStart();
 }
+
+
 
 class ReviewApp {
     constructor(){
@@ -722,7 +725,6 @@ class ReviewApp {
     }
 
     init(){
-
         this.imageList = []
 
         // 모든 입력란을 불러옴
@@ -770,12 +772,13 @@ class ReviewApp {
 
         // 이미지 추가 버튼 클릭시 파일 입력란 보이게 하기
         this.addImageFileBtn.click(()=>{
-            console.log('이미지 추가')
+            // 숨겨져 있던 입력란 1개를 복사하여 새로운 입력란을 만듦
             const imgFile = $(this.imagefile[0].cloneNode(true))
             imgFile.css('display', 'inline')
 
             // 새로운 입력란에 아이디 추가
             imgFile.data('id', new Date().getTime())
+            console.log(imgFile.data('id'))
 
             // 새로운 입력란에 이벤트 추가
             imgFile.on('input', this.checkImage)
@@ -784,30 +787,36 @@ class ReviewApp {
         })
 
         this.imageList = []
-
     }
 
 
     checkImage = async (e)=>{
         const files = e.target.files
 
+        const id = $(e.target).data('id')
+
         for(let i = 0; i < this.imageList.length; i++){
             // 이미 이미지를 추가 했었던 입력란에서 이미지를 변경 했다면
-            if(this.imageList[i].id == e.target.dataset.id){    
+            if(this.imageList[i].id == id){    
+                // 먼저 입력했던 이미지 삭제
                 this.imageList.splice(i, 1)
             }
         }
 
+        // files에 있는 이미지를 불러옴
         for(let file of files){
+            // 확장자만 이미지 일 수 있으므로 진짜 이미지인지 검사
             const img = await getImage(file)
 
             if(img){
+                // 이미지 리스트에 이미지 추가
                 this.imageList.push( {
-                    img : (await getImage(file)),
-                    id : e.target.dataset.id,
+                    img : img,
+                    id : id,
                     file : file
                 })
             } else {
+                // 올바르지 않은 이미지 파일이라면 값 삭제
                 alert('올바른 이미지 파일이 아닌 파일입니다.')
                 $(e.target).val('')
                 break
@@ -965,6 +974,10 @@ class Star {
         return this.lastSelect
     }
 }
+
+
+
+
 
 window.addEventListener('load', ()=>{
     if($('#event-card').length == 0){

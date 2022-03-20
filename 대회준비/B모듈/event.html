@@ -1,0 +1,236 @@
+<!-- 카드 뒤집기 이벤트 페이지 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./js/lib/jquery-3.6.0.js"></script>
+    <script src="./js/script.js"></script>
+
+    <!--  테스트 용 -->
+
+    <!-- <script src="./js/lib/util.js"></script>
+    <script src="./js/lib/config.js"></script>
+
+    <script src="./js/event/cardEvent/Game.js"></script>
+    <script src="./js/event/cardEvent/Card.js"></script>
+    <script src="./js/event/form/Form.js"></script>
+
+    <script src="./js/event/App.js"></script> -->
+    
+    <!--  테스트 용 -->
+
+    <style>
+        p {
+            margin: 0;
+        }
+
+        .event-card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* 
+            transform-style: preserve-3d;
+            perspective: 300px; 
+            를 이용하여 카드가 입체적으로 돌아가는 듯하게 보이게 한다.
+        */
+
+        .event-card-grid>.event-card {
+            transform-style: preserve-3d;
+            perspective: 300px;
+            position: relative;
+            width: 100%;
+            height: 130px;
+        }
+
+        .event-card-grid>.event-card>* {
+            backface-visibility: hidden;
+            transition: 0.5s;
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid black;
+        }
+
+        .event-card-grid>.event-card>*>* {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 앞면이 뒤집힌채로 있는다 */
+        .front {
+            transform: rotateY(180deg);
+            background-color: rgb(140, 152, 163);
+        }
+
+        .back {
+            transform: rotateY(0deg);
+        }
+
+        /* 카드가 활성화 되면 뒷면과 앞면에 각각 180deg씩 빼서 카드를 돌려준다 */
+        .event-card.active .front {
+            transform: rotateY(0deg);
+        }
+
+        .event-card.active .back {
+            transform: rotateY(-180deg);
+        }
+
+
+        /* 찾은 카드만 info(지역명)이 보여야하므로 display는 none*/
+        .event-card .info {
+            display: none;
+
+            background-color: rgba(0, 255, 0, 0.5);
+            height: 100%;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .event-card .info.active {
+            display: flex;
+        }
+
+        /* unfind가 붙어있었을때는 못 찾은 카드이므로 색깔을 다르게 해줌 */
+        .event-card.unfind .info {
+            background-color: rgba(255, 0, 0, 0.5);
+        }
+
+
+        /* 출석 스탬프 찍는 곳 */
+        .stamp-box {
+            width: 650px;
+            height: 170px;
+            border: 1px solid gray;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .stamp-box>div {
+            border: left;
+        }
+
+        .stamp {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 출석 스탬프 1칸에 꽉차게 하기 위해 크기 100% */
+        .stamp>svg{
+            width: 100%;
+            height: 100%;
+        }
+
+        .stamp:not(:first-child){
+            border-left: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="event-card">
+        <div class="container">
+            <div class="row mb-5">
+                <!-- 영역 타이틀 시작-->
+                <div class="col-12 title">
+                    <h5>event</h5>
+                    <h1 class="mt-2"><span>이벤트</span></h1>
+                </div>
+                <!-- 영역 타이틀 종료-->
+            </div>
+            <div class="row">
+                <div class="col-8" style="width : 65%">
+                    <!-- 카드 게임 진행 영역 시작 -->
+                    <div class="event-card-grid">
+                    </div>
+                    <!-- 카드 게임 진행 영역 종료 -->
+                </div>
+                <div class="col-4" style="width: 35%">
+                    <div class="row h-25">
+                        <div class="col-12 w-100">
+
+                            <!-- 남은 시간, 찾은 카드 수 영역 시작 -->
+                            <h3 class="timer">남은 시간 : <span>01분 30초</span></h3>
+                            <h3 class="mt-3 finded-event-card">찾은 카드 수 : 0</h3>
+                            <!-- 남은 시간, 찾은 카드 수 영역 종료 -->
+    
+                            <!-- 버튼 영역 시작 -->
+                            <div class="d-flex mt-3" style="gap: 5px; margin-top: 20px;">
+                                <button class="button btn btn-primary me-3 game-start">게임시작</button>
+                                <button class="button btn btn-success hint">힌트보기</button>
+                            </div>
+                            <!-- 버튼 영역 종료 -->
+                        </div>
+                    </div>
+                    <div class="row h-75 ">
+                        <div class="col-12 w-100">
+                            <!-- 게임 참여 정보 입력 폼 시작 -->
+                            <div class="form p-3 h-100 position-relative" style="border: 1px solid #ccc;">
+                                <h2>Form</h2>
+                                <div class="mt-3">
+                                    <h4>찾은 카드 수 갯수 : <span class="find-card-count">0</span></h4>
+                                </div>
+                                <div class="mt-3 form-group">
+                                    <p>이름</p>
+                                    <input type="text" name="name" class="form-control name" maxlength="50">
+                                </div>
+                                <div class="mt-3 form-group">
+                                    <p>핸드폰번호</p>
+                                    <input type="text" name="name" class="form-control phone">
+                                </div>
+                                <div class="mt-3 form-group">
+                                    <button class="button w-50 submit-btn">
+                                        등록
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 게임 참여 정보 입력 폼 종료 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- 출석 체크 스탬프 영역 시작 -->
+                    <div>
+                        <p>출석 체크</p>
+
+                        <div class="stamp-box">
+                            <div class="stamp">
+                            </div>
+                            <div class="stamp">
+                            </div>
+                            <div class="stamp">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 출석 체크 스탬프 영역 종료 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+</body>
+
+</html>

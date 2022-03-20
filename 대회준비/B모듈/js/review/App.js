@@ -59,6 +59,7 @@ class App {
 
             // 새로운 입력란에 아이디 추가
             imgFile.data('id', new Date().getTime())
+            console.log(imgFile.data('id'))
 
             // 새로운 입력란에 이벤트 추가
             imgFile.on('input', this.checkImage)
@@ -73,9 +74,11 @@ class App {
     checkImage = async (e)=>{
         const files = e.target.files
 
+        const id = $(e.target).data('id')
+
         for(let i = 0; i < this.imageList.length; i++){
             // 이미 이미지를 추가 했었던 입력란에서 이미지를 변경 했다면
-            if(this.imageList[i].id == e.target.dataset.id){    
+            if(this.imageList[i].id == id){    
                 // 먼저 입력했던 이미지 삭제
                 this.imageList.splice(i, 1)
             }
@@ -90,7 +93,7 @@ class App {
                 // 이미지 리스트에 이미지 추가
                 this.imageList.push( {
                     img : img,
-                    id : e.target.dataset.id,
+                    id : id,
                     file : file
                 })
             } else {

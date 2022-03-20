@@ -51,7 +51,7 @@ class Game {
 
         return imgList
     }
-
+    // 아직 안외움
     gameReset = () => {
         // 인터벌과 변수를 모두 초기화 해줌
         this.gameStartBtn.html('시작하기')
