@@ -13,7 +13,7 @@ body {
     position: relative;
 }
 
-.title > div:nth-child(1) {
+.title div:nth-child(1) {
     font-size: 18px;
     font-weight: bold;
 }
@@ -23,7 +23,7 @@ body {
     margin-top: 5px;
 }
 
-.title > div:nth-child(2) > span {
+.title div:nth-child(2) > span {
     color: var(--sub-color);
     font-weight: bold;
 }
@@ -75,7 +75,8 @@ header label {
     padding-left: 60px;
     padding-right: 30px;
     display: flex;
-    background-color: rgb(0, 30, 101);
+    background-color: #f4f4f4;
+    border: 1px solid rgb(0, 30, 101);
     margin-left: -600px;
     transition: all .5s;
     position: relative;
@@ -88,19 +89,20 @@ header label {
 }
 
 #menu-area > div:not(.highlight) {
-    color: #dddddd;
+    color: rgb(0, 30, 101);
 }
 
 #closeMenu {
     position: absolute;
     margin-left: 510px;
     z-index: 17;
-    color: white;
+    color: rgb(143, 0, 0);
 }
 
 #social-area {
-    background-color: rgb(0, 30, 101);
+    background-color: #f4f4f4;
     display: flex;
+    border: 1px solid rgb(0, 30, 101);
     margin-top: 5px;
     height: 50px;
     width: 400px;
@@ -132,7 +134,7 @@ header label {
     position: absolute;
     z-index: 17;
     margin-left: 400px;
-    color: white;
+    color: rgb(117, 0, 0);
 }
 
 
@@ -204,15 +206,15 @@ header label {
 }
 
 .go-menu:nth-child(1) {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3) ),url('/resources/images/img/photo\ \(14\).jpg');
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3) ),url('/resources/images/sizeDown/photo\ \(14\).jpg');
 }
 
 .go-menu:nth-child(2) {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3) ),url('/resources/images/img/photo\ \(21\).jpg');
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3) ),url('/resources/images/sizeDown/photo\ \(21\).jpg');
 }
 
 .go-menu:nth-child(3) {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3) ),url('/resources/images/img/photo\ \(4\).jpg');
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3) ),url('/resources/images/sizeDown/photo\ \(4\).jpg');
 }
 
 .menu-info {
@@ -337,14 +339,18 @@ footer {
 
 /* img */
 #informationImg {
-    /* width: 1350px; */
-    background-image: url('/resources/images/makeImg/안내이미지.png');
-    height: 200px;
-    /* border-radius: 20px; */
-    margin-top: 10px;
+    height: 250px;
     background-size: cover;
     background-position: center;
     padding-top: 60px;
+}
+
+.informationImg1 {
+    background-image: url('/resources/images/makeImg/안내이미지.png');
+}
+
+.informationImg2 {
+    background-image: url('/resources/images/makeImg/안내이미지2.png');
 }
 
 
@@ -393,14 +399,14 @@ footer {
     margin-top: 40px;
 }
 
-#control-area > div:nth-child(1) {
-    margin-top: 10px;
+#control-area > div:nth-child(3) {
+    margin-top: 50px;
     display: flex;
     gap: 20px;
     width: 50%;
     margin-left: 0;
 }
-#control-area > div:nth-child(1) > div {
+#control-area > div:nth-child(3) > div {
     text-align: center;
     line-height: 2;
     border-radius: 5px;
@@ -409,23 +415,23 @@ footer {
     margin-left: 0;
 }
 
-#control-area > div:nth-child(1) > div:nth-child(1) {
+#control-area > div:nth-child(3) > div:nth-child(1) {
     background-color: #276fff;
     color: white;
 }
 
-#control-area > div:nth-child(1) > div:nth-child(2) {
+#control-area > div:nth-child(3) > div:nth-child(2) {
     background-color: white;
     color: #276fff;
     border: 1px solid #276fff;
 }
 
-#control-area > div:not(#control-area > div:nth-child(1)) {
+#control-area > div:not(#control-area > div:nth-child(3)) {
     margin-top: 30px;
     font-size: 20px;
     font-weight: bold;
 }
-#control-area span {
+#control-area span:not(#stamp span) {
     font-size: 16px;
     color: rgb(97, 97, 97);
     font-weight: lighter;
