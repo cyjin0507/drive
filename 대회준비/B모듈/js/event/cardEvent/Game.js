@@ -43,6 +43,7 @@ class Game {
 
         return imgList
     }
+
     gameReset = () => {
         this.gameStartBtn.html('시작하기')
 
@@ -73,136 +74,56 @@ class Game {
         this.UpdateFindCardCount(0)
     }
 
-    gameStart = async () => {
+    gameStart = async() => {
         this.form.formReset()
-
         this.gameReset()
-
         this.cardSet()
-
         await this.firstTimerSet()
-
-        this.gameStarted = true
-
+        this.gameStarted = ture;
         this.gameTimerSet()
     }
 
-    gameEnd = () => {
+    gameEnd() {
         this.form.formOpen(this.findCardCount, this.gameReset)
-
-        this.gameStarted = false
+        this.gameStarted = false;
         clearInterval(this.timerInterval)
-
-        this.cardList.forEach(card => {
-            if (!card.isFixed) {
+        this.cardList.forEach(card=> {
+            if(!card.isFixed) {
                 card.dom.addClass('unfind')
                 card.fix()
             }
         })
     }
 
-    hint = () => {
-        this.cardList.forEach(card => {
-            if (!card.isFixed) {
-                card.select(TIMEDATA.HINT_TIME)
-            }
-        })
-    }
-
-    cardSet = () => {
+    cardSet() {
         this.cardGrid.html('')
-
         const randomImageList = this.getRandomImageList()
-
-        for (let img of randomImageList) {
-
-            for (let i = 0; i < 2; i++) {
+        for(let img of randomImageList) {
+            for(let i=0; i<2; i++) {
                 const card = new Card(img, this.acitiveCard, this.UpdateFindCardCount)
-
-    
                 card.select(TIMEDATA.START_COUNTDOWN + 0.5)
-
-    
                 this.cardList.push(card)
             }
         }
-
-        this.cardList = this.cardList.sort((a, b) => Math.random() - 0.5)
-
-        for (let card of this.cardList) {
+        this.cardList = this.cardList.sort((a,b)=>Math.random()-0.5)
+        for(let card of this.cardList) {
             this.cardGrid.append(card.dom)
         }
     }
 
-    UpdateFindCardCount = (count = 1) => {
-        this.findCardCount += count
-
-        if (this.findCardCount >= 8) {
+    UpdateFindCardCount = (count =1)=> {
+        this.findCardCount += count;
+        if(this.findCardCount >= 8) {
             this.gameEnd()
         }
-
-        $('.finded-event-card').html(`
-            찾은 카드 수 : ${this.findCardCount}
-        `)
+        $('.finded-event-card').html(`찾은 카드 수 ${this.findCardCount}`)
     }
 
-    firstTimerSet = () => {
+    firstTimerSet() {
         this.timer = new Date()
-
-        const countDown = TIMEDATA.START_COUNTDOWN
-
-        return new Promise((res, rej) => {
-
-
-            const timerInterval = setInterval(() => {
-    
-                let gameTime = (new Date()).getTime() - this.timer.getTime()
-                let second = parseInt(gameTime / 1000)
-
-    
-                if (countDown - second >= 0) {
-        
-                    this.timerText.html(`${countDown - second}초`)
-                } else {
-        
-
-        
-                    this.startBtnActive = true
-                    this.gameStartBtn.html('다시하기')
-
-        
-                    clearInterval(timerInterval)
-
-                    res(true)
-                }
-            }, 100)
+        const countDown = TIMEDATA.START_COUNTDOWN;
+L            // let gameTime = 
         })
     }
 
-    gameTimerSet = () => {
-        this.timer = new Date()
-
-        this.timerInterval = setInterval(() => {
-
-            let gameTime = (new Date()).getTime() - this.timer.getTime()
-
-
-            let second = TIMEDATA.GAME_PLAY_TIME - parseInt(gameTime / 1000)
-
-            if (second > 59) {
-    
-                let minute = parseInt(second / 60)
-                this.timerText.html(`${padstart(minute)}분 ${padstart(second % 60)}초`)
-            } else {
-    
-                this.timerText.html(`${padstart((second % 60))}초`)
-
-    
-                if(second <= 0){
-                    this.gameEnd()
-                }
-            }
-
-        }, 100)
-    }
 }
