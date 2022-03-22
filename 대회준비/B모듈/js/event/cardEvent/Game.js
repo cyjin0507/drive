@@ -12,36 +12,6 @@ class Game {
         this.gameReset()
     }
 
-    gameReset = () => {
-        this.startBtn.html('시작하기')
-
-        clearInterval(this.timerInterval)
-
-        this.cardList = []
-        this.acitiveCard = []
-
-        this.cardGrid.html('')
-
-        for(let i = 0; i < 16; i++){
-            this.cardGrid.append(
-            `<div class="event-card">
-                <div class="front">
-                    <img src="./img/특산품/거제시_유자.jpg" alt="앞면 이미지" title="앞면 이미지">
-                    <div class="info">
-                        <span>거제시</span>
-                    </div>
-                </div>
-                <div class="back">뒷면</div>
-            </div>`)
-        }
-
-
-        this.timerText.html(TIMEDATA.START_COUNTDOWN + '초')
-
-        this.findCardCount = 0
-        this.UpdateFindCardCount(0)
-    }
-
     addEvent() {
         this.startBtn.click(()=> {
             if(this.startBtnActive) {
@@ -56,6 +26,31 @@ class Game {
         })
     }
 
+    gameReset() {
+        this.startBtn.html('게임시작')
+        clearInterval(this.timerInterval)
+        this.cardList = []
+        this.activeCard = []
+        for(let i=0; i<16; i++) {
+            this.cardGrid.append(`
+            <div class="event-card">
+            <div class="front">
+                <img src="/img/특산품/" alt="">
+                <div class="info">
+
+                </div>
+            </div>
+            <div class="back">
+                back
+            </div>
+        </div>
+            `)
+        }
+        this.timerText.html(TIMEDATA.START_COUNTDOWN + '초')
+        this.findCardCount = 0
+        this.UpdateFindCardCount(0)
+    }
+
     gameRandomImageList() {
         const imgList = this.imgs.sort((a,b)=> {
             return Math.random() - 0.5
@@ -68,8 +63,8 @@ class Game {
         this.form.formReset()
         this.gameReset()
         this.cardSet()
-        this.gameStarted = true
         await this.firstTimerSet()
+        this.gameStarted = true
         this.gameTimerSet()
     }
 
@@ -95,27 +90,26 @@ class Game {
 
     cardSet() {
         this.cardGrid.html('')
-        const randomImageList = this.gameRandomImageList()
-        for(let img of randomImageList) {
+        const imgList = this.gameRandomImageList()
+        for(let img of imgList) {
             for(let i=0; i<2; i++) {
-                const card = new Card(img, this.acitiveCard, this.UpdateFindCardCount)
+                const card = new Card(img, this.activeCard, this.UpdateFindCardCount)
                 card.select(TIMEDATA.START_COUNTDOWN + 0.5)
                 this.cardList.push(card)
             }
         }
-
         this.cardList = this.cardList.sort((a,b)=> Math.random()-0.5)
         for(let card of this.cardList) {
             this.cardGrid.append(card.dom)
         }
     }
 
-    UpdateFindCardCount = (count = 1)=> {
+    UpdateFindCardCount = (count=1) => {
         this.findCardCount += count
         if(this.findCardCount >= 8) {
             this.gameEnd()
         }
-        $('.finded-event-card').html(`찾은 카드 수 ${this.findCardCount}`)
+        $('.finded-event-card').html(`찾은 카드 수 : ${this.findCardCount}`)
     }
 
     firstTimerSet() {
@@ -124,16 +118,16 @@ class Game {
         return new Promise((res, rej)=> {
             const timerInterval = setInterval(()=> {
                 let gameTime = (new Date()).getTime() - this.timer.getTime()
-                let second = parseInt(gameTime / 1000)
-                if(countDown - second >= 0) {
-                    this.timerText.html(`${countDown - second}초`)
-                } else {
-                    this.startBtnActive = true
-                    this.startBtn.html('다시하기')
-                    clearInterval(timerInterval)
-                    res(true)
-                }
-            }, 100)
+            let second = parseInt(gameTime / 1000)
+            if(countDown - second >= 0) {
+                this.timerText.html(`${countDown - second}초`)
+            } else {
+                this.startBtnActive = true
+                this.startBtn.html('다시시작')
+                clearInterval(timerInterval)
+                res(true)
+            }
+            },100)
         })
     }
 
@@ -151,7 +145,9 @@ class Game {
                     this.gameEnd()
                 }
             }
-        })
+        },100)
     }
+
+
 
 }

@@ -109,7 +109,7 @@ header input {
 }
 
 .header-content1 a {
-    color: white;
+    color: #f4f4f4;
 }
 
 .header-content2 {
@@ -123,7 +123,7 @@ header input {
 .header-content2 > div > div {
     font-size: 20px;
     font-weight: bold;
-    color: white;
+    color: #f4f4f4;
 }
 
 .header-content2 img {
@@ -149,7 +149,7 @@ header input {
 #slogun-area {
     width: 250px;
     position: absolute;
-    z-index: 10;
+    z-index: 1;
     display: flex;
     margin-left: 130px;
     margin-top: 50px;
@@ -546,6 +546,55 @@ footer.sub {
 #goods {
     width: 50%;
     margin-top: 100px;
+}
+
+#map {
+    width: 600px;
+}
+
+#map-info {
+    width: 200px;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 5px 5px 5px #aaa;
+    border: 1px solid #f7f7f7;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left: 230px;
+}
+
+#map-info img {
+    height: 120px;
+    filter: brightness(.6);
+}
+
+.area-name {
+    position: absolute;
+    margin-top: -125px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(241, 240, 240);
+}
+
+.map-info-txt {
+    margin-top: 5px;
+}
+
+.map-info-txt > div:nth-child(1) {
+    margin-left: 15px;
+    color: var(--sub-color);
+}
+
+.map-info-txt hr {
+    border-color: var(--sub-color);
+    margin-top: 5px;
+    
+}
+
+.map-info-txt > div:nth-child(2) {
+
 }
 
 /* info */

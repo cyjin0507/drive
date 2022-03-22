@@ -5,7 +5,7 @@ class App {
         this.addEvent()
     }
 
-    init(){
+    init() {
         this.imageList = []
 
         // 모든 입력란을 불러옴
