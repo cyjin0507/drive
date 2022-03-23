@@ -1,3 +1,4 @@
+//  3분 53초
 class Star {
     constructor() {
         this.dom = $('.star-input')
@@ -8,8 +9,8 @@ class Star {
     }
 
     addEvent() {
-        this.stars.each((index, x)=> {
-            $(x).on('mousemove', ()=> {
+        this.stars.each((index, x) => {
+            $(x).on('mouseover', ()=> {
                 this.lastSelect = index
                 for(let i=0; i<=index; i++) {
                     $(this.stars[i]).html('★')
@@ -27,7 +28,7 @@ class Star {
     }
 
     val() {
-        return this.lastSelect
+        return this.lastSelect;
     }
 
 }

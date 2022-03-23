@@ -16,7 +16,7 @@ class Card {
         <div class="front">
         <img src="/img/특산품/${this.imgSrc}" alt="">
         <div class="info">
-${this.location}
+            ${this.location}
         </div>
     </div>
         `)
@@ -25,13 +25,13 @@ ${this.location}
                                 back
                             </div>
         `)
-        this.isActive = false
         this.isFixed = false
+        this.isActive = false
     }
 
     addEvent() {
         this.dom.click(()=> {
-            if(this.isActive || this.isFixed || this.activeCardList.length>=2 || window.isUnactiving) {
+            if(this.isActive || this.isFixed || this.activeCardList.length >= 2 || window.isUnactiving) {
                 return
             }
             this.activeCardList.push(this)
@@ -39,20 +39,20 @@ ${this.location}
                 card.timerReset()
             })
             this.select()
-            if(this.activeCardList.length >= 2) {
-                this.cardCkeck()
+            if(this.activeCardList.length >=2) {
+                this.cardCheck()
             }
         })
     }
 
-    cardCkeck() {
+    cardCheck() {
         if(this.activeCardList[0].imgSrc === this.activeCardList[1].imgSrc) {
             this.activeCardList.forEach(card=> {
                 card.fix()
             })
             this.findCardCountUpdate()
             const timer = setTimeout(()=> {
-                this.activeCardList.splice(0,1000000)
+                this.activeCardList.splice(0,10000000)
             }, TIMEDATA.CARD_ROTATE_TIME * 1000)
             this.timerList.push(timer)
         } else {
@@ -66,7 +66,7 @@ ${this.location}
     }
 
     timerReset() {
-        while(this.timerList.length != 0 ) {
+        while(this.timerList.length != 0) {
             clearTimeout(this.timerList[0])
             this.timerList.splice(0,1)
         }
@@ -84,7 +84,7 @@ ${this.location}
         this.dom.removeClass('active')
         window.isUnactiving = true
         const timer = setTimeout(()=> {
-            this.activeCardList.splice(0,100000)
+            this.activeCardList.splice(0,1000000)
             window.isUnactiving = false
         }, TIMEDATA.CARD_ROTATE_TIME * 1000)
         this.timerList.push(timer)
@@ -94,7 +94,7 @@ ${this.location}
         this.active()
         const timer = setTimeout(()=> {
             this.unactive()
-        }, time*1000)
+        }, time * 1000)
         this.timerList.push(timer)
     }
 

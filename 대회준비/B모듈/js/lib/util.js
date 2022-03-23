@@ -1,5 +1,5 @@
 function removeNotNumber(number) {
-    return number.toString().replace(/^[0-9]/g, '')
+    return number.toString().replace(/[^0-9]/g, '')
 }
 
 function numberFormet(number) {
@@ -8,7 +8,7 @@ function numberFormet(number) {
 }
 
 function removeNotKOROrEN(str) {
-    return str.replace(/[^ㅏ-ㅣㄱ-ㅎ가-힣a-zA-z]/g, '')
+    return str.replace(/[^ㅏ-ㅣㄱ-ㅎ가-힣a-zA-Z]/g, '')
 }
 
 function phoneNumberFormet(number) {
@@ -20,7 +20,7 @@ function phoneNumberFormet(number) {
     } else {
         number = number.replace(/(\d{0,3})/, '$1')
     }
-    number.substr(0,13)
+    number = number.substr(0,13)
     return number
 }
 
@@ -49,7 +49,11 @@ async function getImage(file) {
             res(img)
         }
         img.onerror = () => {
-            rej(false)
+            res(false)
         }
     })
+}
+
+Date.prototype.myDateFormat = function(){
+    return this.getFullYear().padStart() + '-' + (this.getMonth()+1).padStart() + '-' + this.getDate().padStart();
 }

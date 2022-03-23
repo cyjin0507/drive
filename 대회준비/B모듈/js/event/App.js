@@ -1,14 +1,10 @@
 class App {
-    constructor(){
-        this.init()
-    }
-
-    init(){
+    constructor() {
         this.form = new Form()
         this.game = new Game(this.form)
     }
 }
 
-window.addEventListener('load', ()=>{
-    window.app = new App()
-})
+window.onload = () => {
+    new App()
+}

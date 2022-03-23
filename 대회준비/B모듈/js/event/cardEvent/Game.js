@@ -63,8 +63,8 @@ class Game {
         this.form.formReset()
         this.gameReset()
         this.cardSet()
-        await this.firstTimerSet()
         this.gameStarted = true
+        await this.firstTimerSet()
         this.gameTimerSet()
     }
 
@@ -98,13 +98,13 @@ class Game {
                 this.cardList.push(card)
             }
         }
-        this.cardList = this.cardList.sort((a,b)=> Math.random()-0.5)
+        this.cardList = this.cardList.sort((a,b)=> Math.random() - 0.5)
         for(let card of this.cardList) {
             this.cardGrid.append(card.dom)
         }
     }
 
-    UpdateFindCardCount = (count=1) => {
+    UpdateFindCardCount = (count=1)=> {
         this.findCardCount += count
         if(this.findCardCount >= 8) {
             this.gameEnd()
@@ -118,16 +118,16 @@ class Game {
         return new Promise((res, rej)=> {
             const timerInterval = setInterval(()=> {
                 let gameTime = (new Date()).getTime() - this.timer.getTime()
-            let second = parseInt(gameTime / 1000)
-            if(countDown - second >= 0) {
-                this.timerText.html(`${countDown - second}초`)
-            } else {
-                this.startBtnActive = true
-                this.startBtn.html('다시시작')
-                clearInterval(timerInterval)
-                res(true)
-            }
-            },100)
+                let second = parseInt(gameTime / 1000)
+                if(countDown - second >= 0) {
+                    this.timerText.html(`${countDown - second}초`)
+                } else {
+                    this.startBtnActive = true
+                    this.startBtn.html('다시하기')
+                    clearInterval(timerInterval)
+                    res(true)
+                }
+            }, 100)
         })
     }
 
@@ -147,7 +147,5 @@ class Game {
             }
         },100)
     }
-
-
 
 }

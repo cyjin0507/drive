@@ -1,3 +1,3 @@
-- Game.js, Form.js, Card.js -
-1. 39분 11초
-2. 35분 (오류 많이 남)
+-카드 이벤트 영역 : ( Game.js, Form.js, Card.js, App.js, util.js, 오류 ) -
+1. 52분 22초
+2. 53분 10초

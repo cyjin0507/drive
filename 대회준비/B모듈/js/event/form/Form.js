@@ -9,22 +9,20 @@ class Form {
     }
 
     addEvent() {
-        this.phone.on('input', (e)=> {
-            e.target.value = phoneNumberFormet(e.target.value)
-        })
         this.name.on('input', (e)=> {
             e.target.value = removeNotKOROrEN(e.target.value)
         })
-        console.log(this.submitBtn);
+        this.phone.on('input', (e)=> {
+            e.target.value = phoneNumberFormet(e.target.value)
+        })
         this.submitBtn.click(()=> {
-            console.log("Test");
             this.checkValue()
         })
     }
 
     formOpen(findCardCount, gameReset) {
         this.gameReset = gameReset
-        this.dom.css('display', 'inline-block')
+        this.dom.css('display', 'inline')
         this.dom.find('.find-card-count').html(findCardCount)
     }
 
@@ -35,27 +33,30 @@ class Form {
         this.dom.find('.find-card-count').html('0')
     }
 
-    async checkValue() {
+    async checkValue(){
         if(this.isCheckRunnig) {
             return
         }
         this.isCheckRunnig = true
         const phoneNumber = this.phone.val().replaceAll('-','')
-        if(phoneNumber.length != 11 || !/^[0-9]*$/.test(phoneNumber)) {
+        if(phoneNumber.length != 11 || !/^[0-9]/.test(phoneNumber)) {
             alert('전화번호 오류')
-            this.this.isCheckRunnig = false
-            return
+            this.isCheckRunnig = false
+            return false
         }
-        if(this.name.val().length < 2 || this.name.val().length > 50 || !/^[ㅏ-ㅣㄱ-ㅎ가-힣a-zA-Z]*$/.test(this.name.val())) {
+        const name = this.name.val()
+        if(name.length < 2 || name.length > 50 || !/^[ㅏ-ㅣㄱ-ㅎ가-힣a-zA-Z]/.test(name)) {
             alert('이름 오류')
-            this.this.isCheckRunnig = false
-            return            
+            this.isCheckRunnig = false
+            return false
         }
+
         alert('이벤트에 참여해 주셔서 감사합니다.')
-        await this.printStamp()
-        this.gameReset()
+        this.gameReset
         this.formReset()
-        this.this.isCheckRunnig = false
+        await this.printStamp()
+        this.isCheckRunnig = false
+        return true
     }
 
     printStamp() {
@@ -63,16 +64,16 @@ class Form {
             if($(x).find('svg').length == 0) {
                 $(x).html(`
                 <svg>
-    <text x="10" y="55">test</text>
-    <text x="10" y="90">${new Date().myDateFormat()}</text>
-</svg>
+                    <text x="10" y="55">test</text>
+                    <text x="10" y="90">${new Date().myDateFormat()}</text>
+                </svg>
                 `)
                 return true
             }
             return false
         })
         if(!isPrint) {
-            alert("이미 3번 찍음")
+            alert('이밎 3번 다 찍음')
         }
     }
 
