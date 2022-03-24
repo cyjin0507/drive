@@ -8,15 +8,18 @@
     <title>구매 후기</title>
 </head>
 <body>
+    <div id="review-write">
+        후기작성
+    </div>
     <header>
         <input type="radio" name="tab" id="open1">
         <input type="radio" name="tab" id="close1" checked>
         <input type="radio" name="tab" id="open2">
         <input type="radio" name="tab" id="close2">
         <div class="menu-tab" id="tab1">
-            <label for="close1">X</label>
+            <label for="close1"><div>X</div></label>
             <div class="header-content1">
-                <div><a href="">메인페이지</a></div>
+                <div><a href="" class="highlight">메인페이지</a></div>
                 <div><a href="">특산품 안내</a></div>
                 <div><a href="">이벤트</a></div>
                 <div><a href="">구매후기</a></div>
@@ -24,7 +27,7 @@
         </div>
 
         <div class="menu-tab" id="tab2">
-            <label for="close1">X</label>
+            <label for="close1"><div>X</div></label>
             <div class="header-content2">
                 <div>
                     <img src="/resources/images/makeImg/소셜1.png" alt="">
@@ -32,157 +35,136 @@
                 </div>
                 <div>
                     <img src="/resources/images/makeImg/소셜2.png" alt="">
-                    <div>인스타그램</div>
+                    <div>페이스북</div>
                 </div>
                 <div>
                     <img src="/resources/images/makeImg/소셜3.png" alt="">
-                    <div>인스타그램</div>
+                    <div>유튜브</div>
                 </div>
                 <div>
                     <img src="/resources/images/makeImg/소셜4.png" alt="">
-                    <div>인스타그램</div>
+                    <div>트위터</div>
                 </div>
             </div>
         </div>
         <div id="tab-area">
-            <label for="open1"><img src="/resources/images/makeImg/menubar.svg" alt=""></label>
-            <label for="open2"><img src="/resources/images/makeImg/sharebar.svg" alt=""></label>
+            <label for="open1"><img src="/resources/images/makeImg/menubar.svg" alt="" style="background-color: #aaa;"></label>
+            <label for="open2"><img src="/resources/images/makeImg/sharebar.svg" alt="" style="background-color: #aaa;"></label>
         </div>
-
 
     </header>
+    <div id="slogun-area" style="position: relative;"><img src="/resources/images/makeImg/슬로건1-black.svg" alt="" class="slogun"></div>
 
 
-    <div id="review-write">
-        후기작성
-    </div>
 
-    <section id="informationImg">
-        <img src="/resources/images/makeImg/안내이미지2.png" alt="">
+    <section id="review">
+        <section id="informationImg">
+            <img src="/resources/images/makeImg/안내이미지.jpg" alt="">
+        </section>
+
+        <section id="reviews">
+            <div class="title">
+                <div>구매 후기 목록</div>
+                <div>경상남도 <span>특산품을 구매</span>한 사람들의 후기를 알아보세요.</div>
+            </div>
+
+            <section id="review-area">
+                <div class="review-content">
+                    <img src="/resources/images/특산품/거제시_유자.jpg" alt="">
+                    <div class="review-txt">
+                        <div>구매품<span>(구매처)</span></div>
+                        <div>홍길동 | <span>★★★★★</span></div>
+                        <div>Lorem ipsum, dolor sit amet <br> cote adipisicing elit.</div>
+                        <div>2022-03-24</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <img src="/resources/images/특산품/거창군_사과.jpg" alt="">
+                    <div class="review-txt">
+                        <div>구매품<span>(구매처)</span></div>
+                        <div>홍길동 | <span>★★★★★</span></div>
+                        <div>Lorem ipsum, dolor sit amet <br> cote adipisicing elit.</div>
+                        <div>2022-03-24</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <img src="/resources/images/특산품/함양군_밤.jpg" alt="">
+                    <div class="review-txt">
+                        <div>구매품<span>(구매처)</span></div>
+                        <div>홍길동 | <span>★★★★★</span></div>
+                        <div>Lorem ipsum, dolor sit amet <br> cote adipisicing elit.</div>
+                        <div>2022-03-24</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <img src="/resources/images/특산품/고성군_방울토마토.jpg" alt="">
+                    <div class="review-txt">
+                        <div>구매품<span>(구매처)</span></div>
+                        <div>홍길동 | <span>★★★★★</span></div>
+                        <div>Lorem ipsum, dolor sit amet <br> cote adipisicing elit.</div>
+                        <div>2022-03-24</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <img src="/resources/images/특산품/김해시_단감.jpg" alt="">
+                    <div class="review-txt">
+                        <div>구매품<span>(구매처)</span></div>
+                        <div>홍길동 | <span>★★★★★</span></div>
+                        <div>Lorem ipsum, dolor sit amet <br> cote adipisicing elit.</div>
+                        <div>2022-03-24</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <img src="/resources/images/특산품/남해군_마늘.jpg" alt="">
+                    <div class="review-txt">
+                        <div>구매품<span>(구매처)</span></div>
+                        <div>홍길동 | <span>★★★★★</span></div>
+                        <div>Lorem ipsum, dolor sit amet <br> cote adipisicing elit.</div>
+                        <div>2022-03-24</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <img src="/resources/images/특산품/밀양시_대추.jpg" alt="">
+                    <div class="review-txt">
+                        <div>구매품<span>(구매처)</span></div>
+                        <div>홍길동 | <span>★★★★★</span></div>
+                        <div>Lorem ipsum, dolor sit amet <br> cote adipisicing elit.</div>
+                        <div>2022-03-24</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <img src="/resources/images/특산품/사천시_멸치.jpg" alt="">
+                    <div class="review-txt">
+                        <div>구매품<span>(구매처)</span></div>
+                        <div>홍길동 | <span>★★★★★</span></div>
+                        <div>Lorem ipsum, dolor sit amet <br> cote adipisicing elit.</div>
+                        <div>2022-03-24</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <img src="/resources/images/특산품/합천군_돼지고기.jpg" alt="">
+                    <div class="review-txt">
+                        <div>구매품<span>(구매처)</span></div>
+                        <div>홍길동 | <span>★★★★★</span></div>
+                        <div>Lorem ipsum, dolor sit amet <br> cote adipisicing elit.</div>
+                        <div>2022-03-24</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <img src="/resources/images/특산품/산청군_약초.jpg" alt="">
+                    <div class="review-txt">
+                        <div>구매품<span>(구매처)</span></div>
+                        <div>홍길동 | <span>★★★★★</span></div>
+                        <div>Lorem ipsum, dolor sit amet <br> cote adipisicing elit.</div>
+                        <div>2022-03-24</div>
+                    </div>
+                </div>
+            </section>
+    
+        </section>
     </section>
 
-    <section id="reviews">
-        <div class="title">
-            <div>구매 후기 목록</div>
-            <div>경상남도 <span>특산품을 구매</span>한 사람들의 후기를 알아보세요.</div>
-        </div>
-
-        <div id="review-area">
-            <div class="review">
-                <!-- <img src="/resources/images/특산품/김해시_단감.jpg" alt=""> -->
-                <div class="sub-info"><span>이름 : </span>홍길동</div>
-                <div class="sub-info"><span>별점 : </span><span class="gold">★★★★★</div>
-                <div class="sub-info"><span>구매품 : </span>단감</div>
-                <div class="sub-info"><span>구매처 : </span>김해시</div>
-                <div class="sub-info"><span>구매일 : </span>2022-03-19</div>
-                <div class="main-info">
-                    Lorem ipsum dolor sit amet consectetur, adipisici...
-                </div>
-            </div>
-            <div class="review">
-                <!-- <img src="/resources/images/특산품/거제시_유자.jpg" alt=""> -->
-                <div class="sub-info"><span>이름 : </span>홍길동</div>
-                <div class="sub-info"><span>별점 : </span><span class="gold">★★★★★</span></div>
-                <div class="sub-info"><span>구매품 : </span>단감</div>
-                <div class="sub-info"><span>구매처 : </span>김해시</div>
-                <div class="sub-info"><span>구매일 : </span>2022-03-19</div>
-                <div class="main-info">
-                    Lorem ipsum dolor sit amet consectetur, adipisici...
-                </div>
-            </div>
-            <div class="review">
-                <!-- <img src="/resources/images/특산품/거창군_사과.jpg" alt=""> -->
-                <div class="sub-info"><span>이름 : </span>홍길동</div>
-                <div class="sub-info"><span>별점 : </span><span class="gold">★★★★★</span></div>
-                <div class="sub-info"><span>구매품 : </span>단감</div>
-                <div class="sub-info"><span>구매처 : </span>김해시</div>
-                <div class="sub-info"><span>구매일 : </span>2022-03-19</div>
-                <div class="main-info">
-                    Lorem ipsum dolor sit amet consectetur, adipisici...
-                </div>
-            </div>
-            <div class="review">
-                <!-- <img src="/resources/images/특산품/고성군_방울토마토.jpg" alt=""> -->
-                <div class="sub-info"><span>이름 : </span>홍길동</div>
-                <div class="sub-info"><span>별점 : </span><span class="gold">★★★★★</span></div>
-                <div class="sub-info"><span>구매품 : </span>단감</div>
-                <div class="sub-info"><span>구매처 : </span>김해시</div>
-                <div class="sub-info"><span>구매일 : </span>2022-03-19</div>
-                <div class="main-info">
-                    Lorem ipsum dolor sit amet consectetur, adipisici...
-                </div>
-            </div>
-            <div class="review">
-                <!-- <img src="/resources/images/특산품/김해시_단감.jpg" alt=""> -->
-                <div class="sub-info"><span>이름 : </span>홍길동</div>
-                <div class="sub-info"><span>별점 : </span><span class="gold">★★★★★</span></div>
-                <div class="sub-info"><span>구매품 : </span>단감</div>
-                <div class="sub-info"><span>구매처 : </span>김해시</div>
-                <div class="sub-info"><span>구매일 : </span>2022-03-19</div>
-                <div class="main-info">
-                    Lorem ipsum dolor sit amet consectetur, adipisici...
-                </div>
-            </div>
-            <div class="review">
-                <!-- <img src="/resources/images/특산품/남해군_마늘.jpg" alt=""> -->
-                <div class="sub-info"><span>이름 : </span>홍길동</div>
-                <div class="sub-info"><span>별점 : </span><span class="gold">★★★★★</span></div>
-                <div class="sub-info"><span>구매품 : </span>단감</div>
-                <div class="sub-info"><span>구매처 : </span>김해시</div>
-                <div class="sub-info"><span>구매일 : </span>2022-03-19</div>
-                <div class="main-info">
-                    Lorem ipsum dolor sit amet consectetur, adipisici...
-                </div>
-            </div>
-            <div class="review">
-                <!-- <img src="/resources/images/특산품/밀양시_대추.jpg" alt=""> -->
-                <div class="sub-info"><span>이름 : </span>홍길동</div>
-                <div class="sub-info"><span>별점 : </span><span class="gold">★★★★★</span></div>
-                <div class="sub-info"><span>구매품 : </span>단감</div>
-                <div class="sub-info"><span>구매처 : </span>김해시</div>
-                <div class="sub-info"><span>구매일 : </span>2022-03-19</div>
-                <div class="main-info">
-                    Lorem ipsum dolor sit amet consectetur, adipisici...
-                </div>
-            </div>
-            <div class="review">
-                <!-- <img src="/resources/images/특산품/사천시_멸치.jpg" alt=""> -->
-                <div class="sub-info"><span>이름 : </span>홍길동</div>
-                <div class="sub-info"><span>별점 : </span><span class="gold">★★★★★</span></div>
-                <div class="sub-info"><span>구매품 : </span>단감</div>
-                <div class="sub-info"><span>구매처 : </span>김해시</div>
-                <div class="sub-info"><span>구매일 : </span>2022-03-19</div>
-                <div class="main-info">
-                    Lorem ipsum dolor sit amet consectetur, adipisici...
-                </div>
-            </div>
-            <div class="review">
-                <!-- <img src="/resources/images/특산품/산청군_약초.jpg" alt=""> -->
-                <div class="sub-info"><span>이름 : </span>홍길동</div>
-                <div class="sub-info"><span>별점 : </span><span class="gold">★★★★★</span></div>
-                <div class="sub-info"><span>구매품 : </span>단감</div>
-                <div class="sub-info"><span>구매처 : </span>김해시</div>
-                <div class="sub-info"><span>구매일 : </span>2022-03-19</div>
-                <div class="main-info">
-                    Lorem ipsum dolor sit amet consectetur, adipisici...
-                </div>
-            </div>
-            <div class="review">
-                <!-- <img src="/resources/images/특산품/진주시_고추.jpg" alt=""> -->
-                <div class="sub-info"><span>이름 : </span>홍길동</div>
-                <div class="sub-info"><span>별점 : </span><span class="gold">★★★★★</span></div>
-                <div class="sub-info"><span>구매품 : </span>단감</div>
-                <div class="sub-info"><span>구매처 : </span>김해시</div>
-                <div class="sub-info"><span>구매일 : </span>2022-03-19</div>
-                <div class="main-info">
-                    Lorem ipsum dolor sit amet consectetur, adipisici...
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <footer class="sub">
+    <footer class="sub" style="padding-bottom: 70px;">
         Copyright (C) Gyeongsangbuk-do. All Rights Reserved
     </footer>
 

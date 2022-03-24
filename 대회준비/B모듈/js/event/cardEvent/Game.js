@@ -34,29 +34,21 @@ class Game {
         for(let i=0; i<16; i++) {
             this.cardGrid.append(`
             <div class="event-card">
-            <div class="front">
-                <img src="/img/특산품/" alt="">
-                <div class="info">
+                            <div class="front">
+                                <img src="/img/특산품/" alt="">
+                                <div class="info">
 
-                </div>
-            </div>
-            <div class="back">
-                back
-            </div>
-        </div>
+                                </div>
+                            </div>
+                            <div class="back">
+                                back
+                            </div>
+                        </div>
             `)
         }
         this.timerText.html(TIMEDATA.START_COUNTDOWN + '초')
         this.findCardCount = 0
         this.UpdateFindCardCount(0)
-    }
-
-    gameRandomImageList() {
-        const imgList = this.imgs.sort((a,b)=> {
-            return Math.random() - 0.5
-        })
-        imgList.splice(8,10000)
-        return imgList
     }
 
     async gameStart() {
@@ -70,8 +62,8 @@ class Game {
 
     gameEnd() {
         this.form.formOpen(this.findCardCount, this.gameReset)
-        this.gameStarted = false
         clearInterval(this.timerInterval)
+        this.gameStarted = false
         this.cardList.forEach(card=> {
             if(!card.isFixed) {
                 card.dom.addClass('unfind')
@@ -88,6 +80,14 @@ class Game {
         })
     }
 
+    gameRandomImageList() {
+        const imgList = this.imgs.sort((a,b)=> {
+            return Math.random() - 0.5
+        })
+        imgList.splice(8,100000)
+        return imgList
+    }
+
     cardSet() {
         this.cardGrid.html('')
         const imgList = this.gameRandomImageList()
@@ -98,13 +98,13 @@ class Game {
                 this.cardList.push(card)
             }
         }
-        this.cardList = this.cardList.sort((a,b)=> Math.random() - 0.5)
+        this.cardList = this.cardList.sort((a,b)=> Math.random()-0.5)
         for(let card of this.cardList) {
             this.cardGrid.append(card.dom)
         }
     }
 
-    UpdateFindCardCount = (count=1)=> {
+    UpdateFindCardCount=(count=1)=> {
         this.findCardCount += count
         if(this.findCardCount >= 8) {
             this.gameEnd()
@@ -123,11 +123,11 @@ class Game {
                     this.timerText.html(`${countDown - second}초`)
                 } else {
                     this.startBtnActive = true
-                    this.startBtn.html('다시하기')
-                    clearInterval(timerInterval)
+                    this.startBtn.html('다시시작')
+                    clearInterval(this.timerInterval)
                     res(true)
                 }
-            }, 100)
+            },100)
         })
     }
 
@@ -137,7 +137,7 @@ class Game {
             let gameTime = (new Date()).getTime() - this.timer.getTime()
             let second = TIMEDATA.GAME_PLAY_TIME - parseInt(gameTime/1000)
             if(second > 59) {
-                let minute = parseInt(second / 60)
+                let minute = parseInt(second/60)
                 this.timerText.html(`${padstart(minute)}분 ${padstart(second%60)}초`)
             } else {
                 this.timerText.html(`${padstart(second%60)}초`)

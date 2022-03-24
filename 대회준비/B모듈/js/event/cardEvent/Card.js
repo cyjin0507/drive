@@ -14,11 +14,11 @@ class Card {
     init() {
         this.dom.append(`
         <div class="front">
-        <img src="/img/특산품/${this.imgSrc}" alt="">
-        <div class="info">
-            ${this.location}
-        </div>
-    </div>
+                                <img src="/img/특산품/${this.imgSrc}" alt="">
+                                <div class="info">
+${this.location}
+                                </div>
+                            </div>
         `)
         this.dom.append(`
         <div class="back">
@@ -39,7 +39,7 @@ class Card {
                 card.timerReset()
             })
             this.select()
-            if(this.activeCardList.length >=2) {
+            if(this.activeCardList.length >= 2) {
                 this.cardCheck()
             }
         })
@@ -52,7 +52,7 @@ class Card {
             })
             this.findCardCountUpdate()
             const timer = setTimeout(()=> {
-                this.activeCardList.splice(0,10000000)
+                this.activeCardList.splice(0,1000000)
             }, TIMEDATA.CARD_ROTATE_TIME * 1000)
             this.timerList.push(timer)
         } else {
@@ -84,7 +84,7 @@ class Card {
         this.dom.removeClass('active')
         window.isUnactiving = true
         const timer = setTimeout(()=> {
-            this.activeCardList.splice(0,1000000)
+            this.activeCardList.splice(0,100000)
             window.isUnactiving = false
         }, TIMEDATA.CARD_ROTATE_TIME * 1000)
         this.timerList.push(timer)
@@ -104,5 +104,5 @@ class Card {
         this.active()
         this.dom.find('.info').addClass('active')
     }
-
+    
 }
