@@ -1,4 +1,5 @@
--카드 이벤트 영역 : ( Game.js, Form.js, Card.js, App.js, util.js, 오류 ) -
+-카드 이벤트 영역 : ( Game.js, Form.js, Card.js, App.js, util.js, 오류수정 ) -
 1. 52분 22초
 2. 53분 10초
 3. 42분 47초
+4. 41분 33초

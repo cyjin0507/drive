@@ -52,7 +52,7 @@ ${this.location}
             })
             this.findCardCountUpdate()
             const timer = setTimeout(()=> {
-                this.activeCardList.splice(0,1000000)
+                this.activeCardList.splice(0,10000000)
             }, TIMEDATA.CARD_ROTATE_TIME * 1000)
             this.timerList.push(timer)
         } else {
@@ -84,7 +84,7 @@ ${this.location}
         this.dom.removeClass('active')
         window.isUnactiving = true
         const timer = setTimeout(()=> {
-            this.activeCardList.splice(0,100000)
+            this.activeCardList.splice(0,10000000000)
             window.isUnactiving = false
         }, TIMEDATA.CARD_ROTATE_TIME * 1000)
         this.timerList.push(timer)
@@ -104,5 +104,5 @@ ${this.location}
         this.active()
         this.dom.find('.info').addClass('active')
     }
-    
+
 }
