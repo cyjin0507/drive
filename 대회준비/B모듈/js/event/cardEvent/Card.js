@@ -14,16 +14,16 @@ class Card {
     init() {
         this.dom.append(`
         <div class="front">
-                                <img src="/img/특산품/${this.imgSrc}" alt="">
-                                <div class="info">
-${this.location}
-                                </div>
+                            <img src="/resources/images/특산품/${this.imgSrc}" class="card-img" alt="">
+                            <div class="info">
+                                ${this.location}
                             </div>
+                        </div>
         `)
         this.dom.append(`
         <div class="back">
-                                back
-                            </div>
+                            back
+                        </div>
         `)
         this.isFixed = false
         this.isActive = false

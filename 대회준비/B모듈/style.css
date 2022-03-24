@@ -1,217 +1,345 @@
-
-
-
-/* 기본 설정 */
-
-*{
-    object-fit: cover;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    object-position: center;
-    background-position: center;
-}
-
-body{
-    min-height: 100vh;
-    padding-bottom: 200px;
-    position: relative;
-}
-
-p, h1, h2, h3, h4, h5 {
-    margin: 0;
-}
-
-.d-flex {
-    display: flex;
-}
-
-.w-50{
-    width: 50%;
-}
-
-.w-100 {
+* {
     width: 100%;
+    margin: 0 auto;
+    padding: auto;
 }
 
-.h-100 {
-    height: 100%;
+footer {
+    margin-top: 60px;
+    text-align: center;
+    line-height: 2;
+    padding-bottom: 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
 }
 
-.ms-3{
-    margin-left: 20px;
+:root {
+    --sub-color : #276fff;
 }
 
-.row{
-    padding: 15px;
-    display: flex;
+.title > div:nth-child(1) {
+    font-size: 18px;
+    font-weight: bold;
 }
 
-.p-3{
-    padding: 15px;
+.title > div:nth-child(2) {
+    font-size: 19px;
+    margin-top: 5px;
+}
+
+.title > div:nth-child(2) span {
+    color: var(--sub-color);
+    font-weight: bold;
 }
 
 a {
     text-decoration: none;
-    color: black;
 }
 
-a:hover {
-    color: black;
+img {
+    object-fit: cover;
 }
 
-h5 {
-    font-size: 16px;
-    font-weight: normal;
+/*  */
+#slogun {
+    width: 230px;
+    margin-left: 130px;
+    margin-top: 40px;
+    position: absolute;
+    z-index: 1;
 }
 
-h4 {
-    /* 사용 */
-    font-size: 19px;
+.go-menu {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
 }
 
-h3 {
-    font-size: 22px;
+.go-menu:nth-child(1) {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ),url('/resources/images/sizeDown/photo\ \(16\)2.jpg');
 }
 
-h2 {
-    font-size: 25px;
+.go-menu:nth-child(2) {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ),url('/resources/images/sizeDown/photo\ \(1\).jpg');
 }
 
-h1 {
-    /* 사용 */
-    font-size: 32px;
+.go-menu:nth-child(3) {
+    background-position: right;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ),url('/resources/images/sizeDown/photo\ \(22\).jpg');
 }
 
-p {
-    /* 사용 */
-    font-size: 14px;
+.menu-info {
+    width: 60%;
+    margin-top: 40vh;
+    background-color: #ededed;
+    padding-bottom: 20px;
+    overflow: hidden;
+    border-radius: 15px;
 }
 
-.container {
-    margin: auto;
-    width: 1200px;
+.menu-name {
+    font-size: 30px;
+    font-weight: bold;
 }
 
-section:not(#visual){
-    padding: 70px 0;
-}
-
-.title h5{
-    color: #0d6efd;
-}
-
-.bg {
-    background-color: rgb(252, 252, 252)
-}
-
-.button1 {
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #0d6efd;
-    color: white;
-    transition: 0.2s;
-}
-
-.button1:hover{
-    background-color: #6b98db;
-    color: white;
-}
-
-a, label {
-    cursor: pointer;
-}
-
-textarea{
-    width: 100%;
-}
-
-/* 기본 설정 끝 */
-
-
-
-/* 팝업 */
-
-.popup {
-    visibility: hidden;
-    opacity: 0;
-    transition: all .2s ease-in-out;
-
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 124312039124;
-
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-
+.tag {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
-.popup:target {
-    visibility: visible;
-    opacity: 1;
-}
-
-.popup>div{
-    position: relative;
-    height: 900px;
-    background-color: white;
-    border-radius: 20px;
-    padding: 30px;
-}
-
-.popup .title{
-    height: 100px;
-    display: flex;
-    align-items: center;
-}
-
-.popup .footer {
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
+.tag > div {
+    display: grid;
+    text-align: center;
+    font-size: 17px;
     gap: 10px;
 }
 
-.popup .body{
-    height: calc(100% - 100px - 80px);
-    position: relative;
-    flex-direction: column;
-}
-
-/* 팝업 종료 */
-
-
-/* 폼 설정 시작 */
-.form-group{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 10px 0;
-}
-
-.form-group>p{
-    width: 100px;
-}
-
-.form-control{
-    width: calc(100% - 60px);
-    border: 1px solid gray;
-    border-radius: 5px;
-    padding: 15px;
-}
-
-.button {
-    display: inline-block;
-    border: 1px solid gray;
-    background-color: white;
-    padding: 15px 30px;
+.tag > div > div {
+    background-color: #f9f9f9;
+    line-height: 2;
+    border: #ddd;
     border-radius: 10px;
 }
 
-/* 폼 설정 종료 */
+.tag > div:nth-child(1) {
+    grid-template-columns: 1fr 1.5fr 1fr;
+}
+
+.tag > div:nth-child(2) {
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+}
+
+/* sub1 */
+
+#event-img {
+    /* width: 10%; */
+    height: 100%;
+}
+/* js */
+.event-card-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.event-card {
+    position: relative;
+    border: 1px solid black;
+    height: 130px;
+    transform-style: preserve-3d;
+}
+
+.card-img {
+    height: 100%;
+    position: relative;
+}
+
+.event-card-grid>.event-card>* {
+    backface-visibility: hidden;
+    transition: 0.5s;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.front {
+    transform: rotateY(180deg);
+    background-color: rgb(140, 152, 163);
+}
+
+.back {
+    transform: rotateY(0deg);
+}
+
+.info {
+    position: absolute;
+    top: 50%;
+}
+
+.info.active {
+    display: flex;
+}
+
+.event-card.unfind .info {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.event-card.active .front {
+    transform: rotateY(0deg);
+}
+
+.event-card.active .back {
+    transform: rotateY(-180deg);
+}
+
+/* js */
+
+.game-control > .col-12 {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.game-control > .col-12 > span {
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.game-control > div:not(.col-12) {
+    display: flex;
+    width: 240px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.game-control > div > div {
+    width: 110px;
+    line-height: 2.3;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.btn1 {
+    background-color: var(--sub-color);
+    color: white;
+}
+
+.btn2 {
+    border: 1px solid var(--sub-color);
+    color: var(--sub-color);
+}
+
+.stamp {
+    margin-top: 70px;
+    padding-left: 13px;
+}
+
+.stamp-area {
+    padding-left: 17px;
+    margin-top: 15px;
+}
+
+.stamp-area > .col {
+    border: 1px solid #aaa;
+    margin-right: -1px;
+    width: 100px;
+    height: 140px;
+}
+
+.stamp-area > .col img {
+    margin-top: 15px;
+}
+
+/* sub3 */
+#review-img {
+ height: 100%;   
+}
+
+.review-area {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    height: 550px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.review-area > div {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 5px 5px 5px rgb(224, 224, 224);
+    height: 200px;
+}
+
+.review-area > div > img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.review-txt {
+    padding-left: 30px;
+}
+
+.review-txt > div:nth-child(1) {
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.review-txt > div:nth-child(1) span {
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.review-txt > div:nth-child(2) {
+    font-size: 15px;
+    margin-top: 5px;
+    color: rgb(68, 68, 68);
+}
+
+.review-txt > div:nth-child(2) span {
+    font-size: 20px;
+    color: goldenrod;
+}
+
+.review-txt > div:nth-child(3) {
+    width: 95%;
+    margin-left: 0;
+    margin-top: 6px;
+    font-size: 16px;
+    color: rgb(0, 0, 190);
+}
+
+.review-txt > div:nth-child(4) {
+    margin-top: 6px;
+    font-size: 15px;
+    color: rgb(109, 109, 109);
+}
+
+#review-write {
+    position: fixed;
+    margin-top: 95.4vh;
+    z-index: 100;
+}
+
+#review-btn {
+    line-height: 2.3;
+    width: 130px;
+    height: 100px;
+    background-color: var(--sub-color);
+    margin-right: 30px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px 10px 0px 0px;
+    font-weight: bold;
+    color: white;
+    transition: all .5s;
+}
+
+#review-btn:hover {
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+/* sub2 */
+#map-img {
+    height: 94%;
+}
+
+#map {
+    width: 60%;
+}

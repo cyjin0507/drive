@@ -4,8 +4,8 @@ class Game {
         this.imgs = SPECIALTY
         this.cradGrid = $('.event-card-grid')
         this.timerText = $('.timer span')
-        this.startBtn = $('.game-start')
-        this.hintBtn = $('.hint')
+        this.startBtn = $('.btn1')
+        this.hintBtn = $('.btn2')
         this.startBtnActive = true
         this.gameStarted = false
         this.addEvent()
@@ -34,16 +34,16 @@ class Game {
         for(let i=0; i<16; i++) {
             this.cradGrid.append(`
             <div class="event-card">
-                            <div class="front">
-                                <img src="/img/특산품/" alt="">
-                                <div class="info">
-
-                                </div>
-                            </div>
-                            <div class="back">
-                                back
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
                             </div>
                         </div>
+                        <div class="back">
+                            back
+                        </div>
+                    </div>
             `)
         }
         this.timerText.html(TIMEDATA.START_COUNTDOWN + '초')
