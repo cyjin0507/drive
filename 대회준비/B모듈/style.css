@@ -174,7 +174,7 @@ img {
 }
 
 .event-card.active .back {
-    transform: rotateY(-180deg);
+    transform: rotateY(180deg);
 }
 
 .info {
@@ -188,13 +188,13 @@ img {
     align-items: center;
     font-size: 20px;
 }
-/* */
-/* .event-card.active .info {
-    display: flex;
-} */
 
-.event-card .info.active {
+.info.active {
     display: flex;
+}
+
+.event-card.unfind .info {
+    background-color: rgba(255, 0, 0, 0.521);
 }
 
 /* js */
