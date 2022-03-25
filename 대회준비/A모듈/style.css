@@ -206,11 +206,33 @@ header input {
 
 .menu-info {
     width: 60%;
-    margin-top: 37vh;
+    margin-top: 40vh;
     background-color: #ededed;
     padding-bottom: 20px;
     overflow: hidden;
     border-radius: 15px;
+    animation: ani2 .5s linear forwards;
+    opacity: 0;
+}
+
+#menu1 {
+    animation-delay: .5s;
+}
+
+#menu3 {
+    animation-delay: 1s;
+}
+
+@keyframes ani2 {
+    0% {
+        margin-top:40vh;
+        opacity: 0;
+    }
+
+    100% {
+        margin-top: 37vh;
+        opacity: 1;
+    }
 }
 
 .menu-info > img {
@@ -267,30 +289,22 @@ header input {
 }
 
 .go-btn {
-    margin-left: -200px;
-    animation: menu 1.3s 1s linear infinite, start .8s linear forwards;
-}
-
-@keyframes start {
-    0% {
-        margin-left: -200px;
-    }
-    100% {
-        margin-left: 0px;
-    }
+    animation: menu 2s linear infinite;
 }
 
 @keyframes menu {
     0% {
-        transform: rotate(5deg);
+        /* margin-left: 0px; */
+        transform: translateX(0px);
     }
 
     50% {
-        transform: rotate(-5deg);
+        /* margin-left: 15px; */
+        transform: translateX(-10px);
     }
 
     100% {
-        transform: rotate(5deg);
+        transform: translateX(0px);
     }
 }
 
@@ -464,9 +478,23 @@ header input {
     height: 550px;
     overflow: auto;
     border-radius: 10px;
+    padding-right: 30px;
+}
+
+.review-area::-webkit-scrollbar {
+    width: 15px;
+}
+.review-area::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 15px;
+}
+.review-area::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
 }
 
 .review-area > div {
+    position: relative;
     display: flex;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -478,15 +506,14 @@ header input {
 }
 
 .review-area > div > img {
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
     border-radius: 100%;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .review-txt {
-    padding-left: 30px;
+    padding-left: 20px;
 }
 
 .review-txt > div:nth-child(1) {
@@ -515,16 +542,19 @@ header input {
     width: 95%;
     margin-left: 0;
     margin-top: 3px;
-    font-size: 16px;
+    font-size: 13px;
     color: rgb(0, 0, 190);
 }
 
-.review-txt > div:nth-child(4) {
+.write-date {
     margin-top: 5px;
     font-size: 15px;
     color: rgb(109, 109, 109);
     margin-left: 150px;
     width: auto;
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 120px;
 }
 
 #review-write {
@@ -607,10 +637,10 @@ header input {
 }
 
 .map-info {
-    margin-top: -553px;
+    margin-top: -400px;
     position: absolute;
     width: 715px;
-    height: 553px;
+    height: 403px;
     margin-left: 640px;
     background-color: rgba(255, 255, 255, 0.822);
     border-radius: 20px;
@@ -626,7 +656,7 @@ header input {
 }
 
 .map-info > .title {
-    margin-top: 25px;
+    margin-top: 75px;
     margin-left: 85px;
 }
 
@@ -637,6 +667,13 @@ header input {
     line-height: 2;
     margin-left: 85px;
     font-weight: bold;
+}
+
+.test {
+    margin-top: -550px;
+    position: absolute;
+    margin-left: 700px;
+    width: 600px;
 }
 
 /* test */
