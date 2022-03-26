@@ -249,15 +249,6 @@ header input {
     font-weight: bold;
 }
 
-.go-menu {
-    filter: brightness(.6);
-    transition: all .5s;
-}
-
-.go-menu:hover {
-    filter: brightness(1);
-}
-
 .tag {
     display: flex;
     flex-direction: column;

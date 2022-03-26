@@ -8,30 +8,57 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="/js/jquery-3.6.0.js"></script>
-    <script src="/js/config.js"></script>
-    <script src="/js/util.js"></script>
-    <script src="/js/event/Card.js"></script>
-    <script src="/js/event/Game.js"></script>
-    <script src="/js/event/Form.js"></script>
-    <script src="/js/event/App.js"></script>
+    <script src="/js/script.js"></script>
     <title>이벤트 페이지</title>
 </head>
 
 <body style="background-image: url('/resources/images/makeImg/배경이미지.jpg'); background-position: center; background-size: cover;">
 
-    <div class="form-layout" style="position: absolute; width: 500px; height: 300px;
-    background-color: #f4f4f4; margin-top: 300px; z-index: 10; margin-left: 150px;">
-        <div class="find-card-count">찾은 카드 수 : 1</div>
-        <div>이름</div>
-        <input type="text" class="name">
-        <div>전화번호</div>
-        <input type="text" class="phone">
-        <button class="btn btn-primary submitBtn" style="width: 200px;">버튼</button>
-    </div>
+    <header>
+        <input type="radio" name="tab" id="open1">
+        <input type="radio" name="tab" id="open2">
+        <input type="radio" name="tab" id="close1">
+        <input type="radio" name="tab" id="close2">
+        <div class="menu" id="menu1">
+            <label for="close1" class="close"><div>X</div></label>
+            <div>
+                <div>메인페이지</div>
+                <div class="highlight">이벤트</div>
+                <div>특산품 안내</div>
+                <div>구매후기</div>
+            </div>
+        </div>
+        <div class="menu" id="menu2">
+            <label for="close1" class="close"><div>X</div></label>
+            <div>
+                <div>
+                    <img id="social1" src="/resources/images/makeImg/소셜1.png" alt="">
+                    <div>인스타그램</div>
+                </div>
+                <div>
+                    <img id="social2" src="/resources/images/makeImg/소셜2.png" alt="">
+                    <div>인스타그램</div>
+                </div>
+                <div>
+                    <img id="social3" src="/resources/images/makeImg/소셜3.png" alt="">
+                    <div>인스타그램</div>
+                </div>
+                <div>
+                    <img id="social4" src="/resources/images/makeImg/소셜4.png" alt="">
+                    <div>인스타그램</div>
+                </div>
+            </div>
+        </div>
+        <div id="tab-menu" style="margin-left: 78%;">
+            <label for="open1"><img src="/resources/images/makeImg/menubar.svg" alt=""></label>
+            <label for="open2"><img src="/resources/images/makeImg/sharebar.svg" alt=""></label>
+        </div>
+    </header>
 
-    <img style="position: relative;" src="/resources/images/makeImg/슬로건1-black.svg" id="slogun" alt="img" title="img">
 
-    <div class="container-fluid mt-4" style="width: 90%;">
+    <img style="position: relative; margin-left: 275px;" src="/resources/images/makeImg/슬로건1.svg" id="slogun" alt="img" title="img">
+
+    <div class="container-fluid mt-4" style="width: 75%;">
         <div class="row">
             <div class="col-4"><img src="/resources/images/makeImg/안내이미지.jpg" alt="img" title="img" id="event-img">
             </div>
@@ -42,8 +69,182 @@
                 </div>
 
                 <div class="event-card-grid">
-
-            
+                    <div class="event-card active">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card active">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="front">
+                            <img src="/resources/images/특산품/거제시_유자.jpg" class="card-img" alt="">
+                            <div class="info">
+                                특산품
+                            </div>
+                        </div>
+                        <div class="back">
+                            <img src="/resources/images/makeImg/슬로건1-black.svg" alt="">
+                        </div>
+                    </div>
                 </div>
                 <!-- 카드 게임 진행 영역 종료 -->
 
@@ -63,18 +264,16 @@
                         <div><span>출석스탬프</span>를 받아가세요.</div>
                     </div>
                     <div class="row stamp-area">
-                        <div class="col stamp">
-                            
-                        </div>
-                        <div class="col stamp"></div>
-                        <div class="col stamp"></div>
+                        <div class="col"><img src="/resources/images/makeImg/스탬프.svg" alt=""></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer>
+    <footer style="margin-top: 40px;">
         Copyright (C) Gyeongsangbuk-do. All Rights Reserved
     </footer>
 

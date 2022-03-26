@@ -10,15 +10,14 @@
 </head>
 <body style="background-image: url('/resources/images/makeImg/');">
 
-    <img src="/resources/images/makeImg/슬로건1.svg" id="slogun" alt="img" title="img">
 
-    <!-- <header>
+    <header>
         <input type="radio" name="tab" id="open1">
         <input type="radio" name="tab" id="open2">
         <input type="radio" name="tab" id="close1">
         <input type="radio" name="tab" id="close2">
         <div class="menu" id="menu1">
-            <label for="close1" class="close"><div>X</div></label>
+            <label for="close1" class="close main-close"><div>X</div></label>
             <div>
                 <div class="highlight">메인페이지</div>
                 <div>이벤트</div>
@@ -26,20 +25,44 @@
                 <div>구매후기</div>
             </div>
         </div>
+        <div class="menu" id="menu2">
+            <label for="close1" class="close main-close"><div>X</div></label>
+            <div>
+                <div>
+                    <img id="social1" src="/resources/images/makeImg/소셜1.png" alt="">
+                    <div>인스타그램</div>
+                </div>
+                <div>
+                    <img id="social2" src="/resources/images/makeImg/소셜2.png" alt="">
+                    <div>페이스북</div>
+                </div>
+                <div>
+                    <img id="social3" src="/resources/images/makeImg/소셜3.png" alt="">
+                    <div>유튜브</div>
+                </div>
+                <div>
+                    <img id="social4" src="/resources/images/makeImg/소셜4.png" alt="">
+                    <div>트위터</div>
+                </div>
+            </div>
+        </div>
         <div id="tab-menu">
             <label for="open1"><img src="/resources/images/makeImg/menubar.svg" alt=""></label>
             <label for="open2"><img src="/resources/images/makeImg/sharebar.svg" alt=""></label>
         </div>
-    </header> -->
+    </header>
+
+    <img src="/resources/images/makeImg/슬로건1.svg" id="slogun" alt="img" title="img">
+
 
     <section class="container-fluid p-0" id="main">
         <div class="row m-0">
             <div class="col go-menu">
                 <div class="menu-info">
                     <img src="/resources/images/sizeDown/photo (14).jpg" alt="">
-                    <div class="row menu-txt">
+                    <div class="row menu-txt mt-2">
                         <div class="col-7 ml-3 mt-3 menu-name">특산품 안내</div>
-                        <div class="col-4 mt-3"><a href="#"><img src="/resources/images/makeImg/바로가기2.svg" alt=""></a></div>
+                        <div class="col-4 mt-3 go-btn"><a href="/sub1.html"><img src="/resources/images/makeImg/바로가기2.svg" alt=""></a></div>
                         <div class="col-9 tag">
                             <div>
                                 <div>#aaaa</div>
@@ -57,11 +80,11 @@
                 
             </div>
             <div class="col go-menu">
-                <div class="menu-info">
+                <div class="menu-info" id="menu1">
                     <img src="/resources/images/sizeDown/photo (11).jpg" alt="">
-                    <div class="row menu-txt">
+                    <div class="row menu-txt mt-2">
                         <div class="col-7 ml-3 mt-3 menu-name">이벤트</div>
-                        <div class="col-4 mt-3"><a href="#"><img src="/resources/images/makeImg/바로가기2.svg" alt=""></a></div>
+                        <div class="col-4 mt-3 go-btn"><a href="/sub2.html"><img src="/resources/images/makeImg/바로가기2.svg" alt=""></a></div>
                         <div class="col-9 tag">
                             <div>
                                 <div>#aaaa</div>
@@ -79,11 +102,11 @@
                 
             </div>
             <div class="col go-menu">
-                <div class="menu-info">
-                    <img src="/resources/images/sizeDown/photo (19).jpg" alt="">
-                    <div class="row menu-txt">
+                <div class="menu-info" id="menu3">
+                    <img src="/resources/images/디자인소스/ZM010.jpg" alt="">
+                    <div class="row menu-txt mt-2">
                         <div class="col-7 ml-3 mt-3 menu-name">구매후기</div>
-                        <div class="col-4 mt-3"><a href="#"><img src="/resources/images/makeImg/바로가기2.svg" alt=""></a></div>
+                        <div class="col-4 mt-3 go-btn"><a href="/sub3.html"><img src="/resources/images/makeImg/바로가기2.svg" alt=""></a></div>
                         <div class="col-9 tag">
                             <div>
                                 <div>#aaaa</div>
@@ -102,6 +125,8 @@
             </div>
         </div>
     </section>
-    
+    <footer>
+        Copyright (C) Gyeongsangbuk-do. All Rights Reserved
+    </footer>
 </body>
 </html>
