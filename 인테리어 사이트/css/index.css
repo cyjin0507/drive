@@ -40,14 +40,36 @@ a {
     border-radius: 1px;
 }
 
-header {
-    padding-top: 20px;
+img {
+    object-fit: cover;
+}
+
+#header-up {
+    /* background-color: rgb(236, 236, 236); */
+}
+
+#header-up > div {
+    line-height: 2.2;
+    width: 70%;
+}
+
+#header-up > div > div {
+    font-size: 16px;
+    display: flex;
+    width: 150px;
+    margin-right: 0;
+}
+
+#header-up > div > div a {
+    width: auto;
+    color: #333333;
 }
 
 #header {
     display: flex;
     justify-content: space-between;
     width: 70%;
+    padding-top: 20px;
 }
 
 #header img {
@@ -268,4 +290,444 @@ footer {
     text-align: center;
     font-size: 14px;
     color: #aaa;
+}
+
+/* 회사소개 */
+#acco-info {
+    margin-top: 50px;
+    width: 70%;
+    height: 350px;
+    background-image: url("/resources/images/안내.png");
+    background-position: 25% 60%;
+    background-size: cover;
+}
+
+#acco-info > div:nth-child(1) {
+    text-align: center;
+    padding-top: 60px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 7px;
+}
+
+/* 시공후기 */
+#review {
+    width: 70%;
+    margin-top: 100px;
+}
+
+#review-list {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.review {
+    border: 1px solid #aaa;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.review > img {
+    height: 300px;
+}
+
+.review-txt > div:nth-child(1) {
+    display: flex;
+    width: 230px;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.review-txt > div:nth-child(1) > div:nth-child(1) {
+    font-size: 20px;
+}
+
+.review-txt > div:nth-child(1) > div:nth-child(2) {
+    font-size: 30px;
+    color: goldenrod;
+    margin-top: -11px;
+}
+
+.review-txt > div:nth-child(2) {
+    margin-top: 15px;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.review-txt > div:nth-child(3) {
+    display: flex;
+    width: 87%;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.review-txt > div:nth-child(3) > a {
+    color: rgb(105, 0, 0);
+    font-weight: bold;
+}
+
+.review-txt > div:nth-child(3) > div {
+    text-align: right;
+    font-size: 15px;
+    color: rgb(77, 77, 77);
+}
+
+#review-write {
+    position: fixed;
+    top: 40%;
+    left: 92%;
+    width: 120px;
+    height: 230px;
+    background-color: #333333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#review-write > i {
+    width: 45px;
+    display: flex;
+    color: white;
+    font-size: 45px;
+    margin-top: 50px;
+}
+
+#review-write > div:nth-child(2) {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+#review-write > div:nth-child(3) {
+    margin-top: 30px;
+    font-size: 15px;
+    color: rgb(205, 205, 205);
+    text-align: center;
+}
+
+/* 모달 */
+.modal {
+    z-index: 2;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    display: none;
+}
+
+#review-form {
+    width: 600px;
+    height: 800px;
+    background-color: white;
+    margin-top: 60px;
+    border-radius: 20px;
+}
+
+#review-form > div {
+    width: 60%;
+}
+
+#review-form > div h2 {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.form-title {
+    font-size: 18px;
+    font-weight:bold;
+    color: var(--sub-color);
+    margin-top: 30px;
+    /* padding-bottom: 20px; */
+}
+
+#review-form > div > textarea {
+    height: 150px;
+    margin-top: 13px;
+    border-radius: 5px;
+    border-style: none;
+    border: 1px solid var(--sub-color);
+}
+
+#review-form > div > input {
+    margin-top: 13px;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+    border: 1px solid var(--sub-color);
+}
+
+.btn-group {
+    display: flex;
+    margin-top: 65px;
+    margin-left: -10px;
+    width: 280px;
+}
+
+.btn {
+    text-align: center;
+    line-height: 2.2;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 120px;
+    cursor: pointer;
+    border-style: none;
+}
+
+.btn1 {
+    background-color: #333333;
+    color: white;
+}
+
+.btn2 {
+    background-color: white;
+    color: #333333;
+    border: 2px solid #333333;
+}
+/* 로그인 */
+#login {
+    width: 500px;
+    height: 600px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+
+#login > div {
+    width: 70%;
+}
+
+#login > div > h2 {
+    margin-top: 55px;
+    text-align: center;
+}
+
+.login-title {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#login input {
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+    border: 1px solid var(--sub-color);
+    margin-top: 15px;
+}
+
+#login .btn1 {
+    margin-left: 0;
+    margin-top: 40px;
+}
+
+.login-info {
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.login-info a {
+    color: rgb(0, 0, 232);
+}
+
+.loginInfo {
+    margin-top: 70px;
+}
+
+/* 회원가입 */
+#join {
+    width: 500px;
+    height: 800px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+
+#join > div {
+    width: 70%;
+}
+
+#join > div h2 {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.join-title {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#join input {
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+    border: 1px solid var(--sub-color);
+    margin-top: 15px;
+}
+
+#join .btn1 {
+    margin-top: 40px;
+    margin-left: 0;
+}
+
+#join .login-info {
+    margin-top: 60px;
+}
+
+/* ask.html */
+#ask-container {
+    width: 70%;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+#ask-area {
+    border: 1px solid #aaa;
+}
+
+#ask-area > input {
+    display: none;
+}
+
+#ask-menu {
+    display: flex;
+
+}
+
+#ask-menu > label {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 2.2;
+    border: 1px solid #aaa;
+    margin-right: -1px;
+    margin-top: -1px;
+}
+
+#ask-do {
+    padding-top: 50px;
+    width: 90%;
+    height: 420px;
+    /* padding-bottom: 50px; */
+}
+
+#ask-title {
+    width: 300px;
+    margin-left: 10px;
+    height: 30px;
+}
+
+#ask-do span {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--sub-color);
+}
+
+#ask-do small {
+    margin-left: 30px;
+    font-weight: bold;
+}
+
+#ask-check {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-radius: 100%;
+    position: absolute;
+}
+
+#ask-do textarea {
+    margin-top: 20px;
+}
+
+#ask-btn-group {
+    display: flex;
+    margin-top: 30px;
+    width: 300px;
+    margin-left: 0;
+}
+
+#ask1:checked ~ #ask-menu > #ask1-menu {
+    background-color: var(--sub-color);
+    color: white;
+}
+
+#ask2:checked ~ #ask-menu > #ask2-menu {
+    background-color: var(--sub-color);
+    color: white;
+}
+
+.ask-space {
+    display: none;
+}
+
+#ask1:checked ~ #ask-do {
+    display: block;
+}
+
+#ask2:checked ~ #ask-list {
+    display: block;
+}
+
+#ask-list {
+    height: 470px;
+    overflow: auto;
+}
+
+#ask-list > div {
+    border-bottom: 1px solid #aaa;
+}
+
+#ask-list > div > div {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr;
+    line-height: 4.2;
+}
+
+#ask-list > div > div > div:nth-child(1) {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#ask-list > div > div > div:nth-child(2) {
+    font-size: 15px;
+    margin-top: 11px;
+    color: #aaa;
+}
+
+.state1 {
+    background-color: #4b4b4b;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    width: 90px;
+    text-align: center;
+    border-radius: 10%;
+    line-height: 2.5;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.state2 {
+    background-color: var(--sub-color);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    width: 90px;
+    text-align: center;
+    border-radius: 10%;
+    line-height: 2.5;
+    height: 40px;
+    margin-top: 20px;
 }
