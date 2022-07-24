@@ -65,9 +65,9 @@ li {
     width: 1024px;
     margin: 0 auto;
     position: relative;
-    visibility: hidden;
-    animation: container 2s forwards;
-    animation-delay: 2s;
+    /* visibility: hidden; */
+    /* animation: container 2s forwards;
+    animation-delay: 2s; */
 }
 
 @keyframes container {
@@ -158,8 +158,8 @@ li {
     left: 0;
     background-color: #0007;
     z-index: 0;
-    animation: loading 2s forwards;
-    animation-delay: 2s;
+    /* animation: loading 2s forwards;
+    animation-delay: 2s; */
 }
 
 @keyframes loading {
