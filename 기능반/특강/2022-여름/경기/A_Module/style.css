@@ -1,5 +1,192 @@
 @charset "UTF-8";
 
-* {
-    
+@font-face {
+    font-family: 'noto';
+    src: url('./resources/NotoSans/NotoSansKR-Regular.otf');
 }
+
+:root {
+    --text-color : #21262e;
+    --main-color : #0051cb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'noto';
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color) !important;
+}
+
+li {
+    list-style: none;
+}
+
+.flex {display: flex;}
+.column {flex-direction: column;}
+.align-center {align-items: center;}
+.justify-center {justify-content: center;}
+.justify-between {justify-content: space-between;}
+
+.btn {
+    all: unset;
+    cursor: pointer;
+    height: 35px;
+    padding: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-self: center;
+    border-radius: 4px;
+}
+
+.btn.primary {
+    background-color: var(--main-color);
+    color: #fff !important;
+}
+
+.btn.primary.outline {
+    border:1px solid var(--main-color);
+    color: var(--main-color) !important;
+    background-color: #fff;
+}
+
+.btn.small {
+    height: 30px;
+    font-size: 13px;
+}
+
+.container {
+    width: 1024px;
+    margin: 0 auto;
+    position: relative;
+    visibility: hidden;
+    animation: container 2s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes container {
+    from {opacity: 0; visibility: visible;}
+    to {opacity: 1; visibility: visible;}
+}
+
+#header {
+    width: 100%;
+    height: 70px;
+    position: relative;
+}
+
+/* Visual */
+#visual {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+#visual::-webkit-scrollbar {
+    display: none !important;
+}
+
+.visual-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    scroll-snap-align: start;
+}
+
+.visual-item > img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    filter: brightness(0.7);
+}
+
+.visual-item > .text {
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+.visual-item > .control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    z-index: 3;
+}
+
+.control > .status {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+}
+
+.control > .status.active {
+    background-color: #fff;
+}
+
+/* Visual End */
+
+/* Loading */
+#loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0007;
+    z-index: 0;
+    animation: loading 2s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes loading {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+.loading-content {
+    gap: 10px;
+    position: relative;
+}
+
+.loading-content > .dot {
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 100%;
+    animation: dot 1s infinite;
+}
+
+.loading-content > .dot:nth-child(1) {animation-delay: 0;}
+.loading-content > .dot:nth-child(2) {animation-delay: 0.1s;}
+.loading-content > .dot:nth-child(3) {animation-delay: 0.2s;}
+
+@keyframes dot {
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(-50px);}
+    100% {transform: translateY(0px);}
+}
+/* Loading End */
