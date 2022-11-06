@@ -9,6 +9,7 @@ class Game {
         this.width = canvas.width
         this.height = canvas.height
         this.player = null
+        this.enemeyList = []
 
         gameInstance = this
         this.init()
@@ -24,6 +25,17 @@ class Game {
             speed : 5
         }
         this.player = new Player(playerData)
+
+        for (let i=0; i<10; i++) {
+            const spawnSide = Util.getRandomSpawnSide()
+            const enemyData = {
+                size : 10,
+                color : "#ddd",
+                speed : 2,
+            }
+            const enemy = new Enemey(enemyData, spawnSide)
+            this.enemeyList.push(enemy)
+        }
         this.render()
     }
 

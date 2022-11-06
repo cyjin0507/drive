@@ -45,7 +45,7 @@ class Player extends Entity {
     moveByKeyMap() {
         const {keyMap, speed, size} = this
         const {width, height} = new Game()
-        
+
         let xDistance = 0
         let yDistance = 0
         if(keyMap['KeyW']) yDistance -= speed
