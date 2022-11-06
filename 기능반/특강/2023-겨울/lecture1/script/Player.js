@@ -33,7 +33,7 @@ class Player extends Entity {
     // Override
     render(ctx) {
         this.moveByKeyMap()
-        const {x, y, size, color} = this
+        const {x, y, size, color, } = this
         
         ctx.beginPath()
         ctx.arc(x,y,size, 0, 2*Math.PI)
@@ -43,7 +43,8 @@ class Player extends Entity {
     }
 
     moveByKeyMap() {
-        const {keyMap, speed} = this
+        const {keyMap, speed, size} = this
+        const {width, height} = new Game()
         
         let xDistance = 0
         let yDistance = 0
@@ -54,6 +55,11 @@ class Player extends Entity {
 
         let nextX = this.x + xDistance
         let nextY = this.y + yDistance
+
+        if(nextX < size) nextX = size
+        if(nextY < size) nextY = size
+        if(nextX > width - size) nextX = width - size
+        if(nextY > height - size) nextY = height - size
 
         this.x = nextX
         this.y = nextY
