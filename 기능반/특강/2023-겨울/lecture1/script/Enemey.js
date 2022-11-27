@@ -104,8 +104,7 @@ class Enemey extends Entity {
         const distX = abs(myX - playerX)
         const distY = abs(myY - playerY)
         const hypo = sqrt(pow(distX,2) + pow(distY, 2))
-        // return (mySize + playerSize) > hypo
-        return false
+        return (mySize + playerSize) > hypo
     }
 
     changeDirection() {
