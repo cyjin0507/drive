@@ -1,8 +1,8 @@
 const KEY_LIST = ['KeyW', 'KeyA', 'KeyS', 'KeyD']
 
 class Player extends Entity {
-    constructor(props) {
-        super(props)
+    constructor({size,color,x,y,speed}) {
+        super({size,color,x,y,speed})
         this.keyMap = {
             keyW : false,
             keyA : false,

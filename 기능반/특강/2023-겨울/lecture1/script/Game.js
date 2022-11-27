@@ -10,6 +10,7 @@ class Game {
         this.height = canvas.height
         this.player = null
         this.enemeyList = []
+        this.isActive = true
 
         gameInstance = this
         this.init()
@@ -18,7 +19,7 @@ class Game {
     init() {
         const {width, height} = this
         const playerData = {
-            size : 30,
+            size : 10,
             color : '#22dbcf',
             x : width / 2,
             y : height / 2,
@@ -26,23 +27,37 @@ class Game {
         }
         this.player = new Player(playerData)
 
-        for (let i=0; i<10; i++) {
-            const spawnSide = Util.getRandomSpawnSide()
+        for (let i=0; i<100; i++) {
             const enemyData = {
-                size : 10,
-                color : "#ddd",
-                speed : 2,
+                size : 5,
+                color : "red",
+                speed : 3,
+                spawnSide : Util.getRandomSpawnSide(),
             }
-            const enemy = new Enemey(enemyData, spawnSide)
+            const enemy = new Enemey(enemyData)
             this.enemeyList.push(enemy)
+
+            setTimeout(()=> {
+                enemy.isActive = true
+            }, i * 100)
         }
         this.render()
     }
 
     render() {
+        if(!this.isActive) return
         const { ctx, width, height } = this
         this.ctx.clearRect(0,0,width, height)
         this.player.render(ctx)
+        this.enemeyList.forEach(enemy=>{
+            enemy.render(ctx)
+            const isCollision = enemy.checkCollision(this.player)
+            if(isCollision) {
+                this.isActive = false
+                return true
+                // alert('충돌')
+            }
+        })
         requestAnimationFrame(this.render.bind(this))
     }
 
