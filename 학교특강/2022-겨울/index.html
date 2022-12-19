@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #header {
+            background-color: red;
+        }
+
+        .content1 {
+            background-color: green;
+            float: left;
+        }
+
+        .content2 {
+            background-color: blue;
+            float: left;
+        }
+
+        .content3 {
+            background-color: yellow;
+            float: left;
+        }
+
+        .clear::after {
+            content: '';
+            clear: both;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="header">HEADER</div>
+        <div id="content" class="clear">
+            <div class="content1">content1</div>
+            <div class="content2">content2</div>
+            <div class="content3">content3</div>
+        </div>
+    </div>
+    
+</body>
+</html>
