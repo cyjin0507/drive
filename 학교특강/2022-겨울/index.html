@@ -6,29 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            text-align: center;
+        }
+
         #header {
             background-color: red;
+            line-height: 4;
         }
 
-        .content1 {
-            background-color: green;
-            float: left;
-        }
-
-        .content2 {
-            background-color: blue;
-            float: left;
-        }
-
-        .content3 {
+        #navigation {
             background-color: yellow;
-            float: left;
+            line-height: 4;
         }
+
+        .contents {
+            float: left;
+            line-height: 10;
+        }
+
+        #content1 {
+            background-color: palegoldenrod;
+            width: 25%;
+        }
+
+        #content2 {
+            background-color: pink;
+            width: 50%;
+        }
+
+        #content3 {
+            background-color: palegoldenrod;
+            width: 25%;
+        }
+        
 
         .clear::after {
             content: '';
             clear: both;
             display: inline-block;
+        }
+
+        footer {
+            background-color: powderblue;
+            line-height: 4;
         }
     </style>
 </head>
@@ -36,11 +57,13 @@
 
     <div id="wrap">
         <div id="header">HEADER</div>
+        <div id="navigation">Navigation Menu</div>
         <div id="content" class="clear">
-            <div class="content1">content1</div>
-            <div class="content2">content2</div>
-            <div class="content3">content3</div>
+            <div class="contents" id="content1">content</div>
+            <div class="contents" id="content2">Main Content</div>
+            <div class="contents" id="content3">content</div>
         </div>
+        <footer>Footer</footer>
     </div>
     
 </body>
