@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        .clear::after {
+            content: '';
+            clear: both;
+            display: inline-block;
+        }
+
+        #banner {
+            line-height: 5;
+            background-color: purple;
+        }
+
+        #navigation {
+            line-height: 3;
+            background-color: royalblue;
+        }
+
+        #content {
+
+        }
+
+        .main-content {
+            float: left;
+            width: 60%;
+            background-color: seagreen;
+            line-height: 20;
+        }
+
+        .sub-menus {
+            float: left;
+            line-height: 10;
+        }
+
+        #picture {
+            width: 15%;
+            background-color: yellow;
+        }
+
+        #about {
+            width: 25%;
+            background-color: skyblue;
+        }
+
+        #recent {
+            width: 40%;
+            background-color: salmon;
+        }
+
+        footer {
+            background-color: aquamarine;
+            line-height: 5;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner">BANNER</div>
+        <div id="navigation">Navigation</div>
+        <div id="content">
+            <div class="main-content">MAIN CONTENT</div>
+            <div class="sub-menu">
+                <div class="sub-menus" id="picture">PICTURE</div>
+                <div class="sub-menus" id="about">ABOUT ME</div>
+                <div class="sub-menus" id="recent">RECENT</div>
+                <div style="clear: both;"></div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <footer>footer</footer>
+    </div>
+
+
+</body>
+</html>
