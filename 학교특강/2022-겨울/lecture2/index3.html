@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <style>
+        #imageSlide {
+            width: 500px;
+            height: 300px;
+            background-color: red;
+            position: relative;
+        }
+        #imageSlide img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        #imageSlide img.active {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="imageSlide">
+        <img src="./img/index3-1.jpg" class="active" alt="">
+        <img src="./img/index3-2.jpg" alt="">
+        <img src="./img/index3-3.jpg" alt="">
+        <img src="./img/index3-4.jpg" alt="">
+    </div>
+
+    <script>
+        let now = 0
+        const imageCount = $('#imageSlide img').length-1
+        
+        setInterval(function() {
+            $('#imageSlide img').eq(now).removeClass('active')
+            if(now < imageCount) {
+                now++
+            } else {
+                now = 0
+            }
+
+
+            $('#imageSlide img').eq(now).addClass('active')
+
+        }, 4000)
+
+    </script>
+    
+</body>
+</html>
