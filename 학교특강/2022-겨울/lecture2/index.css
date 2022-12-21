@@ -15,12 +15,12 @@ body {
     justify-content: space-between;
 }
 
-#wrap header ul {
+#wrap nav> ul {
     list-style: none;
     display: flex;
 }
 
-#wrap header ul > li {
+#wrap nav ul > li {
     font-size: 18px;
     font-weight: bold;
     padding: 10px 0;
@@ -28,12 +28,34 @@ body {
     text-align: center;
 }
 
-#wrap header ul > li:hover {
+#wrap nav > ul > li:hover {
     background-color: rgb(26, 96, 161);
     color: #fff;
 }
 
-#wrap header ul > li a {
+#wrap nav ul > li > a {
     text-decoration: none;
     color: inherit;
+}
+
+#wrap nav > ul > li {
+    position: relative;
+}
+
+#wrap nav > ul > li:hover ul {
+    display: block;
+}
+
+#wrap nav > ul > li > ul {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    color: black;
+    display: none;
+}
+
+#wrap header ul > li ul li {
+    background-color: white;
 }
