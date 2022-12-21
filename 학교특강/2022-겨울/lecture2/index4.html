@@ -43,21 +43,10 @@
         setInterval(function() {
             $('#imageSlide img').eq(now).animate({
                 top: '-100%'
-            }, {
-                complete : function() {
-                    $('#imageSlide img').css('top', '100%')
-                }
-            }, 1000, "linear")
-
-            if(now < imageCount) {now++}
-            else {now = 0}
-
-            $('#imageSlide img').eq(now).animate({
-                top: '0'
-            }, 1000, "linear")
+            },1000)
 
 
-        },4000)
+        },2000)
         
     </script>
     

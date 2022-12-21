@@ -11,14 +11,14 @@
             width: 500px;
             height: 300px;
             position: relative;
-            /* overflow: hi */
+            /* overflow: hidden */
         }
 
         #imageSlide img {
             width: 100%;
             height: 100%;
             position: absolute;
-            top: 100%;
+            top: 0;
             left: 0;
         }
     </style>
@@ -26,63 +26,108 @@
 <body>
 
     <div id="imageSlide">
-        <img src="./img/index3-1.jpg" alt="">
-        <img src="./img/index3-2.jpg" alt="">
-        <img src="./img/index3-3.jpg" alt="">
-        <img src="./img/index3-4.jpg" alt="">
+        <img src="./img/1.png" alt="">
+        <img src="./img/2.png" alt="">
+        <img src="./img/3.png" alt="">
+        <img src="./img/4.png" alt="">
     </div>
 
     <script>
         let imgs = $('#imageSlide > img')
-        let now = 0
-        const maxNum = imgs.length - 1
+        let now = imgs.length - 1
+        const maxNum = 0
 
-        
-        for(let i=0; i<=maxNum; i++) {
+        // for(let i=now; i>=maxNum; i--) {
+        //     let rnd = Math.round(Math.random() * 4);
+        //     if(rnd==0) {
+        //         $(imgs[i]).css({
+        //             top:'-100%',
+        //             left:'0'
+        //         })
+        //     }
+        //     if(rnd==1) {
+        //         $(imgs[i]).css({
+        //             top:'0',
+        //             left:'100%'
+        //         })
+        //     }
+        //     if(rnd==2) {
+        //         $(imgs[i]).css({
+        //             top:'100%',
+        //             left:'0'
+        //         })
+        //     }
+        //     if(rnd==3) {
+        //         $(imgs[i]).css({
+        //             top:'0',
+        //             left:'-100%'
+        //         })
+        //     }
+        // }
+
+        setInterval(function() {
             let rnd = Math.round(Math.random() * 4);
+            let num2 = now
             if(rnd==0) {
-                $(imgs[i]).css({
-                    top:'-100%',
-                    left:'0'
-                })
+                imgs.eq(now).animate({
+                    top:'100%',
+                    left:'0%'
+                },500)
             }
             if(rnd==1) {
-                $(imgs[i]).css({
-                    top:'0',
-                    left:'100%'
-                })
+                imgs.eq(now).animate({
+                    top:'0%',
+                    left:'-100%'
+                },500)
             }
             if(rnd==2) {
-                $(imgs[i]).css({
-                    top:'100%',
-                    left:'0'
-                })
+                imgs.eq(now).animate({
+                    top:'-100%',
+                    left:'0%'
+                },500)
             }
             if(rnd==3) {
-                $(imgs[i]).css({
-                    top:'0',
-                    left:'-100%'
-                })
+                imgs.eq(now).animate({
+                    top:'0%',
+                    left:'100%'
+                },500)
             }
-        }
-   
-        setInterval(function() {
-            imgs[now].animate({
+
+            if(now > maxNum) {now--}
+            else {now = imgs.length - 1}
+
+            imgs.eq(now).animate({
                 top:'0',
                 left:'0'
             },500)
 
-            if(now < maxNum) {now++}
-            else {now = 0}
+            if(rnd==0) {
+                imgs.eq(num2).animate({
+                    top:'-100%',
+                    left:'0%'
+                },500)
+            }
+            if(rnd==1) {
+                imgs.eq(num2).animate({
+                    top:'0%',
+                    left:'100%'
+                },500)
+            }
+            if(rnd==2) {
+                imgs.eq(num2).animate({
+                    top:'100%',
+                    left:'0%'
+                },500)
+            }
+            if(rnd==3) {
+                imgs.eq(num2).animate({
+                    top:'0%',
+                    left:'-100%'
+                },500)
+            }
 
-            imgs[now].animate({
-                top:'100%',
-                left:'100%'
-            },500)
-
-
-            
         },1000)
+
 
    </script>
     
